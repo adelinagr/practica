@@ -608,7 +608,7 @@ export function LiquidEther({
         this.props = props || {};
         this.uniforms = this.props.material?.uniforms;
       }
-      init() {
+      init(args?: any) {
         this.scene = new THREE.Scene();
         this.camera = new THREE.Camera();
         if (this.uniforms) {
