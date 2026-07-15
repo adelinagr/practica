@@ -1,0 +1,351 @@
+Iată modulele 7 și 8, împreună cu tabelul final de sumarizare, complet curățate de caractere speciale ascunse și formatări problematice. Textul de mai jos este optimizat în format Markdown standard pentru a fi acceptat fără erori de editorul Antigravity.
+
+---
+
+## MODULE 7 — HR DIGITALIZATION
+
+Acest modul evaluează maturitatea organizației în:
+
+* digitalizarea proceselor HR;
+* automatizare;
+* HR data management;
+* reporting;
+* self-service;
+* analytics;
+* digital readiness.
+
+### 7.1 Digital Infrastructure
+
+**DIG1: Organizația utilizează un sistem digital dedicat pentru administrarea datelor de personal (ex. HR software, ERP HR module, HRIS, payroll-integrated systems).**
+
+1. Exclusiv hârtie / Excel dispersat
+2. Excel / fișiere locale limitate
+3. Soluții digitale parțiale
+4. Sistem digital utilizat pentru majoritatea datelor HR
+5. Platformă HR integrată și centralizată
+
+**DIG2: Datele despre angajați sunt actualizate, centralizate și ușor accesibile persoanelor autorizate.**
+
+1. Foarte dispersate
+2. Acces dificil
+3. Parțial centralizate
+4. Bună centralizare
+5. Management matur al datelor HR
+
+**DIG3: Documentele HR sunt gestionate digital (ex. contracte, acte adiționale, evaluări, training records, documente administrative).**
+
+1. Exclusiv pe hârtie
+2. Predominant hârtie
+3. Mix hârtie + digital
+4. Predominant digital
+5. Flux complet digital document management
+
+### 7.2 Process Automation
+
+**DIG4: Procesele administrative HR sunt automatizate parțial sau complet (ex. leave requests, approvals, document generation, notifications).**
+
+1. Exclusiv manual
+2. Foarte puțin automatizat
+3. Automatizare limitată
+4. Mai multe procese automatizate
+5. Automatizare matură a workflow-urilor
+
+**DIG5: Procesele repetitive HR consumatoare de timp au fost simplificate sau digitalizate.**
+
+1. Nu
+2. Foarte puțin
+3. Unele procese
+4. Majoritatea proceselor repetitive
+5. Optimizare continuă a proceselor
+
+### 7.3 Employee Self-Service
+
+**DIG6: Angajații au acces digital la informații sau servicii HR fără intervenție manuală (ex. cereri concediu, adeverințe, actualizare date personale, documente).**
+
+1. Nu există
+2. Foarte limitat
+3. Unele funcționalități
+4. Multiple servicii disponibile
+5. Self-service matur și utilizat activ
+
+**DIG7: Managerii au acces la informații relevante despre echipele lor prin instrumente digitale.**
+
+1. Nu
+2. Acces foarte limitat
+3. Acces parțial
+4. Acces bun
+5. Dashboard managerial dedicat
+
+### 7.4 HR Reporting & Analytics
+
+**DIG8: Organizația utilizează rapoarte digitale pentru monitorizarea indicatorilor HR (ex. turnover, absenteeism, recruitment metrics, training participation).**
+
+1. Nu utilizăm
+2. Rapoarte manuale rare
+3. Rapoarte periodice de bază
+4. Reporting structurat
+5. Dashboard activ și utilizat în decizii
+
+**DIG9: Datele HR sunt utilizate pentru luarea deciziilor manageriale.**
+
+1. Nu
+2. Foarte rar
+3. Uneori
+4. Frecvent
+5. Data-driven people decisions
+
+**DIG10: Organizația poate genera rapid rapoarte relevante despre personal.**
+
+1. Foarte dificil
+2. Consum mare de timp
+3. Posibil cu efort moderat
+4. Rapid
+5. Instant / dashboard live
+
+### 7.5 Digital Learning & Communication
+
+**DIG11: Organizația utilizează instrumente digitale pentru training și dezvoltare (ex. e-learning, webinar, LMS, learning platforms).**
+
+1. Nu
+2. Foarte rar
+3. Ocazional
+4. Frecvent
+5. Ecosistem digital de learning
+
+**DIG12: Comunicarea internă utilizează instrumente digitale moderne (ex. Teams, Slack, portals, digital announcements, employee apps).**
+
+1. Foarte limitat
+2. Utilizare minimă
+3. Utilizare moderată
+4. Utilizare activă
+5. Parte integrată din employee experience
+
+### 7.6 GDPR & Security
+
+**DIG13: Datele HR sunt gestionate cu măsuri clare de securitate și control acces.**
+
+1. Măsuri inexistente
+2. Măsuri minimale
+3. Control parțial
+4. Măsuri clare aplicate
+5. Standard matur de data governance
+
+**DIG14: Organizația respectă cerințele GDPR privind datele angajaților.**
+
+1. Nu există claritate
+2. Respectare parțială
+3. Conformitate de bază
+4. Conformitate clara și documentată
+5. Management matur de compliance digital
+
+### 7.7 Digital Readiness
+
+**DIG15: Funcția HR este deschisă către adoptarea de noi tehnologii și digitalizare.**
+
+1. Rezistență puternică
+2. Reticență ridicată
+3. Deschidere moderată
+4. Atitudine pozitivă
+5. Proactivitate în inovare digitală
+
+**DIG16: Organizația investește în modernizarea digitală a proceselor HR.**
+
+1. Nu investește
+2. Foarte rar
+3. Investiții punctuale
+4. Investiții recurente
+5. Strategie activă de digital transformation
+
+---
+
+* **Maximum score MODULE 7:** 16 itemi × 5 = 80 puncte
+* **Risk logic examples (If DIG < 40):** High operational inefficiency risk. Possible vulnerabilities: HR admin overload, poor reporting, compliance exposure, weak employee experience, low agility.
+* **Commercial opportunity:** Aici poți deschide consulting pe: HR digital transformation, process redesign, HRIS selection, workflow automation, HR analytics maturity.
+
+---
+
+## MODULE 8 — COMPLIANCE & HR RISK MANAGEMENT
+
+Acest modul evaluează maturitatea organizației în:
+
+* conformitate legală;
+* documentație HR;
+* relații de muncă;
+* disciplină;
+* SSM;
+* medicina muncii;
+* audit HR;
+* prevenirea riscurilor.
+
+### 8.1 Employment Documentation
+
+**COM1: Documentele obligatorii privind relațiile de muncă sunt complete, actualizate și ușor accesibile (ex. contracte individuale de muncă, acte adiționale, fișe de post, decizii relevante).**
+
+1. Documentație incompletă / neorganizată
+2. Există lacune semnificative
+3. Documentație parțial conformă
+4. Documentație completă și bine organizată
+5. Sistem matur, auditabil și actualizat constant
+
+**COM2: Fișele de post sunt utilizate activ ca document managerial, nu doar formal.**
+
+1. Lipsesc sau sunt pur formale
+2. Rareori utilizate
+3. Utilizare ocazională
+4. Utilizare frecventă
+5. Integrate în recrutare, evaluare și dezvoltare
+
+**COM3: Organizația gestionează corect și la timp modificările contractuale (ex. funcție, salariu, program, responsabilități).**
+
+1. Frecvente întârzieri / erori
+2. Probleme recurente
+3. Gestionare acceptabilă
+4. Gestionare bună și predictibilă
+5. Proces matur și controlat
+
+### 8.2 Legal Compliance
+
+**COM4: Organizația urmărește activ modificările legislației muncii relevante.**
+
+1. Nu există monitorizare
+2. Reacție doar când apar probleme
+3. Monitorizare ocazională
+4. Monitorizare periodică
+5. Proces formal de compliance monitoring
+
+**COM5: Politicile și practicile HR sunt actualizate conform cerințelor legale.**
+
+1. Nu
+2. Foarte rar
+3. Uneori
+4. Frecvent
+5. Sistematic și documentat
+
+**COM6: Există suport intern sau extern pentru interpretarea aspectelor juridice de HR.**
+
+1. Nu există
+2. Foarte limitat
+3. Ocazional
+4. Accees regulat
+5. Suport clar și predictibil
+
+### 8.3 Disciplinary & Employee Relations
+
+**COM7: Organizația are proceduri clare pentru gestionarea situațiilor disciplinare.**
+
+1. Nu există
+2. Foarte neclare
+3. Parțial definite
+4. Clar definite și utilizabile
+5. Formalizate și aplicate consecvent
+
+**COM8: Managerii cunosc regulile și pașii privind gestionarea situațiilor disciplinare sau conflictelor de muncă.**
+
+1. Nu cunosc
+2. Cunoștințe foarte limitate
+3. Cunoștințe moderate
+4. Nivel bun de cunoaștere
+5. Instruire formală și aplicare corectă
+
+**COM9: Conflictele sau reclamațiile angajaților sunt gestionate prin mecanisme clare și echitabile.**
+
+1. Nu există mecanisme clare
+2. Gestionare ad-hoc
+3. Unele practici
+4. Proceduri clare
+5. Sistem matur de employee relations
+
+### 8.4 Health, Safety & Occupational Compliance
+
+**COM10: Obligațiile privind sănătatea și securitatea în muncă (SSM) sunt gestionate conform cerințelor legale.**
+
+1. Probleme majore
+2. Lacune importante
+3. Conformitate de bază
+4. Bună conformitate
+5. Sistem matur și preventiv
+
+**COM11: Evaluările și instruirile obligatorii SSM sunt realizate la timp și documentate.**
+
+1. Frecvente omisiuni
+2. Probleme recurente
+3. Acceptabil
+4. Gestionare bună
+5. Control matur și predictibil
+
+**COM12: Organizația gestionează conform obligațiile privind medicina muncii.**
+
+1. Probleme majore
+2. Lacune importante
+3. Conformitate minimă
+4. Bună conformitate
+5. Management matur și preventiv
+
+### 8.5 HR Audit & Risk Prevention
+
+**COM13: Organizația verifică periodic conformitatea documentelor și proceselor HR.**
+
+1. Nu verificăm
+2. Doar când apare o problemă
+3. Verificări ocazionale
+4. Verificări periodice
+5. Audit intern formal HR
+
+**COM14: Riscurile legate de resurse umane sunt identificate și discutate managerial (ex. litigii, turnover, absenteism, lipsă competențe, compliance failures).**
+
+1. Nu
+2. Foarte rar
+3. Uneori
+4. Frecvent
+5. Parte formală din risk management
+
+**COM15: Organizația are planuri sau măsuri preventive pentru reducerea riscurilor HR.**
+
+1. Nu există
+2. Măsuri reactive
+3. Unele măsuri
+4. Program coerent
+5. Strategie preventivă matură
+
+### 8.6 Ethical & Governance Safeguards
+
+**COM16: Angajații au posibilitatea de a semnala probleme sau preocupări într-un mod sigur și clar.**
+
+1. Nu există
+2. Foarte limitat
+3. Unele mecanisme
+4. Canale clare
+5. Sistem matur și de încredere
+
+**COM17: Organizația promovează tratament echitabil și decizii HR consistente.**
+
+1. Frecvente percepții de inechitate
+2. Probleme recurente
+3. Situație mixtă
+4. Percepție majoritar pozitivă
+5. Standard ridicat de fairness
+
+---
+
+* **Maximum score MODULE 8:** 17 itemi × 5 = 85 puncte
+* **Risk logic examples (If COM < 40):** High compliance risk. Potential vulnerabilities: legal exposure, labor disputes, inspection vulnerability, documentation gaps, managerial inconsistency.
+
+---
+
+## FULL FRAMEWORK SUMMARY
+
+| Module | Items | Max Score |
+| --- | --- | --- |
+| Module 1 – HR Governance | 13 | 65 |
+| Module 2 – Workforce Planning | 11 | 55 |
+| Module 3 – Recruitment & Selection | 16 | 80 |
+| Module 4 – Performance & Rewards | 20 | 100 |
+| Module 5 – Learning & Development | 19 | 95 |
+| Module 6 – Employee Experience & Retention | 18 | 90 |
+| Module 7 – HR Digitalization | 16 | 80 |
+| Module 8 – Compliance & HR Risk | 17 | 85 |
+| **TOTAL INSTRUMENT** | **130** | **650** |
+
+* **Total items:** 130
+* **Total max raw score:** 650 puncte
+* **Overall maturity:** [Calculat ca: (Scor Total Obținut / 650) × 100]%

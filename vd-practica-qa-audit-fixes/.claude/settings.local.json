@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//private/tmp/vd-practica-template/**)",
+      "Bash(rm -f actions/generate-user-stripe.ts)",
+      "Bash(rm -f lib/stripe.ts)",
+      "Bash(rm -rf .git .husky .commitlintrc.json)",
+      "Bash(cp -r /tmp/vd-practica-template/* /Users/raisissoftware/Downloads/_CLAUDE/_Practica/)",
+      "Bash(cp -r /tmp/vd-practica-template/.[!.]* /Users/raisissoftware/Downloads/_CLAUDE/_Practica/)",
+      "Bash(docker-compose ps *)",
+      "Bash(docker-compose logs *)"
+    ]
+  }
+}

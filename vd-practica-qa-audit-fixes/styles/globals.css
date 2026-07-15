@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    /* Vibrant Palette */
+    --background: 217 41% 40%;          /* Lapis Lazuli #3D5D91 */
+    --foreground: 3 46% 90%;            /* Misty Rose #F2DCDB */
+    
+    --card: 346 86% 23%;                /* Burgundy #6C0820 */
+    --card-foreground: 3 46% 90%;       /* Misty Rose */
+    
+    --popover: 346 86% 23%;             /* Burgundy */
+    --popover-foreground: 3 46% 90%;
+    
+    --primary: 348 71% 82%;             /* Cherry Blossom Pink #F2AEBC */
+    --primary-foreground: 346 86% 23%;  /* Burgundy */
+    
+    --secondary: 217 53% 57%;           /* Silver Lake Blue #5A86CB */
+    --secondary-foreground: 3 46% 90%;  /* Misty Rose */
+    
+    --muted: 217 41% 30%;               /* Darker Lapis */
+    --muted-foreground: 3 46% 80%;      /* Slightly darker Misty Rose */
+    
+    --accent: 348 71% 82%;              /* Cherry Blossom Pink */
+    --accent-foreground: 346 86% 23%;   /* Burgundy */
+    
+    --destructive: 346 86% 23%;         /* Burgundy */
+    --destructive-foreground: 3 46% 90%;
+    
+    --border: 217 53% 57%;              /* Silver Lake Blue */
+    --input: 217 53% 57%;
+    --ring: 348 71% 82%;                /* Cherry Blossom Pink */
+    --radius: 1rem;
+    
+    --chart-1: 346 86% 23%;
+    --chart-2: 348 71% 82%;
+    --chart-3: 3 46% 90%;
+    --chart-4: 217 53% 57%;
+    --chart-5: 217 41% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    background-color: #F2AEBC;
+    color: #6C0820;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(242, 220, 219, 0.2);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 127, 142, 0.8);
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+
+  /* Glass Floating Card */
+  .glass-card {
+    background: rgba(90, 134, 203, 0.1); /* Silver Lake Blue tint */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(90, 134, 203, 0.2);
+    border-radius: 1.5rem;
+  }
+  
+  .glass-float {
+    animation: float-anim 6s infinite ease-in-out;
+  }
+
+  @keyframes float-anim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Neon Pulse Button */
+  .neon-pulse-btn {
+    background-color: #F2AEBC;
+    color: #6C0820;
+    font-weight: 700;
+    border-radius: 9999px;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 30px rgba(242, 174, 188, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .neon-pulse-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* System Status Tag */
+  .system-status-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+  }
+  
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #F2AEBC;
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+}
+
+.text-gradient_rose {
+  background: linear-gradient(90deg, #F2AEBC 0%, #F2DCDB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,448 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+}
+
+model Account {
+  id                String   @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?  @db.Text
+  access_token      String?  @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?  @db.Text
+  session_state     String?
+  createdAt         DateTime @default(now()) @map(name: "created_at")
+  updatedAt         DateTime @default(now()) @map(name: "updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map(name: "accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map(name: "sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  twoFactorEnabled Boolean @default(false)
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @default(now()) @map(name: "updated_at")
+  role          UserRole  @default(VIEWER)
+  status        UserStatus @default(ACTIVE)
+
+  accessibleQuestionnaires Questionnaire[] @relation("QuestionnaireToUser")
+  ownedQuestionnaires     Questionnaire[] @relation("UserOwnedQuestionnaires")
+
+  company       String?
+  phone         String?
+  timezone      String?   @default("Europe/Bucharest")
+  language      String?   @default("ro")
+  jobTitle      String?
+
+  accounts Account[]
+  sessions Session[]
+  trustedDevices TrustedDevice[]
+  securityLogs   SecurityLog[]
+  posts    Post[]
+  aiHistory AiHistory[]
+  calendarSettings CalendarSettings?
+  availabilities   Availability[]
+  blockedDates     BlockedDate[]
+  appointments     Appointment[]
+
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+
+  @@map(name: "users")
+}
+
+model TrustedDevice {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("trusted_devices")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map(name: "verification_tokens")
+}
+
+model SecurityLog {
+  id        String   @id @default(cuid())
+  userId    String
+  event     String
+  ipAddress String?
+  userAgent String?
+  status    String   @default("SUCCESS") // SUCCESS, FAILED, WARNING
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("security_logs")
+}
+
+// ─── Questionnaire Models ──────────────────────────────────────────────────────
+
+enum QuestionnaireStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum QuestionType {
+  TEXT
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  RATING
+}
+
+model Questionnaire {
+  id               String              @id @default(cuid())
+  slug             String              @unique
+  title            String
+  description      String?
+  status           QuestionnaireStatus @default(DRAFT)
+  isPinned         Boolean             @default(false)
+  category         String?
+  estimatedMinutes Int?
+  resultInterpretations Json?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+
+  ownerId          String?
+  owner            User?               @relation("UserOwnedQuestionnaires", fields: [ownerId], references: [id], onDelete: SetNull)
+  allowedRoles     String[]            @default([])
+  allowedUsers     User[]              @relation("QuestionnaireToUser")
+
+  questions Question[]
+  leads     Lead[]
+  analyticsEvents QuestionnaireAnalyticsEvent[]
+
+  @@map("questionnaires")
+}
+
+model Question {
+  id              String       @id @default(cuid())
+  questionnaireId String
+  type            String
+  text            String
+  options         Json?
+  validations     Json?
+  required        Boolean      @default(false)
+  order           Int
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  questionnaire Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
+  ruleGroups    QuestionRuleGroup[]
+  answers       ResponseAnswer[]
+
+  @@index([questionnaireId])
+  @@map("questions")
+}
+
+model QuestionRuleGroup {
+  id            String   @id @default(cuid())
+  questionId    String
+  logicOperator String   @default("AND")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  question   Question            @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  conditions QuestionCondition[]
+
+  @@index([questionId])
+  @@map("question_rule_groups")
+}
+
+model QuestionCondition {
+  id               String  @id @default(cuid())
+  ruleGroupId      String
+  sourceQuestionId String
+  operator         String
+  value            String?
+  valueSecondary   String?
+
+  ruleGroup QuestionRuleGroup @relation(fields: [ruleGroupId], references: [id], onDelete: Cascade)
+
+  @@index([ruleGroupId])
+  @@map("question_conditions")
+}
+
+model Lead {
+  id              String   @id @default(cuid())
+  name            String
+  email           String
+  phone           String?
+  source          String?
+  questionnaireId String?
+  score           Int?
+  level           String?
+  aiReport        Json?
+  status          String   @default("Nou")
+  timeline        Json?
+  createdAt       DateTime @default(now())
+
+  // Company and HR Assessment fields
+  companyName     String?
+  industry        String?
+  companySize     String?
+  ownershipType   String?
+  respondentRole  String?
+  hrAnswers       Json?
+  hrScoreReport   Json?
+
+  questionnaire Questionnaire?  @relation(fields: [questionnaireId], references: [id], onDelete: SetNull)
+  answers       ResponseAnswer[]
+
+  @@index([questionnaireId])
+  @@map("leads")
+}
+
+model ResponseAnswer {
+  id         String   @id @default(cuid())
+  leadId     String
+  questionId String
+  answer     String
+  createdAt  DateTime @default(now())
+
+  lead     Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@index([questionId])
+  @@map("response_answers")
+}
+
+model QuestionnaireAnalyticsEvent {
+  id              String   @id @default(cuid())
+  eventType       String
+  questionnaireId String
+  questionId      String?
+  ruleGroupId     String?
+  sessionId       String?
+  metadata        Json?
+  createdAt       DateTime @default(now())
+
+  questionnaire Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
+
+  @@index([questionnaireId])
+  @@index([sessionId])
+  @@map("questionnaire_analytics_events")
+}
+
+// ─── Blog / Content Models ───────────────────────────────────────────────────
+
+model Category {
+  id           String   @id @default(cuid())
+  name         String
+  slug         String   @unique
+  articleCount Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  posts Post[]
+
+  @@map("categories")
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.Text
+  excerpt     String?  @db.Text
+  imageUrl    String?
+  published   Boolean  @default(false)
+  featured    Boolean  @default(false)
+  views       Int      @default(0)
+  readingTime Int      @default(5)
+  seoTitle    String?
+  seoDesc     String?
+  tags        String[] // Supported in PostgreSQL
+
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+
+  @@index([categoryId])
+  @@index([authorId])
+  @@map("posts")
+}
+
+// ─── AI Models ───────────────────────────────────────────────────────────────
+
+model AiPromptTemplate {
+  id          String   @id @default(cuid())
+  name        String
+  category    String
+  systemMsg   String   @db.Text
+  userMsg     String   @db.Text
+  isFavorite  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("ai_prompt_templates")
+}
+
+model AiHistory {
+  id          String   @id @default(cuid())
+  userId      String
+  action      String
+  prompt      String   @db.Text
+  output      String   @db.Text
+  model       String
+  status      String   @default("COMPLETED")
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("ai_history")
+}
+
+// ─── Booking / Scheduling Models ─────────────────────────────────────────────
+
+enum AppointmentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+model CalendarSettings {
+  id             String  @id @default(cuid())
+  userId         String  @unique
+  slotDuration   Int     @default(30) // in minutes
+  bufferTime     Int     @default(15) // in minutes
+  noticePeriod   Int     @default(12) // in hours
+  maxDaysAhead   Int     @default(60)
+
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("calendar_settings")
+}
+
+model Availability {
+  id         String   @id @default(cuid())
+  userId     String
+  dayOfWeek  Int      // 0 (Sunday) to 6 (Saturday)
+  startTime  String   // HH:MM
+  endTime    String   // HH:MM
+  isActive   Boolean  @default(true)
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, dayOfWeek, startTime, endTime])
+  @@index([userId, dayOfWeek])
+  @@map("availabilities")
+}
+
+model BlockedDate {
+  id        String   @id @default(cuid())
+  userId    String
+  date      DateTime
+  reason    String?
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@map("blocked_dates")
+}
+
+model Appointment {
+  id             String            @id @default(cuid())
+  adminId        String
+  name           String
+  email          String
+  phone          String?
+  notes          String?           @db.Text
+  startTime      DateTime
+  endTime        DateTime
+  status         AppointmentStatus @default(PENDING)
+
+  googleMeetLink String?
+  zoomLink       String?
+
+  aiPreparation  String?           @db.Text
+  aiSummary      String?           @db.Text
+
+  createdAt      DateTime          @default(now()) @map("created_at")
+  updatedAt      DateTime          @updatedAt @map("updated_at")
+
+  admin          User              @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([adminId, startTime, endTime])
+  @@index([startTime, endTime, status])
+  @@map("appointments")
+}
+
+// ─── Newsletter Models ───────────────────────────────────────────────────────
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("newsletter_subscribers")
+}
