@@ -35,7 +35,7 @@ export default function BentoGrid() {
           {/* Card 2 — Securitate de top */}
           <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 sm:col-span-3 lg:col-span-2 transition-colors hover:bg-muted/50">
             <div>
-              <div className="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border before:bg-muted/20 dark:before:border-white/5">
+              <div className="relative mx-auto flex aspect-square size-32 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border before:bg-muted/20 dark:before:border-foreground/5">
                 <svg
                   className="m-auto h-fit w-24"
                   viewBox="0 0 212 143"
@@ -114,7 +114,7 @@ export default function BentoGrid() {
                   >
                     <stop className="text-sky-500/80" stopColor="currentColor" />
                     <stop
-                      className="text-white dark:text-transparent"
+                      className="text-foreground dark:text-transparent"
                       offset="1"
                       stopColor="currentColor"
                       stopOpacity="0.103775"
@@ -185,7 +185,7 @@ export default function BentoGrid() {
           <div className="relative col-span-full overflow-hidden rounded-2xl border bg-background p-8 lg:col-span-6 transition-colors hover:bg-muted/50">
             <div className="grid h-full sm:grid-cols-2 gap-8">
               <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
-                <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-white/10 dark:bg-white/5 dark:before:border-white/5 dark:before:bg-white/5">
+                <div className="relative flex aspect-square size-12 rounded-full border before:absolute before:-inset-2 before:rounded-full before:border dark:border-foreground/10 dark:bg-foreground/5 dark:before:border-foreground/5 dark:before:bg-foreground/5">
                   <svg
                     className="m-auto size-6 text-sky-500"
                     xmlns="http://www.w3.org/2000/svg"

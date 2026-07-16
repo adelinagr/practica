@@ -163,7 +163,7 @@ export default function QuestionnaireCard({ q }: { q: QuestionnaireCardData }) {
           </div>
 
           <span className={cn(
-            "inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r",
+            "inline-flex items-center gap-1 rounded-full px-3.5 py-1.5 text-xs font-semibold text-foreground bg-gradient-to-r",
             theme.accent,
             "shadow-sm transition-all duration-200 group-hover:shadow-md group-hover:gap-2",
           )}>

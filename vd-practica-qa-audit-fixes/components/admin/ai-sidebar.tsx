@@ -95,7 +95,7 @@ export function AiSidebar({
       <div className="p-4 flex items-center justify-between border-b border-secondary/30">
         <div className="flex items-center gap-2">
           <div className="bg-primary p-1.5 rounded-md">
-            <Sparkles className="size-4 text-white" />
+            <Sparkles className="size-4 text-foreground" />
           </div>
           <h3 className="font-bold text-foreground text-sm">AI Content Assistant</h3>
         </div>
@@ -172,7 +172,7 @@ export function AiSidebar({
                       onUpdateContent(currentContent + "\n<br/>\n" + completion);
                       toast.success("Adăugat la final!");
                     }}
-                    className="flex-1 rounded-lg bg-primary py-1.5 text-[11px] font-bold text-white shadow-lg hover:bg-primary/90 transition-colors"
+                    className="flex-1 rounded-lg bg-primary py-1.5 text-[11px] font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors"
                   >
                     Inserează
                   </button>
@@ -202,7 +202,7 @@ export function AiSidebar({
           <button
             type="submit"
             disabled={isLoading || !prompt.trim()}
-            className="absolute bottom-2 right-2 rounded-lg bg-indigo-500 p-2 text-white hover:bg-primary disabled:opacity-50 transition-colors"
+            className="absolute bottom-2 right-2 rounded-lg bg-indigo-500 p-2 text-foreground hover:bg-primary disabled:opacity-50 transition-colors"
           >
             {isLoading ? <Loader2 className="size-3.5 animate-spin" /> : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>}
           </button>

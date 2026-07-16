@@ -52,7 +52,7 @@ export function HowItWorksTimeline() {
   };
 
   return (
-    <section className="py-24 md:py-36 bg-[#F2DCDB] text-[#3D5D91] relative overflow-hidden rounded-[2.5rem] mt-24 z-10 mx-4 md:mx-8">
+    <section className="py-24 md:py-36 bg-card text-foreground relative overflow-hidden rounded-[2.5rem] mt-24 z-10 mx-4 md:mx-8">
       <div className="mx-auto max-w-7xl px-6 md:px-8 relative">
         {/* Title Header */}
         <div className="text-center mb-24 max-w-3xl mx-auto">
@@ -62,13 +62,13 @@ export function HowItWorksTimeline() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#3D5D91]/60">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-foreground/60">
               Procesul Nostru
             </span>
-            <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-[#3D5D91] leading-none">
+            <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl text-foreground leading-none">
               3 pași până la transformare
             </h2>
-            <p className="mt-5 text-base sm:text-lg text-[#3D5D91]/80 font-sans font-light leading-relaxed text-balance">
+            <p className="mt-5 text-base sm:text-lg text-foreground/80 font-sans font-light leading-relaxed text-balance">
               Digitalizarea este procesul prin care tehnologia devine inima companiei tale. Iată cum lucrăm împreună, transparent și eficient.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export function HowItWorksTimeline() {
         {/* Steps container */}
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute top-12 left-0 right-0 hidden lg:block h-[2px] bg-[#3D5D91]/10" />
+          <div className="absolute top-12 left-0 right-0 hidden lg:block h-[2px] bg-background/10" />
           
           <motion.div
             variants={containerVariants}
@@ -95,20 +95,20 @@ export function HowItWorksTimeline() {
                   className="relative flex flex-col items-center lg:items-start text-center lg:text-left group"
                 >
                   {/* Number & Icon node */}
-                  <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full border-4 border-[#3D5D91] bg-[#F2DCDB] shadow-[8px_8px_0_0_#3D5D91] mb-6 transition-transform duration-300 group-hover:-translate-y-1">
-                    <div className="absolute -top-3 -right-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-mono font-bold text-[#F2DCDB] border-2 border-[#3D5D91]">
+                  <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full border-4 border-foreground bg-card shadow-md mb-6 transition-transform duration-300 group-hover:-translate-y-1">
+                    <div className="absolute -top-3 -right-3 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-mono font-bold text-card-foreground border-2 border-foreground">
                       {step.number}
                     </div>
-                    <IconComp className="h-8 w-8 text-[#3D5D91]" />
+                    <IconComp className="h-8 w-8 text-foreground" />
                   </div>
                   
                   {/* Timeframe Badge */}
-                  <div className="mb-4 inline-flex items-center rounded-full border-2 border-[#3D5D91] bg-white px-3 py-1 text-[11px] font-mono font-bold text-[#3D5D91]">
+                  <div className="mb-4 inline-flex items-center rounded-full border-2 border-foreground bg-foreground px-3 py-1 text-[11px] font-mono font-bold text-foreground">
                     Durată: {step.timeframe}
                   </div>
                   
-                  <h3 className="mb-3 font-heading text-xl font-extrabold text-[#3D5D91]">{step.title}</h3>
-                  <p className="text-[#3D5D91]/80 font-sans text-sm leading-relaxed max-w-sm font-medium">
+                  <h3 className="mb-3 font-heading text-xl font-extrabold text-foreground">{step.title}</h3>
+                  <p className="text-foreground/80 font-sans text-sm leading-relaxed max-w-sm font-medium">
                     {step.description}
                   </p>
                 </motion.div>

@@ -25,7 +25,7 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
           </h2>
           <Link
             href="/blog"
-            className="hidden sm:flex items-center text-sm font-bold text-blue-600 transition-colors hover:text-blue-700"
+            className="hidden sm:flex items-center text-sm font-bold text-primary transition-colors hover:text-primary"
           >
             Vezi Toate Articolele <ArrowRight className="ml-1.5 size-4" />
           </Link>
@@ -36,7 +36,7 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-foreground shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -46,7 +46,7 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute left-4 top-4">
-                  <span className="rounded-md bg-slate-900/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">
+                  <span className="rounded-md bg-slate-900/80 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-foreground backdrop-blur-md">
                     {post.category}
                   </span>
                 </div>
@@ -66,7 +66,7 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
 
         <Link
           href="/blog"
-          className="mt-10 flex sm:hidden items-center justify-center text-sm font-bold text-blue-600 transition-colors hover:text-blue-700"
+          className="mt-10 flex sm:hidden items-center justify-center text-sm font-bold text-primary transition-colors hover:text-primary"
         >
           Vezi Toate Articolele <ArrowRight className="ml-1.5 size-4" />
         </Link>

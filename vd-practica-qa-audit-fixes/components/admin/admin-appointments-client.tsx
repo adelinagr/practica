@@ -345,7 +345,7 @@ export function AdminAppointmentsClient({
                     onClick={() => setStatusFilter(filter)}
                     className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
                       statusFilter === filter
-                        ? "bg-slate-900 text-white dark:bg-zinc-50 dark:text-zinc-950"
+                        ? "bg-slate-900 text-foreground dark:bg-zinc-50 dark:text-zinc-950"
                         : "bg-accent/20 text-muted-foreground hover:bg-slate-200 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     }`}
                   >
@@ -445,7 +445,7 @@ export function AdminAppointmentsClient({
                                     <Button
                                       size="sm"
                                       onClick={() => handleApprove(app.id)}
-                                      className="h-8 bg-emerald-600 text-white hover:bg-emerald-500 text-xs px-2.5 font-bold"
+                                      className="h-8 bg-emerald-600 text-foreground hover:bg-emerald-500 text-xs px-2.5 font-bold"
                                     >
                                       <Check className="mr-1 size-3.5" />
                                       Aprobă
@@ -613,7 +613,7 @@ export function AdminAppointmentsClient({
                   <Button
                     onClick={handleSaveSettings}
                     disabled={submittingSettings}
-                    className="bg-primary text-white hover:bg-indigo-500 px-6 font-bold"
+                    className="bg-primary text-foreground hover:bg-indigo-500 px-6 font-bold"
                   >
                     {submittingSettings ? "Se salvează..." : "Salvează Configurările"}
                   </Button>
@@ -854,7 +854,7 @@ export function AdminAppointmentsClient({
                   </Button>
                   <Button
                     type="submit"
-                    className="h-10 bg-primary hover:bg-indigo-500 text-white text-xs font-bold px-4"
+                    className="h-10 bg-primary hover:bg-indigo-500 text-foreground text-xs font-bold px-4"
                   >
                     Confirmă Reprogramarea
                   </Button>

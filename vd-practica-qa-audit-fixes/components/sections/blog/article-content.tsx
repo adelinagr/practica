@@ -11,11 +11,11 @@ export function ArticleContent({ contentHtml }: ArticleContentProps) {
         className="prose prose-lg prose-slate dark:prose-invert max-w-none 
           break-words [word-break:break-word]
           prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight
-          prose-a:text-blue-600 hover:prose-a:text-blue-500
+          prose-a:text-primary hover:prose-a:text-primary
           prose-img:rounded-2xl prose-img:shadow-sm
-          prose-blockquote:border-l-blue-500 prose-blockquote:bg-blue-50/50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:text-slate-700
+          prose-blockquote:border-l-blue-500 prose-blockquote:bg-primary/50 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:not-italic prose-blockquote:text-slate-700
           prose-p:leading-relaxed prose-p:break-words
-          marker:text-blue-500"
+          marker:text-primary"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </article>

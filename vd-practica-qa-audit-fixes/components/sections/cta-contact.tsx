@@ -44,7 +44,7 @@ function InputField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}
-        className="rounded-lg border border-slate-700/80 bg-slate-900/60 px-3 py-2.5 text-sm text-white placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
+        className="rounded-lg border border-slate-700/80 bg-slate-900/60 px-3 py-2.5 text-sm text-foreground placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
       />
     </div>
   );
@@ -65,7 +65,7 @@ function TrustPoint({
         {icon}
       </div>
       <div>
-        <div className="text-sm font-semibold text-white">{title}</div>
+        <div className="text-sm font-semibold text-foreground">{title}</div>
         <div className="text-xs text-slate-400 mt-0.5 leading-relaxed">{subtitle}</div>
       </div>
     </li>
@@ -115,7 +115,7 @@ export default function CtaContactSection() {
             <p className="text-xs font-bold uppercase tracking-widest text-sky-500 mb-4">
               Începe transformarea
             </p>
-            <h2 className="text-3xl font-extrabold text-white lg:text-4xl leading-tight">
+            <h2 className="text-3xl font-extrabold text-foreground lg:text-4xl leading-tight">
               Gata să digitalizezi?
             </h2>
           </div>
@@ -166,7 +166,7 @@ export default function CtaContactSection() {
                   <path d="m4.5 12.75 6 6 9-13.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white">Mesaj trimis!</h3>
+              <h3 className="text-xl font-bold text-foreground">Mesaj trimis!</h3>
               <p className="text-sm text-slate-400 max-w-xs">
                 Mulțumim! Te vom contacta în maxim 24 de ore la adresa de email furnizată.
               </p>
@@ -229,7 +229,7 @@ export default function CtaContactSection() {
                   placeholder="Spune-ne despre obiectivele tale de digitalizare..."
                   value={form.message}
                   onChange={(e) => set("message")(e.target.value)}
-                  className="rounded-lg border border-slate-700/80 bg-slate-900/60 px-3 py-2.5 text-sm text-white placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all resize-none"
+                  className="rounded-lg border border-slate-700/80 bg-slate-900/60 px-3 py-2.5 text-sm text-foreground placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all resize-none"
                 />
               </div>
 
@@ -256,7 +256,7 @@ export default function CtaContactSection() {
                 type="button"
                 disabled={!form.gdpr || status === "loading"}
                 onClick={handleSubmit}
-                className="w-full rounded-lg bg-sky-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full rounded-lg bg-sky-500 px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {status === "loading" ? (
                   <>

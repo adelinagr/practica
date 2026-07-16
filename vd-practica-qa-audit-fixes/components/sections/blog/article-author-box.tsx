@@ -30,7 +30,7 @@ export function ArticleAuthorBox({ tags, author }: ArticleAuthorBoxProps) {
       )}
 
       {/* Author Bio Box */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 rounded-3xl border border-slate-200 bg-foreground p-8 shadow-sm">
         <div className="flex-shrink-0">
           {author.image ? (
             <Image
@@ -50,13 +50,13 @@ export function ArticleAuthorBox({ tags, author }: ArticleAuthorBoxProps) {
         <div className="text-center sm:text-left flex-1">
           <h3 className="mb-1 text-lg font-bold text-slate-900">{author.name}</h3>
           {author.role && (
-            <p className="mb-4 text-sm font-medium text-blue-600">{author.role}</p>
+            <p className="mb-4 text-sm font-medium text-primary">{author.role}</p>
           )}
           <p className="mb-6 text-sm text-slate-500 leading-relaxed">
             {author.role ? `Autor pe VreauDigitalizare în rolul de ${author.role}.` : "Autor pe platforma VreauDigitalizare, aducând conținut de calitate și sfaturi utile pentru transformarea digitală a afacerii tale."}
           </p>
           
-          <Link href={`/blog?search=${author.name}`} className="text-sm font-bold text-blue-600 transition-colors hover:text-blue-700">
+          <Link href={`/blog?search=${author.name}`} className="text-sm font-bold text-primary transition-colors hover:text-primary">
             Vezi toate articolele de {author.name} →
           </Link>
         </div>

@@ -87,13 +87,13 @@ export function AssessmentCta() {
               />
 
               <div className="relative z-10 flex items-center justify-between mb-6">
-                <span className="text-[10px] font-mono font-bold text-white/50 uppercase tracking-widest">
+                <span className="text-[10px] font-mono font-bold text-foreground/50 uppercase tracking-widest">
                   Progres evaluare
                 </span>
                 <span className="text-[11px] font-mono font-bold text-primary">20%</span>
               </div>
               
-              <div className="relative z-10 w-full bg-white/10 rounded-full h-1.5 mb-8">
+              <div className="relative z-10 w-full bg-foreground/10 rounded-full h-1.5 mb-8">
                 <div className="bg-gradient-to-r from-primary to-secondary h-1.5 rounded-full w-[20%]" />
               </div>
 
@@ -122,14 +122,14 @@ export function AssessmentCta() {
                     className={cn(
                       "w-full flex items-center justify-between p-4 rounded-xl border text-left text-xs font-bold transition-all duration-300",
                       selected === idx
-                        ? "border-primary bg-primary/10 text-white shadow-[0_0_15px_rgba(204,255,0,0.15)]"
-                        : "border-white/10 bg-[#3D5D91]/50 text-white/60 hover:bg-white/5"
+                        ? "border-primary bg-primary/10 text-foreground shadow-[0_0_15px_rgba(204,255,0,0.15)]"
+                        : "border-foreground/10 bg-background/50 text-foreground/60 hover:bg-foreground/5"
                     )}
                   >
                     {option}
                     <div className={cn(
                       "flex h-4.5 w-4.5 items-center justify-center rounded-full border transition-colors",
-                      selected === idx ? "border-primary bg-primary" : "border-white/20"
+                      selected === idx ? "border-primary bg-primary" : "border-foreground/20"
                     )}>
                       {selected === idx && <Check className="h-3 w-3 text-black" />}
                     </div>

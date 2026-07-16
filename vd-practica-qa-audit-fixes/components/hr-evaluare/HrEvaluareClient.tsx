@@ -403,7 +403,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
             Am găsit un progres salvat anterior pe acest dispozitiv. Dorești să continui de unde ai rămas sau să începi un chestionar nou?
           </p>
           <div className="mt-8 flex flex-col gap-3">
-            <Button onClick={handleRestore} className="w-full rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold">
+            <Button onClick={handleRestore} className="w-full rounded-full bg-indigo-600 hover:bg-indigo-700 text-foreground font-semibold">
               Continuă evaluarea salvată
             </Button>
             <Button onClick={handleClearSavedState} variant="outline" className="w-full rounded-full border-border hover:bg-muted font-semibold">
@@ -556,7 +556,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
               </div>
             </div>
 
-            <Button type="submit" className="w-full mt-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold h-11 transition-all">
+            <Button type="submit" className="w-full mt-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-foreground font-bold h-11 transition-all">
               Mergi la pasul următor
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -637,7 +637,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
                 setStep("quiz");
                 saveCurrentProgress(responses, currentQuestionIndex);
               }}
-              className="rounded-xl flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold"
+              className="rounded-xl flex-1 bg-indigo-600 hover:bg-indigo-700 text-foreground font-bold"
             >
               Începe evaluarea
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -700,7 +700,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
                   <div className={cn(
                     "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all",
                     isSelected 
-                      ? "border-indigo-600 bg-indigo-600 text-white dark:border-indigo-500 dark:bg-indigo-500" 
+                      ? "border-indigo-600 bg-indigo-600 text-foreground dark:border-indigo-500 dark:bg-indigo-500" 
                       : "border-muted-foreground/40"
                   )}>
                     {isSelected && <Check className="h-3 w-3 stroke-[3]" />}
@@ -727,7 +727,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
               <Button
                 onClick={handleSubmitQuiz}
                 disabled={isSubmitting}
-                className="rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-700 hover:to-violet-600 text-white font-bold shadow-lg"
+                className="rounded-xl bg-gradient-to-r from-indigo-600 to-violet-500 hover:from-indigo-700 hover:to-violet-600 text-foreground font-bold shadow-lg"
               >
                 {isSubmitting ? (
                   <>
@@ -745,7 +745,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
               <Button
                 onClick={handleNext}
                 disabled={responses[allQuestions[currentQuestionIndex].id] === undefined}
-                className="rounded-xl px-5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold"
+                className="rounded-xl px-5 bg-indigo-600 hover:bg-indigo-700 text-foreground font-semibold"
               >
                 Înainte
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -763,7 +763,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
           <div className="flex justify-between items-center gap-3 print:hidden">
             <Button
               onClick={() => window.print()}
-              className="rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold flex items-center gap-2"
+              className="rounded-xl bg-indigo-600 hover:bg-indigo-700 text-foreground font-semibold flex items-center gap-2"
             >
               <Printer className="h-4 w-4" />
               Printează sau Salvează PDF
@@ -1019,7 +1019,7 @@ export function HrEvaluareClient({ type }: { type: "governance" | "workforce" | 
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <a href="/contact?subject=Consiliere%20HR" className="flex-1 max-w-[200px]">
-                <Button className="w-full rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-md">
+                <Button className="w-full rounded-full bg-indigo-600 hover:bg-indigo-700 text-foreground font-semibold shadow-md">
                   Programează apel gratuit
                 </Button>
               </a>

@@ -114,7 +114,7 @@ export default function TransactionsList() {
           </button>
 
           {/* View all */}
-          <button className="inline-flex h-8 items-center gap-1 rounded-lg bg-indigo-600 px-3 text-xs font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 active:scale-[0.97]">
+          <button className="inline-flex h-8 items-center gap-1 rounded-lg bg-indigo-600 px-3 text-xs font-semibold text-foreground shadow-sm transition-all hover:bg-indigo-700 active:scale-[0.97]">
             Toate
             <ArrowUpRight className="size-3.5" />
           </button>
@@ -178,7 +178,7 @@ export default function TransactionsList() {
                   {/* Avatar + name/email */}
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-3">
-                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${row.avatarColor} text-[11px] font-bold text-white shadow-sm`}>
+                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${row.avatarColor} text-[11px] font-bold text-foreground shadow-sm`}>
                         {row.initials}
                       </div>
                       <div className="min-w-0">
@@ -247,7 +247,7 @@ export default function TransactionsList() {
               onClick={() => setPage(p)}
               className={`inline-flex h-7 w-7 items-center justify-center rounded-lg text-xs font-medium transition-colors ${
                 p === page
-                  ? "bg-indigo-600 text-white shadow-sm"
+                  ? "bg-indigo-600 text-foreground shadow-sm"
                   : "border border-border/60 text-muted-foreground hover:border-indigo-400/40 hover:text-foreground"
               }`}
             >

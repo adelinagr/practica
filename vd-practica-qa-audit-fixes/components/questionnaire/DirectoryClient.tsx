@@ -76,7 +76,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
         {/* Main Grid Section (Left - 75%) */}
         <div className="flex-1 w-full">
           {/* Categories Filter */}
-          <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-white/10 pb-4">
+          <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-foreground/10 pb-4">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -113,7 +113,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
                 }
 
                 return (
-                  <div key={q.id} className="group relative bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-sm hover:shadow-xl hover:bg-[#5A86CB]/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
+                  <div key={q.id} className="group relative bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl p-8 border border-foreground/10 shadow-sm hover:shadow-xl hover:bg-[#5A86CB]/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
                     
                     <div className="flex justify-between items-start mb-6">
                       <div className={`p-3 rounded-2xl ring-1 ${bgIconClass}`}>
@@ -142,7 +142,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
                       {q.description || "Evaluează procesele din compania ta și descoperă oportunități de optimizare automată."}
                     </p>
 
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-foreground/10">
                       <div className="text-xs font-medium text-muted-foreground flex items-center">
                         <svg className="size-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -161,7 +161,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
                         q.slug === "evaluare-compliance-hr" ? "/chestionare/compliance" : 
                         `/chestionare/${q.slug}`
                       }>
-                        <Button className={`text-white rounded-full px-6 shadow-md group-hover:shadow-lg transition-all ${btnClass}`}>
+                        <Button className={`text-foreground rounded-full px-6 shadow-md group-hover:shadow-lg transition-all ${btnClass}`}>
                            Start
                            <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
                          </Button>
@@ -172,7 +172,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
               })}
             </div>
           ) : (
-            <div className="text-center py-20 bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl border border-dashed border-white/10">
+            <div className="text-center py-20 bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl border border-dashed border-foreground/10">
               <Search className="size-10 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-foreground mb-2">Niciun chestionar găsit</h3>
               <p className="text-muted-foreground">Încearcă să folosești alte cuvinte cheie pentru căutare.</p>
@@ -183,7 +183,7 @@ export default function DirectoryClient({ questionnaires }: { questionnaires: Qu
         {/* Sidebar Section (Right - 25%) */}
         <div className="w-full lg:w-80 shrink-0 space-y-6">
           {/* Privacy Card */}
-          <div className="bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-sm relative overflow-hidden">
+          <div className="bg-[#5A86CB]/10 backdrop-blur-md rounded-3xl p-8 border border-foreground/10 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-5">
               <ShieldCheck className="size-24" />
             </div>

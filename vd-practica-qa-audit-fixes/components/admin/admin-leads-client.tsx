@@ -83,7 +83,7 @@ const STATUS_OPTIONS = [
 function getStatusBadgeStyles(status: string) {
   switch (status) {
     case "Nou":
-      return "bg-blue-50 text-blue-700 border-blue-200";
+      return "bg-primary text-primary border-blue-200";
     case "Contactat":
       return "bg-amber-50 text-amber-700 border-amber-200";
     case "În discuție":
@@ -307,7 +307,7 @@ function LeadDetailPanel({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-secondary/30 px-6 py-4 bg-accent/20/50">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-bold text-white shadow-lg text-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-bold text-foreground shadow-lg text-sm">
               {loading ? "…" : detail?.name.charAt(0).toUpperCase()}
             </div>
             <div>
@@ -436,7 +436,7 @@ function LeadDetailPanel({
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <div className="flex size-7 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                        <div className="flex size-7 items-center justify-center rounded-lg bg-primary text-primary">
                           <Building className="size-3.5" />
                         </div>
                         <div>
@@ -629,7 +629,7 @@ function LeadDetailPanel({
                       <button
                         type="submit"
                         disabled={addingNote || !noteText.trim()}
-                        className="flex items-center gap-1 rounded-lg bg-primary text-white px-3 py-1.5 text-[11px] font-bold hover:bg-primary/90 disabled:opacity-50 transition-colors shadow-lg"
+                        className="flex items-center gap-1 rounded-lg bg-primary text-foreground px-3 py-1.5 text-[11px] font-bold hover:bg-primary/90 disabled:opacity-50 transition-colors shadow-lg"
                       >
                         {addingNote ? <Loader2 className="size-3 animate-spin" /> : <Plus className="size-3" />}
                         Adaugă
@@ -868,7 +868,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-7">
         {[
           { label: "Total Leads", val: stats.total, icon: Users, color: "text-primary bg-primary/20 border-indigo-100" },
-          { label: "Noi", val: stats.newLeads, icon: AlertCircle, color: "text-blue-600 bg-blue-50 border-blue-100" },
+          { label: "Noi", val: stats.newLeads, icon: AlertCircle, color: "text-primary bg-primary border-blue-100" },
           { label: "Contactate", val: stats.contactedLeads, icon: Clock, color: "text-amber-600 bg-amber-50 border-amber-100" },
           { label: "Clienți Câștigați", val: stats.wonLeads, icon: CheckCircle, color: "text-emerald-600 bg-emerald-50 border-emerald-100" },
         ].map((card, i) => (
@@ -1152,7 +1152,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
           {aiInsights && (
             <div className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white p-5 shadow-lg space-y-4">
               <div className="flex items-center gap-2">
-                <div className="flex size-7 items-center justify-center rounded-lg bg-primary text-white shadow-lg">
+                <div className="flex size-7 items-center justify-center rounded-lg bg-primary text-foreground shadow-lg">
                   <Sparkles className="size-4 animate-pulse" />
                 </div>
                 <h3 className="text-[14px] font-extrabold text-foreground tracking-tight">AI Collective Insights</h3>

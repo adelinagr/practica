@@ -320,7 +320,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
             <button
               onClick={() => handleSave(true)}
               disabled={saving}
-              className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-1.5 text-sm font-bold text-white shadow-lg hover:bg-primary/90 transition-colors disabled:opacity-60"
+              className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-1.5 text-sm font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors disabled:opacity-60"
             >
               {saving ? <Loader2 className="size-4 animate-spin" /> : <Globe className="size-4" />}
               {editingPost?.published ? "Actualizează Publicat" : "Publică Acum"}
@@ -346,7 +346,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
                         <UploadCloud className="size-4" /> Schimbă
                         <input type="file" accept="image/*" className="hidden" onChange={handleCoverUpload} />
                       </label>
-                      <button onClick={() => setImageUrl("")} className="bg-red-500 text-white font-bold px-4 py-2 rounded-xl text-sm hover:bg-red-600 shadow-lg flex items-center gap-2">
+                      <button onClick={() => setImageUrl("")} className="bg-red-500 text-foreground font-bold px-4 py-2 rounded-xl text-sm hover:bg-red-600 shadow-lg flex items-center gap-2">
                         <Trash2 className="size-4" /> Șterge
                       </button>
                     </div>
@@ -569,7 +569,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
           </label>
           <button
             onClick={() => openEditor()}
-            className="flex flex-shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white shadow-lg hover:bg-primary/90 transition-colors"
+            className="flex flex-shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors"
           >
             <Plus className="size-4" /> <span className="hidden lg:inline">Articol Nou</span>
           </button>
@@ -588,7 +588,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
           {!search && (
             <button
               onClick={() => openEditor()}
-              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white hover:bg-primary/90 shadow-lg"
+              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-foreground hover:bg-primary/90 shadow-lg"
             >
               <Plus className="size-4" /> Scrie Acum
             </button>
@@ -610,7 +610,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
                 <div className="absolute top-3 right-3 flex gap-2">
                   <span className={cn(
                     "rounded-full px-2.5 py-1 text-[10px] font-bold shadow-lg backdrop-blur-md",
-                    post.published ? "bg-emerald-500/90 text-white" : "bg-amber-400/90 text-foreground"
+                    post.published ? "bg-emerald-500/90 text-foreground" : "bg-amber-400/90 text-foreground"
                   )}>
                     {post.published ? "Publicat" : "Draft"}
                   </span>

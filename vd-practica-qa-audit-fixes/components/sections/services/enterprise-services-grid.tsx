@@ -33,9 +33,9 @@ const SERVICES = [
     icon: CloudCog,
     focusStack: ["Migrare cloud", "Arhitectură scalabilă", "Backup & Disaster Recovery", "Conformitate GDPR"],
     href: "/servicii/infrastructura-cloud",
-    accentColor: "text-[#F2DCDB]",
-    bgAccent: "bg-[#F2DCDB]/15 group-hover:bg-[#F2DCDB]/25",
-    borderAccent: "group-hover:border-[#F2DCDB]/40",
+    accentColor: "text-card-foreground",
+    bgAccent: "bg-card/15 group-hover:bg-card/25",
+    borderAccent: "group-hover:border-border/40",
   },
   {
     title: "Consultanță Digitalizare & Fonduri IMM",
@@ -43,9 +43,9 @@ const SERVICES = [
     icon: Landmark,
     focusStack: ["Finanțări PNRR", "Strategie digitalizare", "Roadmap tehnologic", "Optimizare costuri"],
     href: "/servicii/consultanta-fonduri",
-    accentColor: "text-[#F2DCDB]",
-    bgAccent: "bg-[#F2DCDB]/10 group-hover:bg-[#F2DCDB]/20",
-    borderAccent: "group-hover:border-[#F2DCDB]/30",
+    accentColor: "text-card-foreground",
+    bgAccent: "bg-card/10 group-hover:bg-card/20",
+    borderAccent: "group-hover:border-border/30",
   },
 ];
 

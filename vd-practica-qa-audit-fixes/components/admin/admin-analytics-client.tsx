@@ -52,7 +52,7 @@ interface Props {
 
 const SOURCE_META: Record<string, { label: string; icon: React.ElementType; color: string; bg: string }> = {
   organic: { label: "Google Organic", icon: Search, color: "text-emerald-600", bg: "bg-emerald-50" },
-  social:  { label: "Social Media",   icon: Linkedin, color: "text-blue-600",   bg: "bg-blue-50"   },
+  social:  { label: "Social Media",   icon: Linkedin, color: "text-primary",   bg: "bg-primary"   },
   direct:  { label: "Direct",         icon: Link2,    color: "text-violet-600", bg: "bg-violet-50" },
   referral:{ label: "Referral",       icon: Globe,    color: "text-amber-600",  bg: "bg-amber-50"  },
   email:   { label: "Email",          icon: Facebook, color: "text-rose-600",   bg: "bg-rose-50"   },
@@ -203,7 +203,7 @@ function FunnelSection({ totalLeads, questionnairesWithLeads }: {
             return (
               <div key={i}>
                 <div className="flex items-center gap-3">
-                  <div className={cn("flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white", step.color)}>
+                  <div className={cn("flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-foreground", step.color)}>
                     <step.icon className="size-4" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -286,7 +286,7 @@ export function AdminAnalyticsClient({ summary, questionnairesWithLeads, leadsBy
                 onClick={() => setPeriod(p)}
                 className={cn(
                   "rounded-lg px-3.5 py-1.5 text-[12px] font-semibold transition-all",
-                  period === p ? "bg-primary text-white shadow-lg" : "text-muted-foreground hover:text-foreground"
+                  period === p ? "bg-primary text-foreground shadow-lg" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {p === "30d" ? "30 zile" : p === "90d" ? "90 zile" : "1 an"}

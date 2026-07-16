@@ -367,7 +367,7 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
           type="submit"
           disabled={isLoading}
           className={cn(
-            "flex h-11 w-full items-center justify-center gap-2 rounded-xl mt-4 font-semibold text-sm text-white transition-all shadow-md shadow-blue-500/10",
+            "flex h-11 w-full items-center justify-center gap-2 rounded-xl mt-4 font-semibold text-sm text-foreground transition-all shadow-md shadow-blue-500/10",
             "bg-[#2563eb] hover:bg-[#1d4ed8] hover:scale-[1.01] active:scale-[0.98]",
             "disabled:pointer-events-none disabled:opacity-60",
           )}

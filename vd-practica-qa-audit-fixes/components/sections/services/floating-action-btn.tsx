@@ -26,7 +26,7 @@ export function FloatingActionBtn() {
     <Link
       href="/contact"
       className={cn(
-        "fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-xl transition-all duration-300 hover:bg-blue-500 hover:scale-105 active:scale-95",
+        "fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-bold text-foreground shadow-xl transition-all duration-300 hover:bg-primary hover:scale-105 active:scale-95",
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0 pointer-events-none"
       )}
     >

@@ -31,7 +31,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-transparent border-t border-white/10 relative z-10">
+    <section className="py-24 bg-transparent border-t border-foreground/10 relative z-10">
       <div className="mx-auto max-w-4xl px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
@@ -49,7 +49,7 @@ export function FaqSection() {
               itemScope itemProp="mainEntity" itemType="https://schema.org/Question"
               className={cn(
                 "rounded-2xl border transition-all duration-300 overflow-hidden",
-                openIndex === idx ? "border-primary/40 bg-[#F2DCDB]/10 shadow-sm" : "border-[#F2DCDB]/20 bg-[#F2DCDB]/5 hover:border-primary/30"
+                openIndex === idx ? "border-primary/40 bg-card/10 shadow-sm" : "border-border/20 bg-card/5 hover:border-primary/30"
               )}
             >
               <button

@@ -30,7 +30,7 @@ export function FinalCta() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Link
               href="/chestionare/evaluare-maturitate-digitala"
-              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-full bg-[#3D5D91] px-8 text-sm font-bold text-[#F2DCDB] shadow-xl transition-all hover:bg-[#3D5D91]/90 hover:scale-[1.03] active:scale-[0.98] duration-200"
+              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-full bg-background px-8 text-sm font-bold text-card-foreground shadow-xl transition-all hover:bg-background/90 hover:scale-[1.03] active:scale-[0.98] duration-200"
             >
               Începe evaluarea <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

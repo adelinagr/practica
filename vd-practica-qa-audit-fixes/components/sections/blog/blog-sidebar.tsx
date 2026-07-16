@@ -76,7 +76,7 @@ export function BlogSidebar({ categories }: { categories: Category[] }) {
                   className={cn(
                     "flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-sm transition-colors",
                     activeCategory === cat.slug
-                      ? "bg-blue-600 font-medium text-white"
+                      ? "bg-primary font-medium text-foreground"
                       : "bg-background font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                   )}
                 >
@@ -85,7 +85,7 @@ export function BlogSidebar({ categories }: { categories: Category[] }) {
                     className={cn(
                       "inline-flex h-5 items-center justify-center rounded-full px-2 text-xs font-bold",
                       activeCategory === cat.slug
-                        ? "bg-white/20 text-white"
+                        ? "bg-foreground/20 text-foreground"
                         : "bg-muted-foreground/10 text-muted-foreground"
                     )}
                   >
@@ -100,15 +100,15 @@ export function BlogSidebar({ categories }: { categories: Category[] }) {
 
       {/* Newsletter Placeholder (Optional) */}
       <div className="rounded-3xl border border-border/50 bg-slate-900 p-6 shadow-sm text-center">
-        <h3 className="mb-2 font-heading text-lg font-bold text-white">Abonează-te</h3>
+        <h3 className="mb-2 font-heading text-lg font-bold text-foreground">Abonează-te</h3>
         <p className="mb-4 text-xs text-slate-300 leading-relaxed">Primești săptămânal cele mai bune strategii de digitalizare.</p>
         <div className="flex flex-col gap-2">
           <input
             type="email"
             placeholder="Adresa de email"
-            className="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 px-3 text-sm text-white placeholder:text-slate-500 focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 px-3 text-sm text-foreground placeholder:text-slate-500 focus:border-blue-500 focus:outline-none"
           />
-          <button className="w-full rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-blue-500">
+          <button className="w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-primary">
             Mă abonez
           </button>
         </div>

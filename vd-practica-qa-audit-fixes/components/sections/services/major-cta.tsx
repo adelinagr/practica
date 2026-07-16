@@ -14,12 +14,12 @@ export function MajorCta() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl bg-[#3D5D91] border border-[#F2DCDB]/20 p-8 md:p-16 text-center shadow-2xl relative overflow-hidden"
+          className="rounded-3xl bg-background border border-border/20 p-8 md:p-16 text-center shadow-2xl relative overflow-hidden"
         >
           
           {/* Subtle palette gradients */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/15 blur-[100px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#F2DCDB]/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-card/10 blur-[100px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2" />
           
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-6 tracking-tight">
             Transformarea companiei tale începe aici
@@ -38,7 +38,7 @@ export function MajorCta() {
             
             <Link
               href="/chestionare"
-              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-xl border border-[#F2DCDB]/30 bg-[#F2DCDB]/10 px-8 text-base font-bold text-foreground backdrop-blur-sm transition-all hover:bg-[#F2DCDB]/20 hover:border-[#F2DCDB]/50"
+              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-xl border border-border/30 bg-card/10 px-8 text-base font-bold text-foreground backdrop-blur-sm transition-all hover:bg-card/20 hover:border-border/50"
             >
               Explorează Chestionarele <ArrowRight className="ml-2 h-5 w-5 text-muted-foreground" />
             </Link>

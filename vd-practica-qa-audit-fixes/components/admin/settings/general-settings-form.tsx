@@ -71,7 +71,7 @@ export function GeneralSettingsForm({ user }: { user: UserData }) {
           <label 
             className="absolute inset-0 flex items-center justify-center rounded-full bg-slate-900/40 opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer"
           >
-            <UploadCloud className="size-6 text-white" />
+            <UploadCloud className="size-6 text-foreground" />
             <input 
               type="file" 
               accept="image/*" 
@@ -205,7 +205,7 @@ export function GeneralSettingsForm({ user }: { user: UserData }) {
         <button 
           disabled={loading} 
           type="submit" 
-          className="flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 disabled:opacity-70"
+          className="flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 disabled:opacity-70"
         >
           {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Save Changes

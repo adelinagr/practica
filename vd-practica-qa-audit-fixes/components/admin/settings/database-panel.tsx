@@ -171,7 +171,7 @@ export function DatabasePanel() {
         <button 
           onClick={handleBackup}
           disabled={backupLoading || !isOperational}
-          className="flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-slate-800 disabled:opacity-70"
+          className="flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-slate-800 disabled:opacity-70"
         >
           {backupLoading ? <Loader2 className="mr-2 size-4 animate-spin" /> : <HardDrive className="mr-2 size-4" />}
           Generate Backup Now

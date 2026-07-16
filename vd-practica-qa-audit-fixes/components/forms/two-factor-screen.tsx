@@ -183,7 +183,7 @@ export function TwoFactorScreen({
           disabled={isLoading || !isComplete}
           className={cn(
             "flex h-11 w-full items-center justify-center gap-2 rounded-xl",
-            "bg-gradient-to-r from-indigo-600 to-blue-500 px-4 text-sm font-semibold text-white",
+            "bg-gradient-to-r from-indigo-600 to-blue-500 px-4 text-sm font-semibold text-foreground",
             "shadow-md shadow-indigo-500/25 transition-all duration-200",
             "hover:shadow-indigo-500/45 hover:scale-[1.01]",
             "active:scale-[0.98]",

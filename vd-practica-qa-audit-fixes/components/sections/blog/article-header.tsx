@@ -30,16 +30,16 @@ export function ArticleHeader({
       <div className="mx-auto max-w-4xl px-4 md:px-6">
         {/* Breadcrumbs */}
         <nav className="mb-8 flex items-center gap-2 text-sm font-medium text-slate-500">
-          <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <span>›</span>
-          <Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
+          <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
           <span>›</span>
           <span className="text-slate-900">{category}</span>
         </nav>
 
         {/* Metadata */}
         <div className="mb-6 flex flex-wrap items-center gap-4 text-sm font-semibold">
-          <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
+          <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
             {category}
           </span>
           <span className="flex items-center gap-1.5 text-slate-500">
@@ -84,7 +84,7 @@ export function ArticleHeader({
           <div className="flex items-center gap-4 text-sm font-semibold text-slate-500">
             <span>Distribuie:</span>
             <div className="flex items-center gap-2">
-              <button className="flex size-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-blue-100 hover:text-blue-700 transition-colors">
+              <button className="flex size-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-primary hover:text-primary transition-colors">
                 <Linkedin className="size-4" />
               </button>
               <button className="flex size-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-sky-100 hover:text-sky-500 transition-colors">

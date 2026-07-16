@@ -26,7 +26,7 @@ export default function PreviewSimulationPanel({
         <Card className="h-full border-l border-border/80 bg-background/95 backdrop-blur-md rounded-none shadow-xl flex flex-col w-80">
             <CardHeader className="py-4 px-4 border-b border-border/40 bg-muted/30">
                 <CardTitle className="text-sm font-bold flex items-center gap-2 text-foreground">
-                    <Info className="h-4 w-4 text-blue-500" />
+                    <Info className="h-4 w-4 text-primary" />
                     Control Simulare Reguli
                 </CardTitle>
                 <p className="text-[11px] text-muted-foreground leading-snug">

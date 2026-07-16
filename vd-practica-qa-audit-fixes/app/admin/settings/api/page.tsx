@@ -28,7 +28,7 @@ export default async function ApiSettingsPage() {
         <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
           API key generation and webhooks management is currently in closed beta.
         </p>
-        <button className="rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-slate-800 disabled:opacity-70">
+        <button className="rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-slate-800 disabled:opacity-70">
           Request Early Access
         </button>
       </div>

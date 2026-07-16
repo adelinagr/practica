@@ -55,7 +55,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Card */}
-        <div className="relative rounded-2xl border border-border/60 bg-transparent shadow-xl shadow-black/5 backdrop-blur-sm dark:border-white/8 dark:shadow-black/30">
+        <div className="relative rounded-2xl border border-border/60 bg-transparent shadow-xl shadow-black/5 backdrop-blur-sm dark:border-foreground/8 dark:shadow-black/30">
           {/* Top accent line */}
           <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 

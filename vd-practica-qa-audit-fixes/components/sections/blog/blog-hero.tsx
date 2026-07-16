@@ -14,9 +14,9 @@ export function BlogHero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-primary"
         >
-          <span className="size-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse" />
+          <span className="size-1.5 rounded-full bg-primary dark:bg-primary animate-pulse" />
           BLOG & INSIGHTS
         </motion.div>
 

@@ -15,10 +15,10 @@ export function SocialProofBar() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="border-y border-white/10 bg-[#3D5D91]/80 py-8 overflow-hidden relative z-10"
+      className="border-y border-foreground/10 bg-background/80 py-8 overflow-hidden relative z-10"
     >
       <div className="mx-auto w-full max-w-7xl px-6 md:px-12 mb-6 text-center">
-        <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-white/40">
+        <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-foreground/40">
           Companii care au încredere în noi
         </p>
       </div>
@@ -29,7 +29,7 @@ export function SocialProofBar() {
           {[...LOGOS, ...LOGOS, ...LOGOS].map((logo, idx) => (
             <div 
               key={idx} 
-              className="flex items-center justify-center font-heading text-lg font-black text-white/20 transition-all duration-300 hover:text-primary"
+              className="flex items-center justify-center font-heading text-lg font-black text-foreground/20 transition-all duration-300 hover:text-primary"
             >
               {logo}
             </div>
@@ -38,8 +38,8 @@ export function SocialProofBar() {
       </div>
       
       {/* Gradients for fade effect */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-[#3D5D91] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-[#3D5D91] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-background to-transparent" />
     </motion.section>
   );
 }

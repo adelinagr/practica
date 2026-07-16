@@ -145,7 +145,7 @@ export default function HeroLanding() {
           {/* Premium Description Paragraph */}
           <motion.p
             variants={textVariants}
-            className="max-w-2xl text-muted-foreground font-sans font-light text-base sm:text-lg md:text-xl leading-relaxed"
+            className="max-w-2xl text-muted-foreground font-sans font-medium text-base sm:text-lg md:text-xl leading-relaxed"
           >
             Evaluăm maturitatea digitală a IMM-urilor în 10 minute și construim împreună un plan de acțiune personalizat, eficient și fără jargon tehnic.
           </motion.p>
@@ -165,7 +165,7 @@ export default function HeroLanding() {
             </Link>
             <Link
               href="#servicii"
-              className="inline-flex justify-center items-center h-12 px-8 rounded-full border border-primary/20 text-foreground font-bold hover:bg-primary/5 transition-colors w-full sm:w-auto"
+              className="inline-flex justify-center items-center h-12 px-8 rounded-full border-2 border-foreground text-foreground font-bold hover:bg-foreground/5 transition-colors w-full sm:w-auto"
             >
               Serviciile Noastre
             </Link>

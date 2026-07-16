@@ -85,7 +85,7 @@ function DeleteAccountModal({
         <div>
           <label htmlFor="verification" className="block text-sm">
             To verify, type{" "}
-            <span className="font-semibold text-black dark:text-white">
+            <span className="font-semibold text-black dark:text-foreground">
               confirm delete account
             </span>{" "}
             below

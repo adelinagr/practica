@@ -19,7 +19,7 @@ interface BlogPreviewProps {
 
 export function BlogPreview({ posts }: BlogPreviewProps) {
   return (
-    <section className="py-24 bg-transparent border-t border-white/10 relative z-10">
+    <section className="py-24 bg-transparent border-t border-foreground/10 relative z-10">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
@@ -43,10 +43,10 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
             <Link 
               key={idx} 
               href={article.href}
-              className="glass-card group flex flex-col overflow-hidden rounded-2xl border border-[#F2DCDB]/20 bg-[#F2DCDB]/8 transition-all hover:bg-[#F2DCDB]/15 hover:shadow-lg hover:border-primary/40"
+              className="glass-card group flex flex-col overflow-hidden rounded-2xl border border-border/20 bg-card/8 transition-all hover:bg-card/15 hover:shadow-lg hover:border-primary/40"
             >
               {article.imageUrl && (
-                <div className="relative h-48 w-full overflow-hidden bg-white/10">
+                <div className="relative h-48 w-full overflow-hidden bg-foreground/10">
                   <Image
                     src={article.imageUrl}
                     alt={article.title}
@@ -72,7 +72,7 @@ export function BlogPreview({ posts }: BlogPreviewProps) {
                   {article.excerpt}
                 </p>
                 
-                <div className="mt-auto pt-4 border-t border-[#F2DCDB]/20 flex items-center justify-between">
+                <div className="mt-auto pt-4 border-t border-border/20 flex items-center justify-between">
                   <span className="text-xs font-mono font-medium text-muted-foreground">{article.date}</span>
                   <span className="inline-flex items-center text-sm font-bold font-sans text-foreground group-hover:text-primary">
                     Citește <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

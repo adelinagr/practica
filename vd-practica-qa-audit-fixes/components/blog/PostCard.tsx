@@ -52,7 +52,7 @@ export default function PostCard({ post }: PostCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
         />
         {/* Category badge */}
-        <span className="absolute top-3 left-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-sky-500 text-white shadow-sm">
+        <span className="absolute top-3 left-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-sky-500 text-foreground shadow-sm">
           {post.category}
         </span>
       </Link>

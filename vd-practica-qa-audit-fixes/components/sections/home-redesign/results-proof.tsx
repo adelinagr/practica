@@ -35,7 +35,7 @@ const TESTIMONIALS = [
 
 export function ResultsAndProof() {
   return (
-    <section className="py-24 bg-transparent border-t border-white/10 relative z-10">
+    <section className="py-24 bg-transparent border-t border-foreground/10 relative z-10">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="font-heading text-3xl md:text-4xl font-extrabold tracking-tight mb-4 text-foreground">
@@ -49,7 +49,7 @@ export function ResultsAndProof() {
         {/* Metrics Grid */}
         <div className="grid sm:grid-cols-3 gap-6 mb-20">
           {METRICS.map((metric, idx) => (
-            <div key={idx} className="glass-card flex flex-col items-center text-center p-8 bg-[#F2DCDB]/10 border border-[#F2DCDB]/20 hover:border-primary/40 transition-colors">
+            <div key={idx} className="glass-card flex flex-col items-center text-center p-8 bg-card/10 border border-border/20 hover:border-primary/40 transition-colors">
               <span className="text-4xl md:text-5xl font-mono font-black text-primary mb-3 tracking-tighter">
                 {metric.value}
               </span>
@@ -63,7 +63,7 @@ export function ResultsAndProof() {
         {TESTIMONIALS.length > 0 && (
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((test, idx) => (
-              <div key={idx} className="glass-card relative flex flex-col p-8 bg-[#F2DCDB]/10 border border-[#F2DCDB]/20 transition-hover hover:border-primary/40">
+              <div key={idx} className="glass-card relative flex flex-col p-8 bg-card/10 border border-border/20 transition-hover hover:border-primary/40">
                 <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/20 rotate-180" />
                 <p className="text-foreground/80 font-sans font-light leading-relaxed mb-8 flex-1 italic">
                   &ldquo;{test.quote}&rdquo;

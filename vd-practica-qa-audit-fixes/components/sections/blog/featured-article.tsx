@@ -36,7 +36,7 @@ export function FeaturedArticle({ post }: { post: FeaturedPost | null }) {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent md:bg-gradient-to-r" />
           
           <div className="absolute top-6 left-6">
-            <span className="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
+            <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-foreground shadow-sm">
               {post.category}
             </span>
           </div>
@@ -70,7 +70,7 @@ export function FeaturedArticle({ post }: { post: FeaturedPost | null }) {
                 </div>
                 <span className="text-sm font-medium text-foreground">{post.author}</span>
               </div>
-              <span className="inline-flex items-center text-sm font-bold text-blue-500 transition-colors group-hover:text-blue-400">
+              <span className="inline-flex items-center text-sm font-bold text-primary transition-colors group-hover:text-primary">
                 Citește <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>

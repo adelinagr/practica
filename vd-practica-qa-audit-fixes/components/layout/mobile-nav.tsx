@@ -40,8 +40,8 @@ export function NavMobile() {
       <button
         onClick={() => setOpen(!open)}
         className={cn(
-          "fixed right-4 top-6 z-50 rounded-full p-2.5 backdrop-blur-md border border-white/10 bg-[#F2DCDB]/5 transition-colors duration-200 hover:bg-[#F2DCDB]/10 focus:outline-none active:bg-[#F2DCDB]/20 md:hidden",
-          open && "bg-[#F2DCDB]/10",
+          "fixed right-4 top-6 z-50 rounded-full p-2.5 backdrop-blur-md border border-foreground/10 bg-card/5 transition-colors duration-200 hover:bg-card/10 focus:outline-none active:bg-card/20 md:hidden",
+          open && "bg-card/10",
         )}
       >
         {open ? (
@@ -63,7 +63,7 @@ export function NavMobile() {
               <Link
                 href={href}
                 onClick={() => setOpen(false)}
-                className="flex w-full text-lg font-medium capitalize text-[#F2DCDB] hover:text-[#DB7F8E] transition-colors"
+                className="flex w-full text-lg font-medium capitalize text-card-foreground hover:text-primary transition-colors"
               >
                 {title}
               </Link>
@@ -77,7 +77,7 @@ export function NavMobile() {
                   <Link
                     href="/admin"
                     onClick={() => setOpen(false)}
-                    className="flex w-full text-lg font-medium capitalize text-[#DB7F8E] hover:text-[#F2DCDB] transition-colors"
+                    className="flex w-full text-lg font-medium capitalize text-primary hover:text-card-foreground transition-colors"
                   >
                     Panou Administrator
                   </Link>
@@ -88,7 +88,7 @@ export function NavMobile() {
                 <Link
                   href="/dashboard"
                   onClick={() => setOpen(false)}
-                  className="flex w-full text-lg font-medium capitalize text-[#F2DCDB] hover:text-[#DB7F8E] transition-colors"
+                  className="flex w-full text-lg font-medium capitalize text-card-foreground hover:text-primary transition-colors"
                 >
                   Dashboard
                 </Link>
@@ -99,7 +99,7 @@ export function NavMobile() {
                     setOpen(false);
                     signOut({ callbackUrl: "/" });
                   }}
-                  className="flex w-full text-left text-lg font-medium capitalize text-[#F2DCDB] hover:text-[#DB7F8E] transition-colors"
+                  className="flex w-full text-left text-lg font-medium capitalize text-card-foreground hover:text-primary transition-colors"
                 >
                   Deconectare
                 </button>
@@ -111,7 +111,7 @@ export function NavMobile() {
                 <Link
                   href="/login"
                   onClick={() => setOpen(false)}
-                  className="flex w-full text-lg font-medium capitalize text-[#F2DCDB] hover:text-[#DB7F8E] transition-colors"
+                  className="flex w-full text-lg font-medium capitalize text-card-foreground hover:text-primary transition-colors"
                 >
                   Autentificare
                 </Link>
@@ -121,7 +121,7 @@ export function NavMobile() {
                 <Link
                   href="/register"
                   onClick={() => setOpen(false)}
-                  className="flex w-full text-lg font-medium capitalize text-[#F2DCDB] hover:text-[#DB7F8E] transition-colors"
+                  className="flex w-full text-lg font-medium capitalize text-card-foreground hover:text-primary transition-colors"
                 >
                   Creare Cont
                 </Link>
@@ -137,7 +137,7 @@ export function NavMobile() {
         ) : null}
 
         <div className="mt-8 flex items-center justify-end space-x-4">
-          <Link href={siteConfig.links.github} target="_blank" rel="noreferrer" className="text-[#F2DCDB]/60 hover:text-[#F2DCDB]">
+          <Link href={siteConfig.links.github} target="_blank" rel="noreferrer" className="text-card-foreground/60 hover:text-card-foreground">
             <Icons.gitHub className="size-6" />
             <span className="sr-only">GitHub</span>
           </Link>

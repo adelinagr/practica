@@ -44,7 +44,7 @@ export default function PartnersPage() {
           <div className="overflow-hidden rounded-3xl bg-[#5A86CB]/10 backdrop-blur-md shadow-xl shadow-black/5 ring-1 ring-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10">
             <div className="grid md:grid-cols-5">
               {/* Image Section */}
-              <div className="relative col-span-2 flex items-center justify-center bg-white/5 p-8 md:border-r md:border-white/10">
+              <div className="relative col-span-2 flex items-center justify-center bg-foreground/5 p-8 md:border-r md:border-foreground/10">
                 <Image
                   src="/partners/hr-lab-usv.jpg"
                   alt="HR Lab USV"

@@ -35,17 +35,17 @@ const dataCallout = {
   idea: {
     icon: Lightbulb,
     classes:
-      "border-blue-200 bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-200",
+      "border-blue-200 bg-primary text-primary dark:bg-primary dark:text-primary",
   },
   info: {
     icon: Info,
     classes:
-      "border-blue-200 bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-200",
+      "border-blue-200 bg-primary text-primary dark:bg-primary dark:text-primary",
   },
   note: {
     icon: FileText,
     classes:
-      "border-blue-200 bg-blue-50 text-blue-800 dark:bg-blue-950 dark:text-blue-200",
+      "border-blue-200 bg-primary text-primary dark:bg-primary dark:text-primary",
   },
   success: {
     icon: CircleCheckBig,

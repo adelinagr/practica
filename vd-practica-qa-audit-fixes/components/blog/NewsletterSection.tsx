@@ -26,7 +26,7 @@ function TrustPoint({
         {icon}
       </div>
       <div>
-        <div className="text-sm font-semibold text-white">{title}</div>
+        <div className="text-sm font-semibold text-foreground">{title}</div>
         <div className="text-xs text-slate-400 mt-0.5 leading-relaxed">
           {subtitle}
         </div>
@@ -69,7 +69,7 @@ export function NewsletterSection() {
               <p className="text-xs font-bold uppercase tracking-widest text-sky-500 mb-3">
                 Newsletter
               </p>
-              <h2 className="text-2xl font-extrabold text-white lg:text-3xl leading-tight">
+              <h2 className="text-2xl font-extrabold text-foreground lg:text-3xl leading-tight">
                 Fii primul care află
               </h2>
             </div>
@@ -141,7 +141,7 @@ export function NewsletterSection() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-white">Abonare reușită!</h3>
+                <h3 className="text-lg font-bold text-foreground">Abonare reușită!</h3>
                 <p className="text-sm text-slate-400 max-w-xs">
                   Mulțumim! Vei primi primul newsletter în curând.
                 </p>
@@ -167,7 +167,7 @@ export function NewsletterSection() {
                     placeholder="Ion Popescu"
                     value={form.fullName}
                     onChange={(e) => set("fullName")(e.target.value)}
-                    className="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2.5 text-sm text-white placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
+                    className="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2.5 text-sm text-foreground placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
                   />
                 </div>
 
@@ -181,7 +181,7 @@ export function NewsletterSection() {
                     placeholder="ion@compania.ro"
                     value={form.email}
                     onChange={(e) => set("email")(e.target.value)}
-                    className="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2.5 text-sm text-white placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
+                    className="rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2.5 text-sm text-foreground placeholder:text-slate-600 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition-all"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ export function NewsletterSection() {
                     status === "loading"
                   }
                   onClick={handleSubmit}
-                  className="w-full rounded-lg bg-sky-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full rounded-lg bg-sky-500 px-4 py-3 text-sm font-semibold text-foreground transition-all hover:bg-sky-400 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {status === "loading" ? (
                     <>

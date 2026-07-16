@@ -39,7 +39,7 @@ export function AccessDenied({
         {/* Action button */}
         <button
           onClick={() => router.push("/admin")}
-          className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-slate-800 active:scale-98 transition-all dark:bg-accent/20 dark:text-slate-950 dark:hover:bg-slate-200"
+          className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-foreground shadow-lg hover:bg-slate-800 active:scale-98 transition-all dark:bg-accent/20 dark:text-slate-950 dark:hover:bg-slate-200"
         >
           <ArrowLeft className="size-4" />
           <span>Înapoi la Dashboard</span>

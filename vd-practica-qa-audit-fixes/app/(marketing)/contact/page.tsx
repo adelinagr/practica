@@ -29,7 +29,7 @@ export default function ContactPage() {
 
         {/* Info Grid (Email, Phone, Office) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
-          <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
+          <div className="flex items-start gap-4 rounded-xl border border-foreground/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
               <Mail className="size-5" />
             </div>
@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
+          <div className="flex items-start gap-4 rounded-xl border border-foreground/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
               <Phone className="size-5" />
             </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
+          <div className="flex items-start gap-4 rounded-xl border border-foreground/10 bg-[#5A86CB]/10 backdrop-blur-md p-5 shadow-sm">
             <div className="rounded-lg bg-primary/10 p-2 text-primary">
               <MapPin className="size-5" />
             </div>

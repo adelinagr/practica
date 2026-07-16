@@ -222,7 +222,7 @@ export function QuestionnaireCore({ data }: QuestionnaireCoreProps) {
                 <div className={cn(
                     "absolute -left-10 top-1/4 h-[350px] w-[350px] rounded-full blur-[100px]",
                     step === "start"
-                        ? "bg-blue-500/10 dark:bg-blue-500/5"
+                        ? "bg-primary/10 dark:bg-primary/5"
                         : "bg-zinc-500/10 dark:bg-zinc-500/5"
                 )} />
                 <div className={cn(
@@ -238,7 +238,7 @@ export function QuestionnaireCore({ data }: QuestionnaireCoreProps) {
                 <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-background/50 p-8 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-border md:p-12">
                     <div className="flex flex-col items-center text-center">
                         {/* Pulsing Accent Badge */}
-                        <div className="mb-6 flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                        <div className="mb-6 flex items-center gap-2 rounded-full border border-blue-500/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary">
                             <Sparkles className="h-3.5 w-3.5 animate-pulse" />
                             Evaluare gratuită
                         </div>
@@ -254,7 +254,7 @@ export function QuestionnaireCore({ data }: QuestionnaireCoreProps) {
                         {/* Structured Value Props */}
                         <div className="mt-10 grid w-full gap-4 sm:grid-cols-3 text-left">
                             <div className="rounded-2xl bg-card/40 border p-5">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 mb-3">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
                                     <TrendingUp className="h-5 w-5" />
                                 </div>
                                 <h3 className="font-semibold text-foreground text-sm">3 Minute</h3>
@@ -393,7 +393,7 @@ export function QuestionnaireCore({ data }: QuestionnaireCoreProps) {
                                             <span className="text-sm leading-snug">{opt}</span>
                                             <div className={cn(
                                                 "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
-                                                isSelected ? "border-zinc-600 bg-zinc-600 dark:border-zinc-400 dark:bg-zinc-400 text-white" : "border-muted-foreground/30 group-hover:border-zinc-500/40"
+                                                isSelected ? "border-zinc-600 bg-zinc-600 dark:border-zinc-400 dark:bg-zinc-400 text-foreground" : "border-muted-foreground/30 group-hover:border-zinc-500/40"
                                             )}>
                                                 {isSelected && <Check className="h-3 w-3 stroke-[3]" />}
                                             </div>
@@ -424,7 +424,7 @@ export function QuestionnaireCore({ data }: QuestionnaireCoreProps) {
                                             <span className="text-sm leading-snug">{opt}</span>
                                             <div className={cn(
                                                 "flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all duration-300",
-                                                isSelected ? "border-zinc-600 bg-zinc-600 dark:border-zinc-400 dark:bg-zinc-400 text-white" : "border-muted-foreground/30 group-hover:border-zinc-500/40"
+                                                isSelected ? "border-zinc-600 bg-zinc-600 dark:border-zinc-400 dark:bg-zinc-400 text-foreground" : "border-muted-foreground/30 group-hover:border-zinc-500/40"
                                             )}>
                                                 {isSelected && <Check className="h-3 w-3 stroke-[3]" />}
                                             </div>

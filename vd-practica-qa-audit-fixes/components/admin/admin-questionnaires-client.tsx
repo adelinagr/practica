@@ -386,7 +386,7 @@ function QuestionnaireModal({
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-white hover:bg-primary/90 transition-colors disabled:opacity-60"
+            className="flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
           >
             {loading && <Loader2 className="size-4 animate-spin" />}
             {loading ? "Se salvează..." : questionnaire ? "Salvează Modificările" : "Crează Chestionar"}
@@ -871,7 +871,7 @@ function QuestionnaireBuilder({
           <button
             onClick={handleSave}
             disabled={saving || !dirty}
-            className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[12px] font-semibold text-white hover:bg-primary/90 transition-colors disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[12px] font-semibold text-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
           >
             {saving ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
             {saving ? "Se salvează..." : "Salvează"}
@@ -996,7 +996,7 @@ function QuestionnaireBuilder({
           {selectedIdx !== null && questions[selectedIdx] ? (
             <div>
               <div className="mb-4 flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-white">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-foreground">
                   {selectedIdx + 1}
                 </span>
                 <span className="text-[13px] font-semibold text-foreground">Editează întrebarea</span>
@@ -1146,7 +1146,7 @@ function ResultInterpretationsBuilder({
           <button
             onClick={handleSave}
             disabled={saving || !dirty}
-            className="flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-[12px] font-semibold text-white hover:bg-emerald-700 transition-colors disabled:opacity-60"
+            className="flex items-center gap-1.5 rounded-lg bg-emerald-600 px-4 py-2 text-[12px] font-semibold text-foreground hover:bg-emerald-700 transition-colors disabled:opacity-60"
           >
             {saving ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
             {saving ? "Se salvează..." : "Salvează Grile"}
@@ -1425,7 +1425,7 @@ export function AdminQuestionnairesClient({ initialData, currentUser }: Props) {
         {currentUser.role !== "VIEWER" && (
           <button
             onClick={() => { setEditingQ(null); setShowModal(true); }}
-            className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-white hover:bg-primary/90 transition-colors shadow-lg"
+            className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-foreground hover:bg-primary/90 transition-colors shadow-lg"
           >
             <Plus className="size-3.5" /> Chestionar Nou
           </button>
@@ -1491,7 +1491,7 @@ export function AdminQuestionnairesClient({ initialData, currentUser }: Props) {
           {!search && currentUser.role !== "VIEWER" && (
             <button
               onClick={() => { setEditingQ(null); setShowModal(true); }}
-              className="mt-1 flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-white hover:bg-primary/90"
+              className="mt-1 flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-[13px] font-semibold text-foreground hover:bg-primary/90"
             >
               <Plus className="size-3.5" /> Chestionar Nou
             </button>

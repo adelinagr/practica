@@ -39,7 +39,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 { label: "Securitate Cibernetică", href: "/servicii/securitate" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-blue-500 transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -59,7 +59,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 { label: "Chestionar Maturitate", href: "/chestionare/evaluare-maturitate-digitala" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-blue-500 transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -79,7 +79,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 { label: "Politica de Confidențialitate", href: "/gdpr" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-blue-500 transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>

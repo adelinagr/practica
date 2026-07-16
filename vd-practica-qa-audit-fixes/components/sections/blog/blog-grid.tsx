@@ -57,7 +57,7 @@ function PostCard({ post }: { post: FormattedPost }) {
               <Calendar className="h-3.5 w-3.5" />
               {format(new Date(post.publishedAt), "d MMM yyyy", { locale: ro })}
             </span>
-            <span className="flex items-center gap-1.5 text-blue-500 font-semibold opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+            <span className="flex items-center gap-1.5 text-primary font-semibold opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
               Citește <ArrowRight className="h-3 w-3" />
             </span>
           </div>
@@ -73,7 +73,7 @@ export function BlogGrid({ posts }: { posts: FormattedPost[] }) {
       <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-border p-12 text-center bg-card/20">
         <h3 className="mb-2 text-xl font-semibold text-foreground">Nu există articole aici</h3>
         <p className="text-sm text-muted-foreground mb-6">Momentan nu există articole publicate pentru aceste filtre.</p>
-        <Link href="/" className="text-sm font-bold text-blue-500 hover:text-blue-400 underline underline-offset-4">
+        <Link href="/" className="text-sm font-bold text-primary hover:text-primary underline underline-offset-4">
           Înapoi la Home
         </Link>
       </div>

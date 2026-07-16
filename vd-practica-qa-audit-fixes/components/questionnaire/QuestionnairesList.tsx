@@ -53,7 +53,7 @@ export default function QuestionnairesList({ questionnaires }: QuestionnairesLis
                 onClick={() => setActiveCategory("all")}
                 className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-all ${
                   activeCategory === "all"
-                    ? "border-sky-500 bg-sky-500 text-white"
+                    ? "border-sky-500 bg-sky-500 text-foreground"
                     : "border-border text-muted-foreground hover:border-sky-500/40 hover:text-foreground"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function QuestionnairesList({ questionnaires }: QuestionnairesLis
                   onClick={() => setActiveCategory(cat.name)}
                   className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-all ${
                     activeCategory === cat.name
-                      ? "border-sky-500 bg-sky-500 text-white"
+                      ? "border-sky-500 bg-sky-500 text-foreground"
                       : "border-border text-muted-foreground hover:border-sky-500/40 hover:text-foreground"
                   }`}
                 >

@@ -66,7 +66,7 @@ export function LeadCaptureForm() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-transparent border-t border-white/10 relative z-10">
+    <section id="contact" className="py-24 bg-transparent border-t border-foreground/10 relative z-10">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
@@ -95,11 +95,11 @@ export function LeadCaptureForm() {
             </ul>
 
             <div className="flex gap-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono font-medium bg-[#F2DCDB]/10 px-4 py-2 rounded-lg border border-[#F2DCDB]/20">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono font-medium bg-card/10 px-4 py-2 rounded-lg border border-border/20">
                 <ShieldCheck className="h-4 w-4 text-secondary" />
                 Date securizate
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono font-medium bg-[#F2DCDB]/10 px-4 py-2 rounded-lg border border-[#F2DCDB]/20">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono font-medium bg-card/10 px-4 py-2 rounded-lg border border-border/20">
                 <Zap className="h-4 w-4 text-primary" />
                 Răspuns rapid
               </div>
@@ -107,7 +107,7 @@ export function LeadCaptureForm() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="glass-card rounded-3xl border border-[#F2DCDB]/25 p-6 md:p-10 shadow-xl relative overflow-hidden" style={{background: 'rgba(96,77,83,0.7)'}}>
+          <div className="glass-card rounded-3xl border border-border/25 p-6 md:p-10 shadow-xl relative overflow-hidden" style={{background: 'rgba(96,77,83,0.7)'}}>
             {success ? (
               <div className="flex flex-col items-center justify-center text-center py-12 animate-fade-in">
                 <div className="h-16 w-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-6">
@@ -128,19 +128,19 @@ export function LeadCaptureForm() {
                 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono font-bold uppercase text-white/50">Prenume</label>
+                    <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Prenume</label>
                     <Input 
                       required 
-                      className="h-11 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                      className="h-11 bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:ring-primary" 
                       value={formData.firstName}
                       onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono font-bold uppercase text-white/50">Nume</label>
+                    <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Nume</label>
                     <Input 
                       required 
-                      className="h-11 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                      className="h-11 bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:ring-primary" 
                       value={formData.lastName}
                       onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                     />
@@ -148,11 +148,11 @@ export function LeadCaptureForm() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold uppercase text-white/50">Email de serviciu *</label>
+                  <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Email de serviciu *</label>
                   <Input 
                     required 
                     type="email" 
-                    className="h-11 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                    className="h-11 bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:ring-primary" 
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
@@ -160,36 +160,36 @@ export function LeadCaptureForm() {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono font-bold uppercase text-white/50">Companie *</label>
+                    <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Companie *</label>
                     <Input 
                       required 
-                      className="h-11 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary" 
+                      className="h-11 bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:ring-primary" 
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[10px] font-mono font-bold uppercase text-white/50">Industrie</label>
+                    <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Industrie</label>
                     <select 
-                      className="flex h-11 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-white/30 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#3D5D91] disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-11 w-full rounded-md border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground/30 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#3D5D91] disabled:cursor-not-allowed disabled:opacity-50"
                       value={formData.industry}
                       onChange={(e) => setFormData({...formData, industry: e.target.value})}
                     >
-                      <option value="" className="bg-[#3D5D91]">Alege...</option>
-                      <option value="IT" className="bg-[#3D5D91]">IT / Software</option>
-                      <option value="Productie" className="bg-[#3D5D91]">Producție</option>
-                      <option value="Retail" className="bg-[#3D5D91]">Retail & E-commerce</option>
-                      <option value="Servicii" className="bg-[#3D5D91]">Servicii Profesionale</option>
-                      <option value="Logistica" className="bg-[#3D5D91]">Logistică & Transport</option>
-                      <option value="Altele" className="bg-[#3D5D91]">Altele</option>
+                      <option value="" className="bg-background">Alege...</option>
+                      <option value="IT" className="bg-background">IT / Software</option>
+                      <option value="Productie" className="bg-background">Producție</option>
+                      <option value="Retail" className="bg-background">Retail & E-commerce</option>
+                      <option value="Servicii" className="bg-background">Servicii Profesionale</option>
+                      <option value="Logistica" className="bg-background">Logistică & Transport</option>
+                      <option value="Altele" className="bg-background">Altele</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-mono font-bold uppercase text-white/50">Cu ce te putem ajuta?</label>
+                  <label className="text-[10px] font-mono font-bold uppercase text-foreground/50">Cu ce te putem ajuta?</label>
                   <Textarea 
-                    className="min-h-[100px] bg-white/5 border-white/10 text-white placeholder:text-white/30 focus-visible:ring-primary resize-none" 
+                    className="min-h-[100px] bg-foreground/5 border-foreground/10 text-foreground placeholder:text-foreground/30 focus-visible:ring-primary resize-none" 
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                   />
@@ -205,8 +205,8 @@ export function LeadCaptureForm() {
                   ) : "Trimite mesajul →"}
                 </Button>
 
-                <p className="text-[11px] text-white/40 font-mono text-center mt-4">
-                  Prin trimiterea acestui formular, ești de acord cu <a href="/gdpr" className="underline hover:text-white">Politica de Confidențialitate (GDPR)</a>.
+                <p className="text-[11px] text-foreground/40 font-mono text-center mt-4">
+                  Prin trimiterea acestui formular, ești de acord cu <a href="/gdpr" className="underline hover:text-foreground">Politica de Confidențialitate (GDPR)</a>.
                 </p>
               </form>
             )}

@@ -130,7 +130,7 @@ export function ServicesGrid() {
                 key={idx}
                 variants={cardVariants}
                 onMouseMove={handleMouseMove}
-                className="glass-card group relative flex flex-col overflow-hidden p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1.5 hover:border-primary/40 bg-[#F2DCDB]/8 border border-[#F2DCDB]/20"
+                className="glass-card group relative flex flex-col overflow-hidden p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1.5 hover:border-primary/40 bg-card/8 border border-border/20"
               >
                 {/* Mouse spotlight overlay - rose palette */}
                 <div
@@ -161,7 +161,7 @@ export function ServicesGrid() {
                 </div>
 
                 {/* Learn More Trigger Modal */}
-                <div className="pt-4 border-t border-white/10">
+                <div className="pt-4 border-t border-foreground/10">
                   <Dialog>
                     <DialogTrigger asChild>
                       <button className="inline-flex items-center text-xs font-bold text-muted-foreground hover:text-primary transition-colors group/btn">
@@ -169,7 +169,7 @@ export function ServicesGrid() {
                         <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </button>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[420px] rounded-3xl border border-[#F2DCDB]/30 bg-[#3D5D91]">
+                    <DialogContent className="sm:max-w-[420px] rounded-3xl border border-border/30 bg-background">
                       <DialogHeader>
                         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg">
                           <IconComp className="h-6 w-6" />
@@ -186,7 +186,7 @@ export function ServicesGrid() {
                           ✨ {service.benefit}
                         </p>
                         <div className="mt-5">
-                          <p className="text-xs text-white/40 font-sans leading-relaxed">
+                          <p className="text-xs text-foreground/40 font-sans leading-relaxed">
                             Programează o discuție gratuită cu unul dintre consultanții noștri pentru a stabili cum putem implementa acest serviciu în afacerea ta.
                           </p>
                         </div>

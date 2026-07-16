@@ -28,7 +28,7 @@ const projects: ProjectType[] = [
   {
     title: "Project 2",
     slug: "project-number-two",
-    color: "bg-blue-500",
+    color: "bg-primary",
   },
 ];
 const selected: ProjectType = projects[1];

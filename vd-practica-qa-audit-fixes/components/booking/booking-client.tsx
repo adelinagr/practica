@@ -119,7 +119,7 @@ export function BookingClient() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-5xl rounded-2xl border border-slate-200/60 bg-white/70 shadow-xl backdrop-blur-md dark:border-zinc-800/50 dark:bg-zinc-950/60">
+    <div className="mx-auto w-full max-w-5xl rounded-2xl border border-slate-200/60 bg-foreground/70 shadow-xl backdrop-blur-md dark:border-zinc-800/50 dark:bg-zinc-950/60">
       <AnimatePresence mode="wait">
         {step === 1 && (
           <motion.div
@@ -177,7 +177,7 @@ export function BookingClient() {
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                     disabled={isDateDisabled}
-                    className="rounded-xl border border-slate-100 bg-white p-3 shadow-sm dark:border-zinc-800/40 dark:bg-zinc-950"
+                    className="rounded-xl border border-slate-100 bg-foreground p-3 shadow-sm dark:border-zinc-800/40 dark:bg-zinc-950"
                   />
                 </div>
 
@@ -219,8 +219,8 @@ export function BookingClient() {
                           onClick={() => handleTimeSelect(time)}
                           className={`flex items-center justify-center rounded-lg border py-2.5 text-xs font-semibold transition-all ${
                             selectedTime === time
-                              ? "border-indigo-600 bg-indigo-600 text-white"
-                              : "border-slate-200 bg-white text-slate-700 hover:border-indigo-500 hover:bg-indigo-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-indigo-400/50 dark:hover:bg-indigo-950/20"
+                              ? "border-indigo-600 bg-indigo-600 text-foreground"
+                              : "border-slate-200 bg-foreground text-slate-700 hover:border-indigo-500 hover:bg-indigo-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-indigo-400/50 dark:hover:bg-indigo-950/20"
                           }`}
                         >
                           {time}
@@ -237,7 +237,7 @@ export function BookingClient() {
                     >
                       <Button
                         onClick={handleNextStep}
-                        className="w-full bg-indigo-600 text-white hover:bg-indigo-500"
+                        className="w-full bg-indigo-600 text-foreground hover:bg-indigo-500"
                       >
                         Continuă spre detalii
                         <ArrowRight className="ml-2 size-4" />
@@ -342,7 +342,7 @@ export function BookingClient() {
                 <Button
                   type="submit"
                   disabled={submitting}
-                  className="w-full h-11 bg-indigo-600 text-white hover:bg-indigo-500 font-bold"
+                  className="w-full h-11 bg-indigo-600 text-foreground hover:bg-indigo-500 font-bold"
                 >
                   {submitting ? "Se trimite..." : "Confirmă Programarea"}
                 </Button>

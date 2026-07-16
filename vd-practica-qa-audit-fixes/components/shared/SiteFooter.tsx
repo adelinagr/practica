@@ -26,10 +26,10 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-20 overflow-hidden bg-transparent pt-32 pb-12 border-t border-white/10">
+    <footer className="relative mt-20 overflow-hidden bg-transparent pt-32 pb-12 border-t border-foreground/10">
       {/* Massive Background Watermark */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex select-none justify-center opacity-5">
-        <span className="font-heading text-[10rem] font-bold leading-none tracking-tighter text-[#F2DCDB]">
+        <span className="font-heading text-[10rem] font-bold leading-none tracking-tighter text-card-foreground">
           DIGITALIZARE
         </span>
       </div>
@@ -37,17 +37,17 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-6xl px-6">
         {/* Call To Action */}
         <div className="mb-24 flex flex-col items-center justify-center text-center">
-          <h2 className="mb-8 font-heading text-4xl font-bold tracking-tight text-[#F2DCDB] md:text-5xl">
+          <h2 className="mb-8 font-heading text-4xl font-bold tracking-tight text-card-foreground md:text-5xl">
             Ready to upgrade your workflow?
           </h2>
           {/* Oversized Lime Button with slide-up hover */}
           <Link
             href="/chestionare"
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-12 py-5 font-bold text-[#3D5D91] transition-all hover:scale-105"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-12 py-5 font-bold text-foreground transition-all hover:scale-105"
             style={{ boxShadow: "0 0 40px rgba(242, 174, 188, 0.25)" }}
           >
             <span className="relative z-10 text-lg uppercase tracking-wider">Start Now</span>
-            <div className="absolute inset-0 z-0 h-full w-full translate-y-full bg-[#F2DCDB] transition-transform duration-300 ease-out group-hover:translate-y-0" />
+            <div className="absolute inset-0 z-0 h-full w-full translate-y-full bg-card transition-transform duration-300 ease-out group-hover:translate-y-0" />
           </Link>
         </div>
 
@@ -107,14 +107,14 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between border-t border-white/10 pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between border-t border-foreground/10 pt-8 md:flex-row">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-[#3D5D91]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-foreground">
               V
             </div>
-            <span className="font-heading font-bold text-[#F2DCDB]">VreauDigitalizare</span>
+            <span className="font-heading font-bold text-card-foreground">VreauDigitalizare</span>
           </div>
-          <p className="mt-4 font-mono text-xs text-[#F2DCDB]/40 md:mt-0">
+          <p className="mt-4 font-mono text-xs text-card-foreground/40 md:mt-0">
             © {year} VREAUDIGITALIZARE. ALL RIGHTS RESERVED.
           </p>
         </div>

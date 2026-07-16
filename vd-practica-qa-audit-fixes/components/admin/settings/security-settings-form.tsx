@@ -88,7 +88,7 @@ export function SecuritySettingsForm({ hasPassword, twoFactorEnabled, logs }: Se
           className={`shrink-0 rounded-xl px-4 py-2 text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
             twoFactorEnabled 
               ? "bg-accent/20 text-foreground hover:bg-slate-200 focus:ring-secondary/30" 
-              : "bg-slate-900 text-white hover:bg-slate-800 focus:ring-slate-900"
+              : "bg-slate-900 text-foreground hover:bg-slate-800 focus:ring-slate-900"
           }`}
         >
           {loading2FA ? <Loader2 className="size-4 animate-spin" /> : twoFactorEnabled ? "Disable 2FA" : "Enable 2FA"}
@@ -98,7 +98,7 @@ export function SecuritySettingsForm({ hasPassword, twoFactorEnabled, logs }: Se
       {/* Password Section */}
       <div className="rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-6 shadow-lg">
         <div className="flex items-center gap-3 mb-6">
-          <div className="flex size-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+          <div className="flex size-8 items-center justify-center rounded-full bg-primary text-primary">
             <KeyRound className="size-4" />
           </div>
           <h4 className="text-sm font-bold text-foreground">Change Password</h4>
@@ -123,7 +123,7 @@ export function SecuritySettingsForm({ hasPassword, twoFactorEnabled, logs }: Se
           <button 
             disabled={loadingPass}
             type="submit" 
-            className="mt-2 flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-slate-800 disabled:opacity-70"
+            className="mt-2 flex items-center justify-center rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-bold text-foreground transition-colors hover:bg-slate-800 disabled:opacity-70"
           >
             {loadingPass && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             Update Password
