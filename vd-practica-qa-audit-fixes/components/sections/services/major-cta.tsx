@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export function MajorCta() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 bg-transparent relative overflow-hidden">
       <div className="container max-w-5xl mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}

@@ -52,7 +52,7 @@ const SERVICES = [
 
 export function EnterpriseServicesGrid() {
   return (
-    <section id="servicii-principale" className="py-20 md:py-24 bg-background scroll-mt-20">
+    <section id="servicii-principale" className="py-20 md:py-24 bg-transparent scroll-mt-20">
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICES.map((service, idx) => (

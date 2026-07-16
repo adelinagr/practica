@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function BlogHero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24 border-b border-border/40">
+    <section className="relative overflow-hidden bg-transparent pt-24 pb-16 md:pt-32 md:pb-24 border-b border-border/40">
       {/* Subtle Background Glows */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(37,99,255,0.06)_0%,transparent_70%)]" />
 

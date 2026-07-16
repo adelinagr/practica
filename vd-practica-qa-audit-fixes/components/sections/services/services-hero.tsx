@@ -10,7 +10,7 @@ export function ServicesHero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
+    <section className="relative overflow-hidden bg-transparent pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Background elegant gradients - palette */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(242, 174, 188,0.08)_0%,transparent_70%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_40%_at_80%_20%,rgba(213,197,200,0.04)_0%,transparent_60%)]" />
