@@ -6,6 +6,8 @@ import { BlogSidebar } from "@/components/sections/blog/blog-sidebar";
 import { prisma } from "@/lib/db";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Cele mai recente insights digitale | Blog VreauDigitalizare",
   description: "Ghiduri practice, studii de caz și strategii pentru companii care vor să crească prin digitalizare, automatizare business și implementare cloud.",

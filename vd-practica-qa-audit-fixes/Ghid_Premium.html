@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghid de Utilizare Complet - VreauDigitalizare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --obsidian: #111111; --rose: #DB7F8E; --rose-light: #F2DCDB; --gray: #f3f4f6; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: #374151; background: #fafafa; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 80px 100px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-radius: 16px; border-top: 10px solid var(--obsidian); }
+        .cover { text-align: center; padding: 100px 0; border-bottom: 2px solid var(--gray); margin-bottom: 60px; }
+        .cover h1 { font-size: 4rem; color: var(--obsidian); font-weight: 800; letter-spacing: -2px; margin: 10px 0; }
+        .cover h2 { font-size: 1.5rem; color: var(--rose); font-weight: 600; text-transform: uppercase; letter-spacing: 3px; margin: 0; }
+        h1, h2, h3, h4 { color: var(--obsidian); }
+        h1.section-title { font-size: 2.2rem; border-bottom: 3px solid var(--obsidian); padding-bottom: 15px; margin-top: 60px; }
+        h2.sub-title { font-size: 1.6rem; margin-top: 40px; display: flex; align-items: center; }
+        h2.sub-title::before { content: ""; display: inline-block; width: 8px; height: 28px; background-color: var(--rose); margin-right: 15px; border-radius: 4px; }
+        h3 { font-size: 1.3rem; color: #1f2937; margin-top: 30px; }
+        p { font-size: 1.1rem; color: #4b5563; text-align: justify; }
+        ul, ol { font-size: 1.1rem; color: #4b5563; padding-left: 25px; margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        .step-box { background-color: var(--gray); padding: 25px 30px 25px 60px; border-radius: 12px; margin: 25px 0; position: relative; border: 1px solid #e5e7eb; }
+        .step-num { position: absolute; top: 25px; left: -20px; background-color: var(--rose); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(219, 127, 142, 0.4); }
+        .note { background-color: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 4px; font-size: 1rem; }
+        .screenshot-placeholder { background-color: #f1f5f9; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 60px 20px; text-align: center; margin: 30px 0; color: #64748b; font-weight: 600; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .screenshot-placeholder span { display: block; margin-top: 10px; font-size: 0.9rem; font-weight: normal; color: #94a3b8; }
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; padding: 0; border: none; max-width: 100%; }
+            .cover { page-break-after: always; padding-top: 40%; }
+            h1.section-title { page-break-before: always; }
+            .step-box { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="cover">
+        <h2>Manual de Operare Exhaustiv</h2>
+        <h1>VreauDigitalizare</h1>
+        <p style="font-size: 1.3rem; margin-top: 50px; color: #6b7280;">Ghid pas cu pas pentru toate funcționalitățile publice și administrative</p>
+    </div>
+
+    <h1 class="section-title">Partea I: Navigarea și Interacțiunea Vizitatorilor</h1>
+    <p>Interfața destinată publicului a fost proiectată nu doar ca un simplu site de prezentare, ci ca un ecosistem de achiziție și calificare a clienților. Iată toate elementele cu care aceștia pot interacționa:</p>
+
+    <h2 class="sub-title">1.1. Pagina Principală și Meniurile</h2>
+    <ul>
+        <li><strong>Navigarea Principală:</strong> Situată în partea de sus a paginii (și retractabilă "hamburger" pe dispozitivele mobile), oferă acces direct la secțiunile: <em>Despre Noi</em>, <em>Servicii</em>, <em>Chestionar</em>, <em>Blog</em> și <em>Contact</em>.</li>
+        <li><strong>Animația Hero:</strong> La prima interacțiune vizuală, efectul fluid din fundal (Liquid Ether WebGL) creează impresia unui produs premium. Aici se găsește Call-to-Action-ul major: <strong>"Începe Evaluarea"</strong>.</li>
+        <li><strong>Servicii & Funcționalități:</strong> Pe măsură ce utilizatorul face scroll, sunt listate serviciile (dezvoltare web, automatizări) și o secțiune cronologică (Timeline) ce explică exact pașii colaborării.</li>
+        <li><strong>Pagini Suport:</strong> Vizitatorii pot accesa oricând paginile informative statice (Despre Noi, Termeni și Condiții, Politica GDPR) din subsolul paginii (Footer).</li>
+        <li><strong>Widget de Chat Flotant:</strong> Orice nelămurire poate fi trimisă rapid prin pictograma persistentă din dreapta-jos. Câmpurile (Nume, Email, Mesaj) sunt validate instant, iar după trimitere apare o animație de succes.</li>
+    </ul>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Pagina Principală (Hero Section / Meniu)
+        <span>Înlocuiți acest spațiu cu imaginea aplicației rulând (ex: &lt;img src="hero.png" /&gt;)</span>
+    </div>
+
+    <h2 class="sub-title">1.2. Fluxul de Chestionare (Evaluare Digitală)</h2>
+    <p>Pentru un prospect interesat de serviciile agenției, completarea chestionarului este pasul fundamental.</p>
+    <div class="step-box">
+        <div class="step-num">1</div>
+        <strong>Inițierea Auditului:</strong> Apăsând "Start Assessment", vizitatorul intră într-o experiență "full-screen", fără meniuri sau butoane care să îi distragă atenția.
+    </div>
+    <div class="step-box">
+        <div class="step-num">2</div>
+        <strong>Parcurgerea Întrebărilor:</strong> Întrebările de calificare (Ex: "Cum vă emiteți facturile?", "Cum țineți legătura cu clienții?") apar consecutiv pe ecran. Click-ul pe un răspuns face automat tranziția, cu un efect de glisare (slide-in), spre întrebarea următoare.
+    </div>
+    <div class="step-box">
+        <div class="step-num">3</div>
+        <strong>Colectarea Datelor (Formularul de Lead):</strong> După ultima întrebare, sistemul condiționează afișarea rezultatului de introducerea numelui și adresei de email profesionale. Aceste date, împreună cu răspunsurile, sunt trimise criptat către server.
+    </div>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Formularul Chestionarului (Pasul de Date)
+        <span>Înlocuiți acest spațiu cu imaginea aplicației rulând</span>
+    </div>
+
+    <h2 class="sub-title">1.3. Realizarea unei Programări (Discovery Call)</h2>
+    <p>A doua formă de conversie este apelul de consultanță stabilit direct din site.</p>
+    <ul>
+        <li><strong>Alegerea Zilei:</strong> Pagina de contact afișează un calendar interactiv. Datele valide sunt evidențiate, iar weekendurile și zilele libere ale echipei sunt dezactivate și iregistrabile.</li>
+        <li><strong>Alegerea Intervalului:</strong> După selectarea zilei (ex: 20 August), sistemul contactează baza de date pentru a afișa DOAR intervalele orare neocupate (de ex: 10:00, 11:30). Suprapunerea este imposibilă.</li>
+        <li><strong>Finalizarea:</strong> Odată ales intervalul de 30 de minute, vizitatorul își confirmă datele, adaugă o scurtă descriere a necesității și apasă "Confirmă". Se declanșează fluxul de notificare intern.</li>
+    </ul>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Calendarul de Programări (Selectia Datei/Orei)
+        <span>Înlocuiți acest spațiu cu imaginea aplicației rulând</span>
+    </div>
+
+    <h1 class="section-title">Partea II: Manualul Administratorului (Dashboard-ul Privat)</h1>
+    <p>Echipa "VreauDigitalizare" are acces exclusiv la un panou de bord securizat prin NextAuth. Această secțiune detaliază operarea sa.</p>
+    <div class="note">
+        <strong>Important:</strong> Accesul la zona <code>/admin</code> este complet blocat pentru oricine nu deține rolul de ADMIN în baza de date. Orice vizitator simplu va fi respins la autentificare.
+    </div>
+
+    <h2 class="sub-title">2.1. Funcționalitățile Dashboard-ului (Statistici)</h2>
+    <p>La conectare, primul ecran oferă un rezumat (Overview) format din:</p>
+    <ul>
+        <li><strong>KPIs Curenți:</strong> Lead-urile totale obținute luna aceasta, programările care necesită o decizie (Pending) și articolele publicate pe blog.</li>
+        <li><strong>Tabelul Recenților:</strong> O privire scurtă asupra celor mai recente acțiuni efectuate de vizitatori.</li>
+    </ul>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Panoul de Start (Dashboard KPIs)
+        <span>Înlocuiți acest spațiu cu imaginea dashboard-ului</span>
+    </div>
+
+    <h2 class="sub-title">2.2. Operarea Modulului de LEAD-uri (CRM)</h2>
+    <p>Acest spațiu permite analizarea în detaliu a oricărui potențial client care a completat formularul de audit.</p>
+    <div class="step-box">
+        <div class="step-num">A</div>
+        <strong>Găsirea și Filtrarea:</strong> Tabelul de Leads permite sortarea coloanelor (apăsând pe antetul "Scor" sau "Dată") și conține un motor de căutare integrat pentru a găsi rapid adresa de email a unui client anume.
+    </div>
+    <div class="step-box">
+        <div class="step-num">B</div>
+        <strong>Interpretarea Fişei (Lead Details):</strong> Dând click pe un rând din tabel, se deschide fisa. <em>Cel mai important aspect</em> aici este lista răspunsurilor la chestionar. Agentul de vânzări o va citi cu atenție pentru a înțelege exact nivelul tehnologic al companiei cu care urmează să discute.
+    </div>
+    <div class="step-box">
+        <div class="step-num">C</div>
+        <strong>Schimbarea Stării (Status) și Notițe:</strong> Din meniul drop-down, prospectul poate fi promovat din starea <code>NOU</code> în <code>CONTACTAT</code> sau <code>CALIFICAT</code>. Tot aici există secțiunea de Notițe Interne pentru a consemna detaliile discuțiilor telefonice.
+    </div>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Fisa de Detaliu a unui Lead (Tabel + Spider Chart)
+        <span>Înlocuiți acest spațiu cu imaginea aplicației rulând</span>
+    </div>
+
+    <h2 class="sub-title">2.3. Gestionarea Calendarului (Programări)</h2>
+    <p>Toate cererile de apel (Discovery Calls) intră aici.</p>
+    <ul>
+        <li><strong>Confirmări / Respingere:</strong> Cererile noi sunt marcate cu galben (PENDING). Administratorul vizualizează motivul apelului (scris de client) și decide dacă validează întâlnirea (Butonul <em>Approve</em>) sau o refuză (Butonul <em>Decline</em>). Intervalul orar declinat devine automat din nou liber pentru public.</li>
+        <li><strong>Definirea Disponibilității:</strong> Din tab-ul <em>Setări / Orar</em>, admin-ul creează ferestre de timp alocate consultanței. Se poate seta orarul de Luni (09:00 - 13:00) sau se pot introduce <strong>Zile Blocate</strong> (Concedii) pentru ca sistemul să nu mai accepte rezervări în acel interval.</li>
+    </ul>
+
+    <h2 class="sub-title">2.4. Managementul Blogului (Sistemul CMS Tiptap)</h2>
+    <p>Funcționalitatea finală permite crearea de conținut organic direct din platformă.</p>
+    <ul>
+        <li><strong>Crearea Articolului:</strong> În secțiunea Blog se apasă "New Post". Titlul și imaginea de copertă sunt esențiale pentru atrăgerea click-urilor (SEO/CTR).</li>
+        <li><strong>Redactarea Rich-Text:</strong> Fereastra de redactare folosește Tiptap (un editor WYSIWYG modern). Puteți îngroșa cuvintele (Bold), crea titluri de secțiune (H2, H3), adăuga citate (Blockquote) sau liste ordonate. Tot codul generat pe fundal este HTML curat și sigur.</li>
+        <li><strong>Stadii de Publicare:</strong> Articolele neterminate se salvează ca <code>Draft</code> (Ciornă - invizibile public). Doar schimbarea statusului în <code>Published</code> va lista automat articolul pe pagina publică a agenției.</li>
+    </ul>
+
+    <div class="screenshot-placeholder">
+        📸 Inserați Screenshot cu Editorul de Articole (Tiptap Editor)
+        <span>Înlocuiți acest spațiu cu imaginea aplicației rulând</span>
+    </div>
+
+</div>
+
+</body>
+</html>

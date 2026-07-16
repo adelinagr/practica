@@ -13,6 +13,8 @@ import { prisma } from "@/lib/db";
 import { format } from "date-fns";
 import { ro } from "date-fns/locale";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Digitalizare Afaceri România | Evaluare Maturitate Digitală | VreauDigitalizare",
   description: "Ajutăm IMM-urile din România să crească prin transformare digitală, automatizări de fluxuri, implementare CRM/ERP și migrare în cloud.",

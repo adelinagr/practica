@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/db";
 import DirectoryClient from "@/components/questionnaire/DirectoryClient";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Chestionare de Evaluare | VreauDigitalizare",
   description: "Explorează colecția noastră de chestionare dinamice concepute pentru a evalua nivelul tău de digitalizare.",
