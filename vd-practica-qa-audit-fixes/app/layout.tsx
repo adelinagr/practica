@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem={false}
             disableTransitionOnChange
           >
-            <div className="w-full max-w-[1600px] bg-[#F6DFB3] rounded-[2.5rem] ring-1 ring-[#83513E]/10 shadow-[0_0_60px_rgba(242,138,161,0.15)] min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative overflow-clip flex flex-col">
+            <div className="w-full max-w-[1600px] bg-[#FDFBF7] rounded-[2.5rem] ring-1 ring-[#83513E]/10 shadow-[0_0_60px_rgba(242,138,161,0.05)] min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative overflow-clip flex flex-col">
               
               {/* Subtle Noise Texture */}
               <div 
