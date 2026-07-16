@@ -44,24 +44,24 @@ export function NavBar({ scroll = false }: NavBarProps) {
       <MaxWidthWrapper className="flex items-center justify-between w-full max-w-6xl">
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-xl font-bold text-[#3D5D91]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-xl font-bold text-primary-foreground">
             V
           </div>
-          <span className="font-heading text-lg font-bold tracking-tight text-[#F2DCDB] hidden sm:block">
+          <span className="font-heading text-lg font-bold tracking-tight text-foreground hidden sm:block">
             VreauDigitalizare
           </span>
         </Link>
 
         {/* Center: Pill-shaped Nav */}
         {links && links.length > 0 ? (
-          <nav className="hidden md:flex items-center gap-6 rounded-full border border-white/10 bg-[#F2DCDB]/5 px-6 py-2 backdrop-blur-md">
+          <nav className="hidden md:flex items-center gap-6 rounded-full border border-foreground/10 bg-background/30 px-6 py-2 backdrop-blur-md">
             {links.map((item, index) => (
               <Link
                 key={index}
                 href={item.disabled ? "#" : item.href}
                 className={cn(
-                  "text-sm font-medium text-[#F2DCDB]/70 transition-colors hover:text-[#F2DCDB]",
-                  item.href.startsWith(`/${selectedLayout}`) && "text-[#F2DCDB]",
+                  "text-sm font-medium text-foreground/70 transition-colors hover:text-foreground",
+                  item.href.startsWith(`/${selectedLayout}`) && "text-foreground",
                   item.disabled && "cursor-not-allowed opacity-50"
                 )}
               >
@@ -84,7 +84,7 @@ export function NavBar({ scroll = false }: NavBarProps) {
             <div className="flex items-center gap-4">
               <Link 
                 href="/login" 
-                className="hidden sm:block text-sm font-bold text-[#F2DCDB]/70 hover:text-[#F2DCDB] transition-colors"
+                className="hidden sm:block text-sm font-bold text-foreground/70 hover:text-foreground transition-colors"
               >
                 Autentificare
               </Link>
@@ -96,7 +96,7 @@ export function NavBar({ scroll = false }: NavBarProps) {
             </div>
           ) : (
             <div className="flex items-center gap-2.5">
-              <Skeleton className="h-9 w-[108px] rounded-full bg-[#F2DCDB]/10" />
+              <Skeleton className="h-9 w-[108px] rounded-full bg-foreground/10" />
             </div>
           )}
         </div>

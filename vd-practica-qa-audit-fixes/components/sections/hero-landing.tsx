@@ -103,9 +103,9 @@ export default function HeroLanding() {
   return (
     <section className="relative min-h-[92vh] flex flex-col items-center justify-center py-16 lg:py-24 z-10 text-center overflow-hidden">
       {/* Dynamic Background */}
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-none mix-blend-screen">
+      <div className="absolute inset-0 z-0 opacity-100 pointer-events-none">
         <LiquidEther
-          colors={['#F2AEBC', '#F2DCDB', '#4A3B40']}
+          colors={['#83513E', '#F28AA1', '#E7AE75']}
           mouseForce={25}
           cursorSize={120}
           autoDemo={true}
@@ -126,7 +126,7 @@ export default function HeroLanding() {
           className="flex flex-col items-center gap-6 md:gap-8 max-w-4xl"
         >
           {/* Tag/Badge */}
-          <motion.div variants={textVariants} className="system-status-tag border border-primary/20 px-4 py-2 rounded-full bg-primary/5 text-white/80">
+          <motion.div variants={textVariants} className="system-status-tag border border-primary/20 px-4 py-2 rounded-full bg-primary/5 text-foreground/80">
             <div className="status-dot"></div>
             <span>PARTENERUL TĂU DE TRANSFORMARE DIGITALĂ</span>
           </motion.div>
@@ -134,10 +134,10 @@ export default function HeroLanding() {
           {/* Massive Cinematic Heading */}
           <motion.h1
             variants={textVariants}
-            className="font-heading font-black tracking-tighter leading-[0.85] text-5xl sm:text-6xl md:text-7xl lg:text-[84px] text-white"
+            className="font-heading font-black tracking-tighter leading-[0.85] text-5xl sm:text-6xl md:text-7xl lg:text-[84px] text-foreground"
           >
             DIGITALIZĂM <br />
-            <span className="italic bg-gradient-to-r from-primary to-white bg-clip-text text-transparent">
+            <span className="italic bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               AFACEREA TA.
             </span>
           </motion.h1>
@@ -145,7 +145,7 @@ export default function HeroLanding() {
           {/* Premium Description Paragraph */}
           <motion.p
             variants={textVariants}
-            className="max-w-2xl text-white/60 font-sans font-light text-base sm:text-lg md:text-xl leading-relaxed"
+            className="max-w-2xl text-muted-foreground font-sans font-light text-base sm:text-lg md:text-xl leading-relaxed"
           >
             Evaluăm maturitatea digitală a IMM-urilor în 10 minute și construim împreună un plan de acțiune personalizat, eficient și fără jargon tehnic.
           </motion.p>
@@ -165,7 +165,7 @@ export default function HeroLanding() {
             </Link>
             <Link
               href="#servicii"
-              className="inline-flex justify-center items-center h-12 px-8 rounded-full border border-white/20 text-white font-bold hover:bg-white hover:text-black transition-colors w-full sm:w-auto"
+              className="inline-flex justify-center items-center h-12 px-8 rounded-full border border-primary/20 text-foreground font-bold hover:bg-primary/5 transition-colors w-full sm:w-auto"
             >
               Serviciile Noastre
             </Link>
@@ -174,25 +174,25 @@ export default function HeroLanding() {
           {/* Statistics Counters */}
           <motion.div
             variants={textVariants}
-            className="flex flex-wrap justify-center gap-8 sm:gap-16 pt-8 mt-4 border-t border-white/10 w-full"
+            className="flex flex-wrap justify-center gap-8 sm:gap-16 pt-8 mt-4 border-t border-border w-full"
           >
             <div className="flex flex-col items-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white font-mono">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground font-mono">
                 <Counter value={240} />+
               </div>
-              <div className="text-[11px] font-bold text-white/40 uppercase mt-1 tracking-wider">Companii</div>
+              <div className="text-[11px] font-bold text-muted-foreground uppercase mt-1 tracking-wider">Companii</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white font-mono">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground font-mono">
                 <Counter value={94} />%
               </div>
-              <div className="text-[11px] font-bold text-white/40 uppercase mt-1 tracking-wider">Satisfacție</div>
+              <div className="text-[11px] font-bold text-muted-foreground uppercase mt-1 tracking-wider">Satisfacție</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white font-mono">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground font-mono">
                 <Counter value={3} />x
               </div>
-              <div className="text-[11px] font-bold text-white/40 uppercase mt-1 tracking-wider">Eficiență</div>
+              <div className="text-[11px] font-bold text-muted-foreground uppercase mt-1 tracking-wider">Eficiență</div>
             </div>
           </motion.div>
         </motion.div>
@@ -210,29 +210,29 @@ export default function HeroLanding() {
                   animate="visible"
                   variants={cardVariants}
                   onMouseMove={handleMouseMove}
-                  className="group relative flex flex-col items-center text-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-primary/40 hover:bg-white/10 overflow-hidden"
+                  className="group relative flex flex-col items-center text-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-2 hover:border-primary/40 overflow-hidden"
                 >
                   {/* Spotlight Glow */}
                   <div
-                    className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(350px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(204,255,0,0.1),transparent_80%)]"
+                    className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(350px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(108,8,32,0.05),transparent_80%)]"
                   />
 
                   {/* Timeline Node */}
-                  <div className="relative z-10 flex size-16 shrink-0 items-center justify-center rounded-2xl bg-primary text-black shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative z-10 flex size-16 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm group-hover:scale-110 transition-transform duration-300">
                     <IconComp className="size-8" />
                   </div>
 
                   {/* Card Content */}
                   <div className="relative z-10 flex flex-col items-center mt-2">
                     <div className="flex flex-col items-center gap-2 mb-3">
-                      <span className="flex h-6 items-center justify-center rounded bg-primary/20 px-3 text-xs font-mono font-black text-primary">
+                      <span className="flex h-6 items-center justify-center rounded bg-primary/10 px-3 text-xs font-mono font-black text-primary">
                         PASUL {step.id}
                       </span>
-                      <h3 className="text-sm font-black uppercase tracking-wider text-white font-heading">
+                      <h3 className="text-sm font-black uppercase tracking-wider text-foreground font-heading">
                         {step.label}
                       </h3>
                     </div>
-                    <p className="text-sm text-white/70 leading-relaxed font-sans font-light">
+                    <p className="text-sm text-muted-foreground leading-relaxed font-sans font-light">
                       {step.description}
                     </p>
                   </div>

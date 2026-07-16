@@ -3,42 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-  :root, .dark {
-    /* Vibrant Palette */
-    --background: 217 41% 40%;          /* Lapis Lazuli #3D5D91 */
-    --foreground: 3 46% 90%;            /* Misty Rose #F2DCDB */
+  :root, .light {
+    /* Floral Earth Palette - Light Theme */
+    --background: 39 82% 83%;          /* Wheat #F6DFB3 */
+    --foreground: 16 36% 38%;          /* Bole #83513E (Dark Brown text) */
     
-    --card: 346 86% 23%;                /* Burgundy #6C0820 */
-    --card-foreground: 3 46% 90%;       /* Misty Rose */
+    --card: 0 0% 100%;                 /* White cards for contrast */
+    --card-foreground: 16 36% 38%;     /* Bole text */
     
-    --popover: 346 86% 23%;             /* Burgundy */
-    --popover-foreground: 3 46% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 16 36% 38%;
     
-    --primary: 348 71% 82%;             /* Cherry Blossom Pink #F2AEBC */
-    --primary-foreground: 346 86% 23%;  /* Burgundy */
+    --primary: 347 79% 74%;            /* Salmon Pink #F28AA1 */
+    --primary-foreground: 0 0% 100%;   /* White text on primary buttons */
     
-    --secondary: 217 53% 57%;           /* Silver Lake Blue #5A86CB */
-    --secondary-foreground: 3 46% 90%;  /* Misty Rose */
+    --secondary: 30 71% 68%;           /* Fawn #E7AE75 */
+    --secondary-foreground: 16 36% 38%;/* Bole text on secondary */
     
-    --muted: 217 41% 30%;               /* Darker Lapis */
-    --muted-foreground: 3 46% 80%;      /* Slightly darker Misty Rose */
+    --muted: 4 78% 90%;                /* Misty Rose #FAD6D3 for subtle backgrounds */
+    --muted-foreground: 16 36% 45%;    /* Lighter Bole for muted text */
     
-    --accent: 348 71% 82%;              /* Cherry Blossom Pink */
-    --accent-foreground: 346 86% 23%;   /* Burgundy */
+    --accent: 30 71% 68%;              /* Fawn */
+    --accent-foreground: 16 36% 38%;
     
-    --destructive: 346 86% 23%;         /* Burgundy */
-    --destructive-foreground: 3 46% 90%;
+    --destructive: 347 79% 74%;        /* Salmon Pink */
+    --destructive-foreground: 0 0% 100%;
     
-    --border: 217 53% 57%;              /* Silver Lake Blue */
-    --input: 217 53% 57%;
-    --ring: 348 71% 82%;                /* Cherry Blossom Pink */
+    --border: 347 79% 74%;             /* Salmon Pink borders */
+    --input: 30 71% 68%;               /* Fawn inputs */
+    --ring: 16 36% 38%;                /* Bole focus rings */
     --radius: 1rem;
     
-    --chart-1: 346 86% 23%;
-    --chart-2: 348 71% 82%;
-    --chart-3: 3 46% 90%;
-    --chart-4: 217 53% 57%;
-    --chart-5: 217 41% 40%;
+    --chart-1: 347 79% 74%;
+    --chart-2: 30 71% 68%;
+    --chart-3: 16 36% 38%;
+    --chart-4: 4 78% 90%;
+    --chart-5: 39 82% 83%;
   }
 }
 

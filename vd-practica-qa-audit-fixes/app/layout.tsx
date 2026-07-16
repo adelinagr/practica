@@ -18,10 +18,10 @@ export const metadata = constructMetadata();
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-[#4A3B40] font-sans antialiased text-foreground p-4 md:p-8 flex justify-center",
+          "min-h-screen bg-[#FAD6D3] font-sans antialiased text-[#83513E] p-4 md:p-8 flex justify-center",
           fontSans.variable,
           fontHeading.variable,
           fontMono.variable,
@@ -30,23 +30,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <SessionProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >
-            <div className="w-full max-w-[1600px] bg-[#3D5D91] rounded-[2.5rem] ring-1 ring-white/10 shadow-2xl min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative overflow-clip flex flex-col">
-              {/* Noise Overlay */}
+            <div className="w-full max-w-[1600px] bg-[#F6DFB3] rounded-[2.5rem] ring-1 ring-[#83513E]/10 shadow-[0_0_60px_rgba(242,138,161,0.15)] min-h-[calc(100vh-2rem)] md:min-h-[calc(100vh-4rem)] relative overflow-clip flex flex-col">
+              
+              {/* Very Subtle Glows to enhance the Light Theme */}
+              <div className="pointer-events-none absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#FAD6D3] blur-[150px] opacity-70 mix-blend-multiply" />
+              <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#F28AA1] blur-[150px] opacity-30 mix-blend-multiply" />
+              
+              {/* Subtle Noise Texture */}
               <div 
-                className="pointer-events-none absolute inset-0 z-0 opacity-15 mix-blend-overlay"
+                className="pointer-events-none absolute inset-0 z-0 opacity-[0.03] mix-blend-overlay"
                 style={{ backgroundImage: "url('/_static/noise.svg')" }}
               />
               
-              {/* Grid Background */}
-              <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:60px_60px]" />
-              
-              {/* Glow Spheres */}
-              <div className="pointer-events-none absolute top-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px] z-0" />
-              <div className="pointer-events-none absolute bottom-[-10%] right-[-5%] w-[30%] h-[50%] rounded-full bg-[#5A86CB]/10 blur-[120px] z-0" />
+              {/* Soft Grid Background */}
+              <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#83513E08_1px,transparent_1px),linear-gradient(to_bottom,#83513E08_1px,transparent_1px)] bg-[size:40px_40px]" />
 
               <div className="relative z-10 flex flex-col flex-1">
                 <ModalProvider>{children}</ModalProvider>
