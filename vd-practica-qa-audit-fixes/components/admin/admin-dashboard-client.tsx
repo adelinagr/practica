@@ -86,7 +86,7 @@ function AreaTooltip({ active, payload, label }: any) {
   const d = new Date(label);
   const formatted = d.toLocaleDateString("ro-RO", { day: "2-digit", month: "short" });
   return (
-    <div className="rounded-xl border border-secondary/30 bg-card p-3 shadow-lg text-xs backdrop-blur-md">
+    <div className="rounded-xl border border-border bg-card p-3 shadow-lg text-xs backdrop-blur-md">
       <p className="font-semibold text-muted-foreground mb-1">{formatted}</p>
       <p className="font-bold text-primary">{payload[0].value} leads</p>
     </div>
@@ -161,7 +161,7 @@ export function AdminDashboardClient({
       <div className="mb-5 flex items-center justify-between">
         <h1 className="text-[20px] font-bold text-gradient_rose">Dashboard Overview</h1>
         <div className="flex items-center gap-2.5">
-          <div className="flex items-center gap-2 rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-2 shadow-sm">
+          <div className="flex items-center gap-2 rounded-lg border border-border bg-secondary/10 backdrop-blur-md px-3 py-2 shadow-sm">
             <Search className="size-3.5 text-accent/80" />
             <input
               placeholder="Caută..."
@@ -170,7 +170,7 @@ export function AdminDashboardClient({
           </div>
           <button
             onClick={() => router.push("/admin/settings")}
-            className="flex items-center gap-1.5 rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-2 text-[13px] text-muted-foreground shadow-sm hover:bg-accent/20 hover:text-foreground"
+            className="flex items-center gap-1.5 rounded-lg border border-border bg-secondary/10 backdrop-blur-md px-3 py-2 text-[13px] text-muted-foreground shadow-sm hover:bg-background hover:text-foreground"
           >
             <Settings className="size-3.5" />
           </button>
@@ -187,7 +187,7 @@ export function AdminDashboardClient({
         </button>
         <button
           onClick={() => router.push("/admin/leads")}
-          className="rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-4 py-2 text-[13px] font-medium text-foreground hover:bg-accent/20 transition-colors shadow-sm"
+          className="rounded-lg border border-border bg-secondary/10 backdrop-blur-md px-4 py-2 text-[13px] font-medium text-foreground hover:bg-background transition-colors shadow-sm"
         >
           👁 Vezi Leads
         </button>
@@ -200,7 +200,7 @@ export function AdminDashboardClient({
               className={cn(
                 "rounded-md px-3 py-1.5 text-[12px] font-medium transition-all",
                 period === p
-                  ? "bg-accent/20 text-foreground shadow-sm"
+                  ? "bg-background text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
@@ -213,7 +213,7 @@ export function AdminDashboardClient({
       {/* Stat cards */}
       <div className="mb-5 grid grid-cols-4 gap-3.5">
         {STAT_CARDS.map((s, i) => (
-          <div key={i} className="rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-4 shadow-lg transition-transform hover:-translate-y-1">
+          <div key={i} className="rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-4 shadow-lg transition-transform hover:-translate-y-1">
             <div className="mb-2 flex items-start justify-between">
               <span className="text-[12px] font-medium text-muted-foreground">{s.label}</span>
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20">
@@ -231,7 +231,7 @@ export function AdminDashboardClient({
                     ? "bg-emerald-500/20 text-emerald-300"
                     : s.up === false
                     ? "bg-destructive/20 text-destructive-foreground"
-                    : "bg-accent/20 text-muted-foreground"
+                    : "bg-background text-muted-foreground"
                 )}
               >
                 {s.up === true ? "↑" : s.up === false ? "↓" : "–"}
@@ -245,7 +245,7 @@ export function AdminDashboardClient({
       {/* Charts row */}
       <div className="mb-5 flex gap-4">
         {/* Area chart */}
-        <div className="flex-1 rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
+        <div className="flex-1 rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
           <div className="mb-4 flex items-start justify-between">
             <div>
               <p className="text-[14px] font-semibold text-foreground">Submisii</p>
@@ -253,7 +253,7 @@ export function AdminDashboardClient({
                 Lead-uri colectate în ultimele {period === "7d" ? "7" : "30"} zile
               </p>
             </div>
-            <button className="rounded-md p-1.5 text-accent/80 hover:bg-accent/20 hover:text-foreground">
+            <button className="rounded-md p-1.5 text-accent/80 hover:bg-background hover:text-foreground">
               <MoreHorizontal className="size-4" />
             </button>
           </div>
@@ -301,7 +301,7 @@ export function AdminDashboardClient({
         </div>
 
         {/* Donut — sources */}
-        <div className="w-[280px] flex-shrink-0 rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
+        <div className="w-[280px] flex-shrink-0 rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
           <div className="mb-4">
             <p className="text-[14px] font-semibold text-foreground">Surse trafic</p>
             <p className="text-[12px] text-accent/80">De unde vin lead-urile</p>
@@ -351,7 +351,7 @@ export function AdminDashboardClient({
       {/* Bottom row */}
       <div className="grid grid-cols-2 gap-4">
         {/* Recent activity */}
-        <div className="rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
+        <div className="rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
           <p className="mb-4 text-[14px] font-semibold text-foreground">Activitate recentă</p>
           {recentQuestionnaires.length === 0 ? (
             <div className="flex flex-col items-center gap-2 py-8 text-center">
@@ -386,7 +386,7 @@ export function AdminDashboardClient({
         </div>
 
         {/* Top questionnaires */}
-        <div className="rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
+        <div className="rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-5 shadow-lg">
           <p className="mb-4 text-[14px] font-semibold text-foreground">Top Chestionare</p>
           {topQuestionnaires.length === 0 ? (
             <div className="flex flex-col items-center gap-2 py-8 text-center">

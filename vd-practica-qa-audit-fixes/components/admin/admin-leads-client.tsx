@@ -303,9 +303,9 @@ function LeadDetailPanel({
       />
 
       {/* Panel */}
-      <div className="relative w-full max-w-[520px] h-full bg-secondary/10 backdrop-blur-md shadow-2xl flex flex-col overflow-hidden">
+      <div className="relative w-full max-w-[520px] h-full bg-card border-l border-border shadow-2xl flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-secondary/30 px-6 py-4 bg-accent/20/50">
+        <div className="flex items-center justify-between border-b border-border px-6 py-4 bg-background">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-bold text-foreground shadow-lg text-sm">
               {loading ? "…" : detail?.name.charAt(0).toUpperCase()}
@@ -335,7 +335,7 @@ function LeadDetailPanel({
 
         {/* Lead CRM Action Bar (Status Changer) */}
         {!loading && detail && (
-          <div className="px-6 py-3 border-b border-secondary/30 bg-accent/20/20 flex items-center justify-between gap-4">
+          <div className="px-6 py-3 border-b border-border bg-background/50 flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold text-accent/80 uppercase tracking-wider">Status:</span>
               <div className="relative">
@@ -350,7 +350,7 @@ function LeadDetailPanel({
                   )}
                 >
                   {STATUS_OPTIONS.map((opt) => (
-                    <option key={opt} value={opt} className="bg-secondary/10 backdrop-blur-md text-foreground font-medium">
+                    <option key={opt} value={opt} className="bg-background text-foreground font-medium">
                       {opt}
                     </option>
                   ))}
@@ -371,7 +371,7 @@ function LeadDetailPanel({
         )}
 
         {/* Tabs navigation */}
-        <div className="flex border-b border-secondary/30 bg-accent/20/30 px-4">
+        <div className="flex border-b border-border bg-background/50 px-4">
           {[
             { id: "info", label: "General" },
             { id: "answers", label: "Răspunsuri" },
@@ -398,7 +398,7 @@ function LeadDetailPanel({
           {loading ? (
             <div className="flex flex-col gap-4">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-14 animate-pulse rounded-xl bg-accent/20 border border-secondary/30" />
+                <div key={i} className="h-14 animate-pulse rounded-xl bg-background border border-border" />
               ))}
             </div>
           ) : detail ? (
@@ -406,7 +406,7 @@ function LeadDetailPanel({
               {/* Tab 1: General Info */}
               {activeTab === "info" && (
                 <div className="space-y-5">
-                  <div className="rounded-xl border border-secondary/30 bg-accent/20/50 p-4 space-y-4">
+                  <div className="rounded-xl border border-border bg-background p-5 space-y-4">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-accent/80">
                       Date de Contact
                     </p>
@@ -466,7 +466,7 @@ function LeadDetailPanel({
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-secondary/30 bg-accent/20/50 p-4 space-y-4">
+                  <div className="rounded-xl border border-border bg-background p-5 space-y-4">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-accent/80">
                       Informații Suplimentare
                     </p>
@@ -522,7 +522,7 @@ function LeadDetailPanel({
                 <div className="space-y-4">
                   {detail.answers.length > 0 ? (
                     detail.answers.map((a) => (
-                      <div key={a.id} className="rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-4 shadow-lg hover:border-secondary/30 transition-all">
+                      <div key={a.id} className="rounded-xl border border-border bg-background p-4 shadow-lg hover:border-primary/30 transition-all">
                         <div className="flex items-start gap-2.5 mb-2.5">
                           <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-accent/20 text-[10px] font-bold text-muted-foreground mt-0.5">
                             {a.questionOrder}
@@ -531,13 +531,13 @@ function LeadDetailPanel({
                             {a.questionText}
                           </p>
                         </div>
-                        <div className="ml-7 bg-accent/20/50 p-2.5 rounded-lg border border-secondary/30/50">
+                        <div className="ml-7 bg-card p-3 rounded-lg border border-border">
                           <AnswerDisplay type={a.questionType} answer={a.answer} />
                         </div>
                       </div>
                     ))
                   ) : (
-                    <div className="flex flex-col items-center gap-2 rounded-xl border border-secondary/30 bg-accent/20/50 py-10 text-center">
+                    <div className="flex flex-col items-center gap-2 rounded-xl border border-border bg-background py-10 text-center">
                       <MessageSquare className="size-6 text-accent/60" />
                       <p className="text-[12px] text-accent/80">Niciun răspuns înregistrat.</p>
                     </div>
@@ -561,7 +561,7 @@ function LeadDetailPanel({
                             <p className="text-[11px] text-muted-foreground">{detail.aiReport.title}</p>
                           )}
                         </div>
-                        <div className="flex flex-col items-center justify-center bg-secondary/10 backdrop-blur-md border border-indigo-100 shadow-lg rounded-2xl p-4 size-20">
+                        <div className="flex flex-col items-center justify-center bg-background border border-border shadow-lg rounded-2xl p-4 size-20">
                           <span className={cn(
                             "text-2xl font-extrabold leading-none",
                             detail.score !== null && detail.score >= 70 ? "text-emerald-500" :
@@ -577,7 +577,7 @@ function LeadDetailPanel({
                       {detail.aiReport?.description && (
                         <div className="space-y-2">
                           <h4 className="text-[12px] font-bold text-foreground">Analiză de Context</h4>
-                          <p className="text-[12px] text-muted-foreground leading-relaxed bg-secondary/10 backdrop-blur-md border border-secondary/30 p-4 rounded-xl shadow-lg">
+                          <p className="text-[12px] text-muted-foreground leading-relaxed bg-background border border-border p-4 rounded-xl shadow-lg">
                             {detail.aiReport.description}
                           </p>
                         </div>
@@ -588,7 +588,7 @@ function LeadDetailPanel({
                           <h4 className="text-[12px] font-bold text-foreground">Plan de Acțiuni Recomandat</h4>
                           <div className="flex flex-col gap-2.5">
                             {detail.aiReport.recommendations.map((rec, i) => (
-                              <div key={i} className="flex gap-3 rounded-xl bg-secondary/10 backdrop-blur-md p-4 text-[11px] text-muted-foreground leading-relaxed border border-secondary/30 shadow-lg">
+                              <div key={i} className="flex gap-3 rounded-xl bg-background p-4 text-[11px] text-muted-foreground leading-relaxed border border-border shadow-lg">
                                 <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/20 text-[10px] font-bold text-primary border border-indigo-100">
                                   {i + 1}
                                 </span>
@@ -602,7 +602,7 @@ function LeadDetailPanel({
                       )}
                     </div>
                   ) : (
-                    <div className="flex flex-col items-center gap-2 rounded-xl border border-secondary/30 bg-accent/20/50 py-10 text-center">
+                    <div className="flex flex-col items-center gap-2 rounded-xl border border-border bg-background py-10 text-center">
                       <Sparkles className="size-6 text-indigo-300" />
                       <p className="text-[12px] text-accent/80">Nu există analiză AI generată pentru acest lead.</p>
                     </div>
@@ -614,7 +614,7 @@ function LeadDetailPanel({
               {activeTab === "timeline" && (
                 <div className="space-y-6">
                   {/* Notes Creator */}
-                  <form onSubmit={handleAddNote} className="bg-accent/20/50 border border-secondary/30 rounded-xl p-3.5 space-y-2">
+                  <form onSubmit={handleAddNote} className="bg-background border border-border rounded-xl p-4 space-y-2">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-accent/80">Adaugă notă internă</p>
                     <div className="flex gap-2">
                       <textarea
@@ -622,7 +622,7 @@ function LeadDetailPanel({
                         onChange={(e) => setNoteText(e.target.value)}
                         placeholder="Adaugă un comentariu, e.g. 'Trimis oferta pe mail'..."
                         rows={2}
-                        className="flex-1 rounded-lg border border-secondary/30 p-2 text-[12px] outline-none focus:border-indigo-500 bg-secondary/10 backdrop-blur-md placeholder-slate-300 leading-snug resize-none"
+                        className="flex-1 rounded-lg border border-border p-2 text-[12px] outline-none focus:border-primary bg-card placeholder-slate-300 leading-snug resize-none"
                       />
                     </div>
                     <div className="flex justify-end">
@@ -653,7 +653,7 @@ function LeadDetailPanel({
                         <div key={index} className="relative group">
                           {/* Circle Dot */}
                           <div className={cn(
-                            "absolute -left-[31px] top-0.5 rounded-full size-4 border bg-secondary/10 backdrop-blur-md flex items-center justify-center shadow-lg",
+                            "absolute -left-[31px] top-0.5 rounded-full size-4 border bg-background flex items-center justify-center shadow-lg",
                             isSystem ? "border-indigo-500 text-primary" :
                             isNote ? "border-emerald-500 text-emerald-500" :
                             "border-amber-500 text-amber-500"
@@ -874,7 +874,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
         ].map((card, i) => (
           <div
             key={i}
-            className="flex items-center gap-4 rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-4 shadow-lg hover:shadow-md transition-all duration-300"
+            className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-lg hover:shadow-md transition-all duration-300"
           >
             <div className={cn("flex h-11 w-11 items-center justify-center rounded-xl border shadow-lg", card.color)}>
               <card.icon className="size-5" />
@@ -892,10 +892,10 @@ export function AdminLeadsClient({ initialLeads }: Props) {
         {/* Left Side: Filters + Table */}
         <div className="lg:col-span-3 space-y-6">
           {/* Controls Bar: Filters & Export */}
-          <div className="bg-secondary/10 backdrop-blur-md rounded-2xl border border-secondary/30 shadow-lg p-4 space-y-4">
+          <div className="bg-card rounded-2xl border border-border shadow-lg p-4 space-y-4">
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
               {/* Search Bar */}
-              <div className="flex w-full md:w-80 items-center gap-2 rounded-xl border border-secondary/30 bg-accent/20/50 px-3.5 py-2 transition-all focus-within:border-indigo-500 focus-within:bg-secondary/10 backdrop-blur-md focus-within:shadow-lg">
+              <div className="flex w-full md:w-80 items-center gap-2 rounded-xl border border-border bg-background px-3.5 py-2 transition-all focus-within:border-primary focus-within:bg-background focus-within:shadow-lg">
                 <Search className="size-4 text-accent/80" />
                 <input
                   value={search}
@@ -909,20 +909,20 @@ export function AdminLeadsClient({ initialLeads }: Props) {
               <div className="flex flex-wrap items-center gap-2 justify-end w-full md:w-auto">
                 <button
                   onClick={() => exportCSV("all")}
-                  className="flex items-center gap-1.5 rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3.5 py-2 text-[12px] font-bold text-muted-foreground shadow-lg hover:bg-accent/20 transition-all"
+                  className="flex items-center gap-1.5 rounded-xl border border-border bg-background px-3.5 py-2 text-[12px] font-bold text-muted-foreground shadow-lg hover:bg-muted transition-all"
                 >
                   <Download className="size-3.5" /> Export Toate
                 </button>
                 <button
                   onClick={() => exportCSV("filtered")}
                   disabled={filtered.length === 0}
-                  className="flex items-center gap-1.5 rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3.5 py-2 text-[12px] font-bold text-primary shadow-lg hover:bg-primary/20 transition-all disabled:opacity-50"
+                  className="flex items-center gap-1.5 rounded-xl border border-border bg-background px-3.5 py-2 text-[12px] font-bold text-primary shadow-lg hover:bg-primary/20 transition-all disabled:opacity-50"
                 >
                   <Download className="size-3.5" /> Export Filtrate
                 </button>
                 <button
                   onClick={() => exportCSV("period")}
-                  className="flex items-center gap-1.5 rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3.5 py-2 text-[12px] font-bold text-muted-foreground shadow-lg hover:bg-accent/20 transition-all"
+                  className="flex items-center gap-1.5 rounded-xl border border-border bg-background px-3.5 py-2 text-[12px] font-bold text-muted-foreground shadow-lg hover:bg-muted transition-all"
                 >
                   <Calendar className="size-3.5" /> Ultimele 30 zile
                 </button>
@@ -930,14 +930,14 @@ export function AdminLeadsClient({ initialLeads }: Props) {
             </div>
 
             {/* Select Dropdowns Filters */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-2 border-t border-secondary/30">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 pt-2 border-t border-border">
               {/* Filter 1: Status */}
               <div>
                 <label className="block text-[10px] font-bold uppercase tracking-wider text-accent/80 mb-1">Status</label>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-indigo-500"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-primary"
                 >
                   <option value="Toate">Toate Statusurile</option>
                   {STATUS_OPTIONS.map((opt) => (
@@ -952,7 +952,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                 <select
                   value={questionnaireFilter}
                   onChange={(e) => setQuestionnaireFilter(e.target.value)}
-                  className="w-full rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-indigo-500"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-primary"
                 >
                   <option value="Toate">Toate Chestionarele</option>
                   {questionnairesList.map((title) => (
@@ -967,7 +967,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                 <select
                   value={periodFilter}
                   onChange={(e) => setPeriodFilter(e.target.value)}
-                  className="w-full rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-indigo-500"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-primary"
                 >
                   <option value="Toate">Toată Perioada</option>
                   <option value="30">Ultimele 30 zile</option>
@@ -982,7 +982,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                 <select
                   value={scoreFilter}
                   onChange={(e) => setScoreFilter(e.target.value)}
-                  className="w-full rounded-lg border border-secondary/30 bg-secondary/10 backdrop-blur-md px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-indigo-500"
+                  className="w-full rounded-lg border border-border bg-background px-3 py-1.5 text-[12px] font-semibold text-muted-foreground outline-none shadow-lg focus:border-primary"
                 >
                   <option value="Toate">Toate Scorurile</option>
                   <option value="Hot">🔥 Hot (≥70)</option>
@@ -995,7 +995,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
 
           {/* Leads CRM Table */}
           {filtered.length === 0 ? (
-            <div className="flex flex-col items-center gap-4 rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md py-20 text-center shadow-lg">
+            <div className="flex flex-col items-center gap-4 rounded-2xl border border-border bg-card py-20 text-center shadow-lg">
               <Users className="size-12 text-slate-200" />
               <h3 className="text-[17px] font-bold text-foreground">
                 {search || statusFilter !== "Toate" || questionnaireFilter !== "Toate" || periodFilter !== "Toate" || scoreFilter !== "Toate"
@@ -1007,11 +1007,11 @@ export function AdminLeadsClient({ initialLeads }: Props) {
               </p>
             </div>
           ) : (
-            <div className="overflow-hidden rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md shadow-lg">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b border-secondary/30 bg-accent/20/50">
+                    <tr className="border-b border-border bg-background/50">
                       {[
                         "Lead",
                         "Contact",
@@ -1052,7 +1052,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                       return (
                         <tr
                           key={lead.id}
-                          className="border-b border-slate-50 hover:bg-accent/20/40 transition-colors cursor-pointer group"
+                          className="border-b border-border hover:bg-background transition-colors cursor-pointer group"
                           onClick={() => setSelectedLeadId(lead.id)}
                         >
                           {/* Name */}
@@ -1118,7 +1118,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
 
                           {/* Source */}
                           <td className="px-4 py-3.5">
-                            <span className="rounded-full bg-accent/20 px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
+                            <span className="rounded-full bg-background px-2 py-0.5 text-[11px] font-bold text-muted-foreground border border-border shadow-sm">
                               {lead.source || "direct"}
                             </span>
                           </td>
@@ -1150,7 +1150,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
         <div className="space-y-6">
           {/* AI insights Card */}
           {aiInsights && (
-            <div className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white p-5 shadow-lg space-y-4">
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-lg space-y-4">
               <div className="flex items-center gap-2">
                 <div className="flex size-7 items-center justify-center rounded-lg bg-primary text-foreground shadow-lg">
                   <Sparkles className="size-4 animate-pulse" />
@@ -1164,7 +1164,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                     <span>Probleme cu automatizarea</span>
                     <span className="font-extrabold text-primary">{aiInsights.automationPercent}%</span>
                   </div>
-                  <div className="w-full bg-accent/20 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-muted h-1.5 rounded-full overflow-hidden">
                     <div
                       className="bg-primary h-1.5 rounded-full transition-all duration-500"
                       style={{ width: `${aiInsights.automationPercent}%` }}
@@ -1177,7 +1177,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                     <span>Utilizează Excel ca instrument principal</span>
                     <span className="font-extrabold text-amber-600">{aiInsights.excelPercent}%</span>
                   </div>
-                  <div className="w-full bg-accent/20 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-muted h-1.5 rounded-full overflow-hidden">
                     <div
                       className="bg-amber-500 h-1.5 rounded-full transition-all duration-500"
                       style={{ width: `${aiInsights.excelPercent}%` }}
@@ -1190,7 +1190,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                     <span>Maturitate digitală ridicată (Hot leads)</span>
                     <span className="font-extrabold text-emerald-600">{aiInsights.hotPercent}%</span>
                   </div>
-                  <div className="w-full bg-accent/20 h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-muted h-1.5 rounded-full overflow-hidden">
                     <div
                       className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500"
                       style={{ width: `${aiInsights.hotPercent}%` }}
@@ -1199,7 +1199,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
                 </div>
               </div>
 
-              <div className="bg-secondary/10 backdrop-blur-md border border-indigo-50 rounded-xl p-3.5 text-[11px] text-muted-foreground leading-relaxed space-y-1 shadow-lg">
+              <div className="bg-background border border-border rounded-xl p-3.5 text-[11px] text-muted-foreground leading-relaxed space-y-1 shadow-lg">
                 <p className="font-bold text-primary uppercase tracking-wider text-[9px]">Recomandare de Vânzări</p>
                 <p className="font-medium text-foreground">
                   {aiInsights.automationPercent > 50
@@ -1211,7 +1211,7 @@ export function AdminLeadsClient({ initialLeads }: Props) {
           )}
 
           {/* Quick tips card */}
-          <div className="rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-5 shadow-lg space-y-3">
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-lg space-y-3">
             <h3 className="text-[12px] font-extrabold text-foreground uppercase tracking-wider">Cum funcționează CRM-ul?</h3>
             <ul className="space-y-2 text-[11.5px] text-muted-foreground font-medium">
               <li className="flex gap-2">

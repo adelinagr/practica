@@ -290,7 +290,7 @@ export function AdminAppointmentsClient({
       </div>
 
       {/* Tabs Menu */}
-      <div className="flex border-b border-secondary/30 dark:border-zinc-800">
+      <div className="flex border-b border-border dark:border-zinc-800">
         <button
           onClick={() => setActiveTab("list")}
           className={`flex items-center gap-2 border-b-2 px-4 py-3 text-xs font-semibold transition-all ${
@@ -346,7 +346,7 @@ export function AdminAppointmentsClient({
                     className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
                       statusFilter === filter
                         ? "bg-slate-900 text-foreground dark:bg-zinc-50 dark:text-zinc-950"
-                        : "bg-accent/20 text-muted-foreground hover:bg-slate-200 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                        : "bg-background text-muted-foreground hover:bg-slate-200 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     }`}
                   >
                     {filter === "ALL" && "Toate"}
@@ -358,7 +358,7 @@ export function AdminAppointmentsClient({
               </div>
 
               {/* Table / List */}
-              <div className="rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
+              <div className="rounded-xl border border-border bg-secondary/10 backdrop-blur-md shadow-lg dark:border-zinc-800 dark:bg-zinc-950">
                 {filteredAppointments.length === 0 ? (
                   <div className="flex flex-col items-center justify-center p-12 text-center min-h-[300px]">
                     <Calendar className="size-10 text-accent/60 dark:text-zinc-700" />
@@ -370,7 +370,7 @@ export function AdminAppointmentsClient({
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-slate-150 bg-accent/20/50 text-xs font-bold text-muted-foreground dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-400">
+                        <tr className="border-b border-slate-150 bg-background/50 text-xs font-bold text-muted-foreground dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-400">
                           <th className="px-6 py-4">Client</th>
                           <th className="px-6 py-4">Dată & Oră</th>
                           <th className="px-6 py-4">Notă/Scop</th>
@@ -385,7 +385,7 @@ export function AdminAppointmentsClient({
                           const timeFormatted = format(dateObj, "HH:mm") + " - " + format(new Date(app.endTime), "HH:mm");
 
                           return (
-                            <tr key={app.id} className="hover:bg-accent/20/50 dark:hover:bg-zinc-900/20">
+                            <tr key={app.id} className="hover:bg-background/50 dark:hover:bg-zinc-900/20">
                               <td className="px-6 py-4">
                                 <div className="font-semibold text-foreground dark:text-zinc-100">{app.name}</div>
                                 <div className="text-[11px] text-accent/80 space-y-0.5 mt-1">
@@ -462,7 +462,7 @@ export function AdminAppointmentsClient({
                                           setRescheduleDate(format(dateObj, "yyyy-MM-dd"));
                                           setRescheduleTime(format(dateObj, "HH:mm"));
                                         }}
-                                        className="h-8 border-secondary/30 text-xs px-2.5 font-bold dark:border-zinc-800"
+                                        className="h-8 border-border text-xs px-2.5 font-bold dark:border-zinc-800"
                                       >
                                         Reprogramează
                                       </Button>
@@ -499,7 +499,7 @@ export function AdminAppointmentsClient({
             >
               {/* Working Hours Setup */}
               <div className="lg:col-span-7 space-y-6">
-                <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                   <CardHeader>
                     <CardTitle className="text-sm font-bold">Program de Lucru Săptămânal</CardTitle>
                     <CardDescription className="text-[11px]">
@@ -510,7 +510,7 @@ export function AdminAppointmentsClient({
                     {availabilities.map((av, index) => (
                       <div
                         key={av.dayOfWeek}
-                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-secondary/30 pb-3 last:border-0 last:pb-0 dark:border-zinc-800"
+                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-3 last:border-0 last:pb-0 dark:border-zinc-800"
                       >
                         <div className="flex items-center gap-3">
                           <input
@@ -536,14 +536,14 @@ export function AdminAppointmentsClient({
                               type="time"
                               value={av.startTime}
                               onChange={(e) => updateDayTime(index, "startTime", e.target.value)}
-                              className="h-8 w-28 text-xs border-secondary/30 focus-visible:ring-primary dark:border-zinc-800"
+                              className="h-8 w-28 text-xs border-border focus-visible:ring-primary dark:border-zinc-800"
                             />
                             <span className="text-accent/80 text-xs">la</span>
                             <Input
                               type="time"
                               value={av.endTime}
                               onChange={(e) => updateDayTime(index, "endTime", e.target.value)}
-                              className="h-8 w-28 text-xs border-secondary/30 focus-visible:ring-primary dark:border-zinc-800"
+                              className="h-8 w-28 text-xs border-border focus-visible:ring-primary dark:border-zinc-800"
                             />
                           </div>
                         ) : (
@@ -557,7 +557,7 @@ export function AdminAppointmentsClient({
                 </Card>
 
                 {/* General Settings */}
-                <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                   <CardHeader>
                     <CardTitle className="text-sm font-bold">Parametri Calendar</CardTitle>
                   </CardHeader>
@@ -570,7 +570,7 @@ export function AdminAppointmentsClient({
                         type="number"
                         value={settings.slotDuration}
                         onChange={(e) => setSettings(prev => ({ ...prev, slotDuration: Number(e.target.value) }))}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -581,7 +581,7 @@ export function AdminAppointmentsClient({
                         type="number"
                         value={settings.bufferTime}
                         onChange={(e) => setSettings(prev => ({ ...prev, bufferTime: Number(e.target.value) }))}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -592,7 +592,7 @@ export function AdminAppointmentsClient({
                         type="number"
                         value={settings.noticePeriod}
                         onChange={(e) => setSettings(prev => ({ ...prev, noticePeriod: Number(e.target.value) }))}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -603,7 +603,7 @@ export function AdminAppointmentsClient({
                         type="number"
                         value={settings.maxDaysAhead}
                         onChange={(e) => setSettings(prev => ({ ...prev, maxDaysAhead: Number(e.target.value) }))}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                     </div>
                   </CardContent>
@@ -622,7 +622,7 @@ export function AdminAppointmentsClient({
 
               {/* Blocked Dates Management */}
               <div className="lg:col-span-5 space-y-6">
-                <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                   <CardHeader>
                     <CardTitle className="text-sm font-bold">Blochează Zile Speciale</CardTitle>
                     <CardDescription className="text-[11px]">
@@ -635,14 +635,14 @@ export function AdminAppointmentsClient({
                         type="date"
                         value={newBlockedDate}
                         onChange={(e) => setNewBlockedDate(e.target.value)}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                       <Input
                         type="text"
                         placeholder="Motiv (ex: Concediu, Crăciun)"
                         value={newBlockedReason}
                         onChange={(e) => setNewBlockedReason(e.target.value)}
-                        className="h-9 text-xs border-secondary/30 dark:border-zinc-800"
+                        className="h-9 text-xs border-border dark:border-zinc-800"
                       />
                       <Button
                         onClick={addBlockedDate}
@@ -654,7 +654,7 @@ export function AdminAppointmentsClient({
                       </Button>
                     </div>
 
-                    <hr className="border-secondary/30 dark:border-zinc-850" />
+                    <hr className="border-border dark:border-zinc-850" />
 
                     <h4 className="text-xs font-bold text-muted-foreground dark:text-zinc-400">
                       Zile Blocate Înregistrate
@@ -673,7 +673,7 @@ export function AdminAppointmentsClient({
                           return (
                             <div
                               key={index}
-                              className="flex items-center justify-between rounded-lg bg-accent/20 px-3 py-2 border border-secondary/30 dark:bg-zinc-900/30 dark:border-zinc-800"
+                              className="flex items-center justify-between rounded-lg bg-background px-3 py-2 border border-border dark:bg-zinc-900/30 dark:border-zinc-800"
                             >
                               <div>
                                 <span className="text-xs font-bold text-foreground dark:text-zinc-200">{dateStr}</span>
@@ -713,14 +713,14 @@ export function AdminAppointmentsClient({
               {loadingAnalytics || !analyticsData ? (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-pulse">
                   {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-24 bg-accent/20 rounded-xl dark:bg-zinc-900" />
+                    <div key={i} className="h-24 bg-background rounded-xl dark:bg-zinc-900" />
                   ))}
                 </div>
               ) : (
                 <>
                   {/* Status Metric Blocks */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                    <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                       <CardHeader className="p-4 pb-2">
                         <CardDescription className="text-[10px] font-bold uppercase tracking-wider text-accent/80">Total Solicitări</CardDescription>
                       </CardHeader>
@@ -730,7 +730,7 @@ export function AdminAppointmentsClient({
                         </span>
                       </CardContent>
                     </Card>
-                    <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                    <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                       <CardHeader className="p-4 pb-2">
                         <CardDescription className="text-[10px] font-bold uppercase tracking-wider text-accent/80">În așteptare</CardDescription>
                       </CardHeader>
@@ -740,7 +740,7 @@ export function AdminAppointmentsClient({
                         </span>
                       </CardContent>
                     </Card>
-                    <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                    <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                       <CardHeader className="p-4 pb-2">
                         <CardDescription className="text-[10px] font-bold uppercase tracking-wider text-accent/80">Confirmate</CardDescription>
                       </CardHeader>
@@ -750,7 +750,7 @@ export function AdminAppointmentsClient({
                         </span>
                       </CardContent>
                     </Card>
-                    <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                    <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                       <CardHeader className="p-4 pb-2">
                         <CardDescription className="text-[10px] font-bold uppercase tracking-wider text-accent/80">Anulate / Respinse</CardDescription>
                       </CardHeader>
@@ -763,7 +763,7 @@ export function AdminAppointmentsClient({
                   </div>
 
                   {/* Volume Chart */}
-                  <Card className="border-secondary/30 dark:border-zinc-800 dark:bg-zinc-950">
+                  <Card className="border-border dark:border-zinc-800 dark:bg-zinc-950">
                     <CardHeader>
                       <CardTitle className="text-sm font-bold">Volum Programări (Ultimele 14 Zile)</CardTitle>
                     </CardHeader>
@@ -803,15 +803,15 @@ export function AdminAppointmentsClient({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="w-full max-w-md rounded-xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-950"
+              className="w-full max-w-md rounded-xl border border-border bg-secondary/10 backdrop-blur-md p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-950"
             >
-              <div className="flex items-center justify-between border-b border-secondary/30 pb-4 dark:border-zinc-800">
+              <div className="flex items-center justify-between border-b border-border pb-4 dark:border-zinc-800">
                 <h3 className="text-sm font-bold text-foreground dark:text-zinc-50">
                   Reprogramează Apelul cu {reschedulingApp.name}
                 </h3>
                 <button
                   onClick={() => setReschedulingApp(null)}
-                  className="rounded-lg p-1 text-accent/80 hover:bg-accent/20 hover:text-muted-foreground dark:hover:bg-zinc-900"
+                  className="rounded-lg p-1 text-accent/80 hover:bg-background hover:text-muted-foreground dark:hover:bg-zinc-900"
                 >
                   <X className="size-4" />
                 </button>
@@ -827,7 +827,7 @@ export function AdminAppointmentsClient({
                     type="date"
                     value={rescheduleDate}
                     onChange={(e) => setRescheduleDate(e.target.value)}
-                    className="h-10 text-xs border-secondary/30 dark:border-zinc-800"
+                    className="h-10 text-xs border-border dark:border-zinc-800"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -839,11 +839,11 @@ export function AdminAppointmentsClient({
                     type="time"
                     value={rescheduleTime}
                     onChange={(e) => setRescheduleTime(e.target.value)}
-                    className="h-10 text-xs border-secondary/30 dark:border-zinc-800"
+                    className="h-10 text-xs border-border dark:border-zinc-800"
                   />
                 </div>
 
-                <div className="flex gap-2 justify-end pt-4 border-t border-secondary/30 mt-6 dark:border-zinc-800">
+                <div className="flex gap-2 justify-end pt-4 border-t border-border mt-6 dark:border-zinc-800">
                   <Button
                     type="button"
                     variant="ghost"
