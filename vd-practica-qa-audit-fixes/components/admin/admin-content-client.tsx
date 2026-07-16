@@ -320,7 +320,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
             <button
               onClick={() => handleSave(true)}
               disabled={saving}
-              className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-1.5 text-sm font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors disabled:opacity-60"
+              className="flex items-center gap-1.5 rounded-lg bg-primary px-5 py-1.5 text-sm font-bold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors disabled:opacity-60"
             >
               {saving ? <Loader2 className="size-4 animate-spin" /> : <Globe className="size-4" />}
               {editingPost?.published ? "Actualizează Publicat" : "Publică Acum"}
@@ -569,7 +569,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
           </label>
           <button
             onClick={() => openEditor()}
-            className="flex flex-shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors"
+            className="flex flex-shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors"
           >
             <Plus className="size-4" /> <span className="hidden lg:inline">Articol Nou</span>
           </button>
@@ -588,7 +588,7 @@ export function AdminContentClient({ initialData }: { initialData: Post[] }) {
           {!search && (
             <button
               onClick={() => openEditor()}
-              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-foreground hover:bg-primary/90 shadow-lg"
+              className="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-primary/90 shadow-lg"
             >
               <Plus className="size-4" /> Scrie Acum
             </button>

@@ -613,7 +613,7 @@ export function AdminAppointmentsClient({
                   <Button
                     onClick={handleSaveSettings}
                     disabled={submittingSettings}
-                    className="bg-primary text-foreground hover:bg-indigo-500 px-6 font-bold"
+                    className="bg-primary text-primary-foreground hover:bg-indigo-500 px-6 font-bold"
                   >
                     {submittingSettings ? "Se salvează..." : "Salvează Configurările"}
                   </Button>
@@ -854,7 +854,7 @@ export function AdminAppointmentsClient({
                   </Button>
                   <Button
                     type="submit"
-                    className="h-10 bg-primary hover:bg-indigo-500 text-foreground text-xs font-bold px-4"
+                    className="h-10 bg-primary hover:bg-indigo-500 text-primary-foreground text-xs font-bold px-4"
                   >
                     Confirmă Reprogramarea
                   </Button>

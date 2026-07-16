@@ -202,7 +202,7 @@ export function TeamSettingsClient({ initialMembers, currentUser }: TeamSettings
         );
       case "EDITOR":
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-primary dark:bg-primary/20 dark:text-primary">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-primary-foreground dark:bg-primary/20 dark:text-primary">
             <Edit3 className="size-3" />
             Editor
           </span>
@@ -441,7 +441,7 @@ export function TeamSettingsClient({ initialMembers, currentUser }: TeamSettings
               <button
                 type="submit"
                 disabled={submitting}
-                className="mt-2 flex h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
+                className="mt-2 flex h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
                 {submitting && <Loader2 className="size-4 animate-spin" />}
                 {submitting ? "Se trimite..." : "Trimite Invitație"}
@@ -466,7 +466,7 @@ export function TeamSettingsClient({ initialMembers, currentUser }: TeamSettings
             </button>
             
             <div className="mb-5 flex items-center gap-2.5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary dark:bg-primary/30 dark:text-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground dark:bg-primary/30 dark:text-primary">
                 <Edit3 className="size-5" />
               </div>
               <div>
@@ -492,7 +492,7 @@ export function TeamSettingsClient({ initialMembers, currentUser }: TeamSettings
               <button
                 onClick={handleEditRole}
                 disabled={submitting}
-                className="mt-2 flex h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
+                className="mt-2 flex h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
                 {submitting && <Loader2 className="size-4 animate-spin" />}
                 {submitting ? "Se salvează..." : "Salvează Rol"}

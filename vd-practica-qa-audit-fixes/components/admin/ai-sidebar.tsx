@@ -172,7 +172,7 @@ export function AiSidebar({
                       onUpdateContent(currentContent + "\n<br/>\n" + completion);
                       toast.success("Adăugat la final!");
                     }}
-                    className="flex-1 rounded-lg bg-primary py-1.5 text-[11px] font-bold text-foreground shadow-lg hover:bg-primary/90 transition-colors"
+                    className="flex-1 rounded-lg bg-primary py-1.5 text-[11px] font-bold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors"
                   >
                     Inserează
                   </button>
@@ -202,7 +202,7 @@ export function AiSidebar({
           <button
             type="submit"
             disabled={isLoading || !prompt.trim()}
-            className="absolute bottom-2 right-2 rounded-lg bg-indigo-500 p-2 text-foreground hover:bg-primary disabled:opacity-50 transition-colors"
+            className="absolute bottom-2 right-2 rounded-lg bg-indigo-500 p-2 text-primary-foreground hover:bg-primary disabled:opacity-50 transition-colors"
           >
             {isLoading ? <Loader2 className="size-3.5 animate-spin" /> : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>}
           </button>

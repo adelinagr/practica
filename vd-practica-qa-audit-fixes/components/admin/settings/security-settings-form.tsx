@@ -98,7 +98,7 @@ export function SecuritySettingsForm({ hasPassword, twoFactorEnabled, logs }: Se
       {/* Password Section */}
       <div className="rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md p-6 shadow-lg">
         <div className="flex items-center gap-3 mb-6">
-          <div className="flex size-8 items-center justify-center rounded-full bg-primary text-primary">
+          <div className="flex size-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
             <KeyRound className="size-4" />
           </div>
           <h4 className="text-sm font-bold text-foreground">Change Password</h4>

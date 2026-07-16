@@ -286,7 +286,7 @@ export function AdminAnalyticsClient({ summary, questionnairesWithLeads, leadsBy
                 onClick={() => setPeriod(p)}
                 className={cn(
                   "rounded-lg px-3.5 py-1.5 text-[12px] font-semibold transition-all",
-                  period === p ? "bg-primary text-foreground shadow-lg" : "text-muted-foreground hover:text-foreground"
+                  period === p ? "bg-primary text-primary-foreground shadow-lg" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {p === "30d" ? "30 zile" : p === "90d" ? "90 zile" : "1 an"}
