@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db";
 
 import { sidebarLinks } from "@/config/dashboard";
 import { getCurrentUser } from "@/lib/session";
@@ -19,6 +20,15 @@ export default async function Dashboard({ children }: ProtectedLayoutProps) {
   const user = await getCurrentUser();
 
   if (!user) redirect("/login");
+
+  const dbUser = await prisma.user.findUnique({
+    where: { id: user.id },
+    select: { status: true },
+  });
+
+  if (!dbUser || dbUser.status !== "ACTIVE") {
+    redirect("/login");
+  }
 
   const filteredLinks = sidebarLinks.map((section) => ({
     ...section,

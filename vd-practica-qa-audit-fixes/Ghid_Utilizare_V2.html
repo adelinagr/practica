@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghid de Utilizare Complet - VreauDigitalizare</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#F28AA1',
+                primaryTextColor: '#FDFBF7',
+                primaryBorderColor: '#83513E',
+                lineColor: '#83513E',
+                secondaryColor: '#E7AE75',
+                tertiaryColor: '#FDFBF7'
+            }
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        :root {
+            --bg-color: #FDFBF7;
+            --text-color: #83513E;
+            --primary: #F28AA1;
+            --secondary: #E7AE75;
+            --card-bg: #FFFFFF;
+            --border-color: rgba(131, 81, 62, 0.15);
+            --admin-bg: #f9f5f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 { color: var(--text-color); font-weight: 800; line-height: 1.3; }
+        h1 { font-size: 2.8em; border-bottom: 4px solid var(--primary); padding-bottom: 15px; margin-bottom: 40px; text-align: center; }
+        
+        .part-header {
+            background-color: rgba(131, 81, 62, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid var(--primary);
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .part-header h2 {
+            margin: 0;
+            font-size: 2.2em;
+            border: none;
+        }
+
+        h3 { font-size: 1.6em; margin-top: 40px; color: #6a3e2e; display: flex; align-items: center; gap: 10px;}
+        h3::before { content: '►'; color: var(--secondary); font-size: 0.7em; }
+
+        p { margin-bottom: 1.5em; }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(131, 81, 62, 0.04);
+        }
+
+        .admin-card {
+            background-color: var(--admin-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid #83513E;
+        }
+
+        .button-def {
+            background-color: rgba(242, 138, 161, 0.15);
+            border: 1px solid rgba(242, 138, 161, 0.5);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #bd3f5a;
+            font-size: 0.9em;
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        .step-list {
+            list-style-type: none;
+            padding-left: 0;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+        }
+
+        .step-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--secondary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .mermaid-container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        .info-box {
+            background-color: rgba(231, 174, 117, 0.15);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .screenshot-placeholder {
+            border: 2px dashed var(--primary);
+            background-color: rgba(242, 138, 161, 0.05);
+            color: var(--primary);
+            text-align: center;
+            height: 600px; /* Înălțime extrem de mare pentru a lăsa loc pe foaia PDF */
+            line-height: 600px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 1.1em;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ghid de Utilizare și Navigare</h1>
+    <p style="text-align: center; font-size: 1.1em; max-width: 800px; margin: 0 auto;">Acest manual este structurat în două mari părți: instrucțiuni detaliate pentru experiența vizitatorului (clientului) și manualul operațional complet pentru administratorii platformei (echipa VreauDigitalizare).</p>
+
+    <!-- PARTEA 1: UTILIZATOR -->
+    <div class="part-header">
+        <h2>PARTEA 1: Experiența Clientului (Frontend)</h2>
+        <p style="margin-top: 10px; margin-bottom: 0;">Ce vede și cum interacționează un vizitator cu platforma publică.</p>
+    </div>
+
+    <h3>1.1. Navigarea pe Pagina Principală (Homepage)</h3>
+    <div class="card">
+        <p>Când un utilizator intră pe site, este întâmpinat de zona Hero (cu fundalul animat fluid). Interacțiunile posibile sunt:</p>
+        <ul class="step-list">
+            <li><strong>Butonul <span class="button-def">Serviciile Noastre</span>:</strong> Un buton cu contur maro. La click, pagina va face automat un scroll lin (smooth-scroll) până la secțiunea de servicii, prezentând pachetele disponibile.</li>
+            <li><strong>Butonul <span class="button-def">Începe Transformarea</span>:</strong> Un buton plin (roz). La click, trimite utilizatorul direct către formularul rapid de contact (Lead Capture) de la baza paginii.</li>
+            <li><strong>Meniul de Navigație (Sus):</strong> Conține link-uri rapide. Butonul <span class="button-def">Evaluare Gratuită</span> din dreapta sus direcționează clientul către pagina de chestionare complexe.</li>
+        </ul>
+    </div>
+
+    <h3>1.2. Contactul Rapid (Formulare și Widget-uri)</h3>
+    <div class="card">
+        <p>Platforma oferă clienților mai multe metode de contact, gândite pentru confortul lor:</p>
+        <ul class="step-list">
+            <li><strong>Widget-ul de Chat (Dreapta-Jos):</strong> Apăsând pe <span class="button-def">Icoana rotundă cu bule de mesaj</span>, se deschide o fereastră mică plutitoare. Utilizatorul introduce email-ul, scrie mesajul și apasă <span class="button-def">Trimite Mesajul</span>. Este gândit pentru întrebări rapide și scurte.</li>
+            <li><strong>Butonul Plutitor <span class="button-def">Programează un apel</span>:</strong> Apare dreapta-jos imediat ce utilizatorul face puțin scroll. La click, deschide pagina completă de contact/calendar unde clientul își alege o oră disponibilă pentru un apel.</li>
+            <li><strong>Formularul "Hai să vorbim" (Homepage):</strong> Situat la baza paginii. Necesită completarea obligatorie a câmpurilor Nume, Prenume, Email, Companie. La apăsarea pe <span class="button-def">Trimite mesajul →</span>, formularul va arăta o rotiță de încărcare, apoi un mesaj verde de succes ("Mesaj trimis cu succes!"). Datele ajung instant în baza de date la secțiunea Leads.</li>
+        </ul>
+    </div>
+
+    <h3>1.3. Completarea Chestionarului de Maturitate Digitală</h3>
+    <div class="card">
+        <p>Procesul premium de calificare a clienților. Accesibil din pagina <code>/chestionare</code>.</p>
+        <ul class="step-list">
+            <li><strong>Ecranul de Start:</strong> Utilizatorul apasă pe <span class="button-def">Începe Evaluarea</span>.</li>
+            <li><strong>Navigarea prin întrebări:</strong> Sistemul afișează câte o întrebare pe ecran. Utilizatorul dă click pe varianta corectă (ex: butoane rotunde tip Radio). După selectare, apasă <span class="button-def">Următoarea Întrebare</span> (sau <span class="button-def">Înapoi</span> dacă a greșit).</li>
+            <li><strong>Submit Final:</strong> La ultima întrebare, butonul devine <span class="button-def">Finalizează și Obține Rezultatele</span>. După click, sistemul afișează un ecran de mulțumire și informează clientul că un raport personalizat îi va fi trimis pe email de către un consultant.</li>
+        </ul>
+    </div>
+
+
+    <!-- PARTEA 2: ADMINISTRATOR -->
+    <div class="part-header">
+        <h2>PARTEA 2: Manualul Administratorului (Backend)</h2>
+        <p style="margin-top: 10px; margin-bottom: 0;">Ghidul operațional pas-cu-pas pentru echipa agenției (gestionare Leads, AI, Content).</p>
+    </div>
+
+    <div class="mermaid-container">
+        <div class="mermaid">
+            flowchart LR
+                Login(Login /login) --> Dashboard(Dashboard Principal)
+                Dashboard --> Leads[Modulul Leads CRM]
+                Dashboard --> Calendar[Modulul Programări]
+                Dashboard --> Content[Modulul Blog]
+                Leads --> Detalii[Detalii Lead & Raport AI]
+        </div>
+    </div>
+
+    <h3>2.1. Autentificarea în Sistem</h3>
+    <div class="card admin-card">
+        <ul class="step-list">
+            <li>Introduceți în browser adresa: <code>vreaudigitalizare.ro/login</code>.</li>
+            <li>Introduceți Adresa de <strong>Email</strong> și <strong>Parola</strong> alocate de IT.</li>
+            <li>Apăsați butonul <span class="button-def">Autentificare</span>. Dacă datele sunt corecte, sunteți redirecționat către <code>/admin/dashboard</code>. Dacă greșiți, apare un mesaj de eroare cu roșu.</li>
+        </ul>
+    </div>
+
+    <h3>2.2. Meniul Lateral (Sidebar) și Dashboard-ul</h3>
+    <div class="card admin-card">
+        <p>Meniul principal (în stânga) conține următoarele butoane:</p>
+        <ul class="step-list">
+            <li><strong><span class="button-def">Acasă (Dashboard)</span>:</strong> Vă aduce pe pagina centrală. Aici vedeți cardurile rezumative: Număr de clienți noi azi, Următoarele programări din agendă.</li>
+            <li><strong><span class="button-def">Leads</span>:</strong> Inima sistemului. Aici găsiți lista tuturor persoanelor care au completat formulare.</li>
+            <li><strong><span class="button-def">Calendar</span>:</strong> Sistemul de gestionare a întâlnirilor online.</li>
+            <li><strong><span class="button-def">Conținut (Blog)</span>:</strong> Sistemul de publicare a articolelor (CMS).</li>
+        </ul>
+    </div>
+    
+    <div class="screenshot-placeholder">
+        📷 [ INSEREAZĂ AICI SCREENSHOT CU DASHBOARD-UL PRINCIPAL ]
+    </div>
+
+    <h3>2.3. Cum se Gestionează un Client Nou (Leads)</h3>
+    <div class="card admin-card">
+        <p>Acesta este cel mai important flux de lucru zilnic pentru echipa de vânzări/consultanță.</p>
+        <ul class="step-list">
+            <li><strong>Pasul 1: Vizualizarea tabelului.</strong> Intrați pe pagina "Leads". Sus aveți un meniu dropdown numit <span class="button-def">Filtrează după Status</span>. Alegeți <strong>"Nou"</strong> pentru a vedea prospecții necontactați. Bara de căutare din dreapta permite căutarea scriind numele companiei.</li>
+            <li><strong>Pasul 2: Deschiderea fișei clientului.</strong> Dați click oriunde pe rândul tabelului corespunzător unui client. Se va deschide pagina detaliată a acestuia.</li>
+            <li><strong>Pasul 3: Citirea Raportului AI (Inteligență Artificială).</strong> În fișa clientului, dacă acesta a completat chestionarul lung, veți vedea un card mare numit <strong>"Analiză AI"</strong>. Sistemul afișează: 
+                <ul>
+                    <li>Scorul calculat (ex: 45/100).</li>
+                    <li>O listă cu buline roșii (Vulnerabilități) descoperite de AI în compania lor.</li>
+                    <li>O listă cu buline verzi (Recomandări de Servicii) pe care ar trebui să i le oferiți.</li>
+                </ul>
+            </li>
+            <li><strong>Pasul 4: Contactarea și Notarea.</strong> După ce citiți raportul, sunați clientul. În partea de jos a ecranului, găsiți secțiunea <strong>"Timeline & Note"</strong>. Faceți click pe câmpul de text gol, scrieți ce ați discutat și apăsați butonul <span class="button-def">Adaugă Notiță</span>.</li>
+            <li><strong>Pasul 5: Schimbarea Statusului.</strong> Sus pe pagină, în dreptul numelui clientului, aveți un meniu de selecție (Dropdown). Schimbați din "Nou" în <strong>"Contactat"</strong> sau <strong>"În Discuții"</strong>.</li>
+        </ul>
+    </div>
+    
+    <div class="screenshot-placeholder">
+        📷 [ INSEREAZĂ AICI SCREENSHOT CU FIȘA CLIENTULUI (RAPORT AI) ]
+    </div>
+
+    <h3>2.4. Setarea Calendarului și a Disponibilității</h3>
+    <div class="card admin-card">
+        <p>Pentru ca sistemul să știe când sunteți liber pentru apeluri cu clienții:</p>
+        <ul class="step-list">
+            <li>Navigați la <strong>Calendar</strong> -> Tab-ul <span class="button-def">Setări Disponibilitate</span>.</li>
+            <li>Folosind Checkbox-urile (căsuțele de bifat), bifați zilele în care lucrați (ex: Luni, Marți, Miercuri).</li>
+            <li>În dreptul fiecărei zile bifate, introduceți ora de început și ora de sfârșit (ex: 09:00 - 17:00).</li>
+            <li>Setați în câmpul de jos "Durata unei întâlniri": scrieți <code>30</code> sau <code>45</code> (minute). Apăsați <span class="button-def">Salvează Setările</span>.</li>
+            <li><strong>Cum adăugați link de Google Meet:</strong> Când cineva se programează, apare în tab-ul "În Așteptare". Apăsați butonul <span class="button-def">Aprobă Întâlnirea</span>. Va apărea un popup. Aici introduceți manual linkul generat din Google Calendar-ul dvs. personal (https://meet.google.com/...) și apăsați <span class="button-def">Confirmă</span>. Clientul va primi automat un email cu acel link!</li>
+        </ul>
+    </div>
+
+    <h3>2.5. Publicarea Articolelor pe Blog</h3>
+    <div class="card admin-card">
+        <p>Crearea de conținut SEO pentru vizitatori se face simplu:</p>
+        <ul class="step-list">
+            <li>Navigați la secțiunea <strong>Conținut</strong> din meniul lateral. Veți vedea tabelul cu articole existente.</li>
+            <li>Apăsați butonul albastru <span class="button-def">+ Articol Nou</span> (dreapta sus).</li>
+            <li><strong>Completarea datelor:</strong> Scrieți titlul în câmpul "Titlu". Sistemul va genera automat un link (slug). În câmpul "URL Imagine", lipiți link-ul pozei principale (sau alegeți una din Media Library, dacă este integrat).</li>
+            <li><strong>Folosirea Editorului Text:</strong> Zona mare albă este editorul. Selectați un cuvânt și apăsați butonul <span class="button-def">B</span> pentru Bold sau selectați un text și alegeți din dropdown <span class="button-def">Heading 2</span> pentru a crea un subtitlu.</li>
+            <li><strong>Salvarea:</strong> Cât timp lucrați, lăsați butonul de "Publicat" debifat (gri). Apăsați <span class="button-def">Salvează Ciornă</span>. Când e gata de lansat, activați switch-ul <span class="button-def">Publicat</span> (se face verde) și apăsați <span class="button-def">Salvează și Actualizează</span>. Articolul este acum instant live pe site-ul public!</li>
+        </ul>
+    </div>
+    
+    <div class="screenshot-placeholder">
+        📷 [ INSEREAZĂ AICI SCREENSHOT CU EDITORUL DE BLOG ]
+    </div>
+
+    <div class="info-box">
+        <strong>Notă Importantă (Log Out):</strong> Pentru a vă deconecta la finalul zilei, apăsați pe icoana de profil din colțul stânga-jos al meniului și selectați <span class="button-def">Deconectare</span>.
+    </div>
+
+</body>
+</html>

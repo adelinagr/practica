@@ -223,13 +223,13 @@ function QuestionnaireModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-xl rounded-2xl border border-secondary/30 bg-secondary/10 backdrop-blur-md shadow-2xl flex flex-col" style={{ maxHeight: "90vh" }}>
+      <div className="relative w-full max-w-xl rounded-2xl border border-border bg-card shadow-2xl flex flex-col" style={{ maxHeight: "90vh" }}>
         {/* Sticky Header */}
-        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-secondary/30 flex-shrink-0">
+        <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-border flex-shrink-0">
           <h2 className="text-[17px] font-bold text-foreground">
             {questionnaire ? "Editează Chestionar" : "Chestionar Nou"}
           </h2>
-          <button onClick={onClose} className="text-accent/80 hover:text-muted-foreground ml-4">
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground ml-4">
             <X className="size-5" />
           </button>
         </div>
@@ -237,64 +237,64 @@ function QuestionnaireModal({
         <div className="overflow-y-auto flex-1 px-6 py-4">
         <div className="flex flex-col gap-4">
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">Titlu *</label>
+            <label className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-foreground">Titlu *</label>
             <input
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
               placeholder="Ex: Evaluare Maturitate Digitală"
-              className="h-10 w-full rounded-lg border border-secondary/30 px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+              className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">Slug (URL) *</label>
+            <label className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-foreground">Slug (URL) *</label>
             <input
               value={slug}
               onChange={(e) => setSlug(autoSlug(e.target.value))}
               placeholder="evaluare-maturitate-digitala"
-              className="h-10 w-full rounded-lg border border-secondary/30 bg-accent/20 px-3 font-mono text-sm text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+              className="h-10 w-full rounded-lg border border-border bg-background/50 px-3 font-mono text-sm text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
-            <p className="mt-1 text-[11px] text-accent/80">
+            <p className="mt-1 text-[11px] text-muted-foreground">
               Accesibil la: /chestionare/{slug || "..."}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">Categorie</label>
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-foreground">Categorie</label>
               <input
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 placeholder="Ex: Digital Readiness"
-                className="h-10 w-full rounded-lg border border-secondary/30 px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">Timp estimat (min)</label>
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-foreground">Timp estimat (min)</label>
               <input
                 type="number"
                 min={1}
                 value={estimatedMinutes}
                 onChange={(e) => setEstimatedMinutes(e.target.value)}
                 placeholder="5"
-                className="h-10 w-full rounded-lg border border-secondary/30 px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
             </div>
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Descriere <span className="font-normal normal-case">(opțional)</span>
+            <label className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-foreground">
+              Descriere <span className="font-normal normal-case text-muted-foreground">(opțional)</span>
             </label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
               placeholder="Scurtă descriere..."
-              className="w-full resize-none rounded-lg border border-secondary/30 px-3 py-2 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+              className="w-full resize-none rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
           {currentUser.role === "ADMIN" && (
-            <div className="rounded-xl border border-secondary/30 bg-accent/20/50 p-4">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Setări Acces (Access Management)</p>
+            <div className="rounded-xl border border-border bg-background/50 p-4">
+              <p className="mb-3 text-xs font-bold uppercase tracking-wide text-foreground">Setări Acces (Access Management)</p>
               
               {/* Allowed Roles */}
               <div className="mb-4">
@@ -308,7 +308,7 @@ function QuestionnaireModal({
                         if (e.target.checked) setAllowedRoles([...allowedRoles, "EDITOR"]);
                         else setAllowedRoles(allowedRoles.filter(r => r !== "EDITOR"));
                       }}
-                      className="rounded border-secondary/50 text-primary focus:ring-indigo-500"
+                      className="rounded border-border text-primary focus:ring-primary"
                     />
                     <span>Toți Editorii</span>
                   </label>
@@ -320,7 +320,7 @@ function QuestionnaireModal({
                         if (e.target.checked) setAllowedRoles([...allowedRoles, "VIEWER"]);
                         else setAllowedRoles(allowedRoles.filter(r => r !== "VIEWER"));
                       }}
-                      className="rounded border-secondary/50 text-primary focus:ring-indigo-500"
+                      className="rounded border-border text-primary focus:ring-primary"
                     />
                     <span>Toți Viewerii</span>
                   </label>
@@ -330,11 +330,11 @@ function QuestionnaireModal({
               {/* Allowed Users */}
               <div className="mb-4">
                 <label className="block text-xs font-semibold text-muted-foreground mb-1.5">Membri Echipă cu Acces</label>
-                <div className="max-h-36 overflow-y-auto border border-secondary/30 rounded-lg p-2.5 bg-secondary/10 backdrop-blur-md space-y-1.5">
+                <div className="max-h-36 overflow-y-auto border border-border rounded-lg p-2.5 bg-card space-y-1.5">
                   {teamMembers
                     .filter(m => m.id !== currentUser.id && m.status !== "INACTIVE")
                     .map((member) => (
-                      <label key={member.id} className="flex items-center gap-2.5 text-xs text-foreground cursor-pointer hover:bg-accent/20 p-1.5 rounded transition-colors">
+                      <label key={member.id} className="flex items-center gap-2.5 text-xs text-foreground cursor-pointer hover:bg-background p-1.5 rounded transition-colors">
                         <input 
                           type="checkbox"
                           checked={allowedUserIds.includes(member.id)}
@@ -342,16 +342,16 @@ function QuestionnaireModal({
                             if (e.target.checked) setAllowedUserIds([...allowedUserIds, member.id]);
                             else setAllowedUserIds(allowedUserIds.filter(id => id !== member.id));
                           }}
-                          className="rounded border-secondary/50 text-primary focus:ring-indigo-500"
+                          className="rounded border-border text-primary focus:ring-primary"
                         />
                         <div className="flex flex-col">
                           <span className="font-semibold text-foreground">{member.name || member.email.split("@")[0]}</span>
-                          <span className="text-[10px] text-accent/80">{member.email} ({member.role})</span>
+                          <span className="text-[10px] text-muted-foreground">{member.email} ({member.role})</span>
                         </div>
                       </label>
                     ))}
                   {teamMembers.filter(m => m.id !== currentUser.id && m.status !== "INACTIVE").length === 0 && (
-                    <p className="text-[11px] text-accent/80 italic p-2 text-center">Nu există alți membri activi în echipă.</p>
+                    <p className="text-[11px] text-muted-foreground italic p-2 text-center">Nu există alți membri activi în echipă.</p>
                   )}
                 </div>
               </div>
@@ -362,7 +362,7 @@ function QuestionnaireModal({
                 <select 
                   value={ownerId}
                   onChange={(e) => setOwnerId(e.target.value)}
-                  className="h-9 w-full rounded-lg border border-secondary/30 px-3 text-xs text-foreground bg-secondary/10 backdrop-blur-md outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="h-9 w-full rounded-lg border border-border px-3 text-xs text-foreground bg-card outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                 >
                   {teamMembers
                     .filter(m => (m.role === "ADMIN" || m.role === "EDITOR") && m.status !== "INACTIVE")

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentație Tehnică Detaliată - VreauDigitalizare</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#F28AA1',
+                primaryTextColor: '#FDFBF7',
+                primaryBorderColor: '#83513E',
+                lineColor: '#83513E',
+                secondaryColor: '#E7AE75',
+                tertiaryColor: '#FDFBF7'
+            }
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        :root {
+            --bg-color: #FDFBF7; /* Ivory/Alabaster */
+            --text-color: #83513E; /* Bole */
+            --text-muted: #A67B6C; /* Lighter Bole */
+            --primary: #F28AA1; /* Salmon Pink */
+            --secondary: #E7AE75; /* Fawn */
+            --card-bg: #FFFFFF;
+            --border-color: rgba(131, 81, 62, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: var(--text-color);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            border-bottom: 4px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 28px;
+            background-color: var(--secondary);
+            border-radius: 4px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 40px;
+            color: #6a3e2e;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(131, 81, 62, 0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(131, 81, 62, 0.05);
+        }
+
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(231, 174, 117, 0.15); /* Light Fawn */
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .mermaid-container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(131, 81, 62, 0.04);
+            overflow-x: auto;
+        }
+
+        code {
+            background-color: rgba(131, 81, 62, 0.08);
+            color: #6a3e2e;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+        
+        pre {
+            background-color: #2D2422; /* Dark Brown/Black for contrast */
+            color: #E2D9D5;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin: 25px 0;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .highlight-box {
+            background-color: rgba(242, 138, 161, 0.08); /* Light Salmon Pink */
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 0 16px 16px 0;
+            margin: 30px 0;
+        }
+        
+        .info-box {
+            background-color: rgba(231, 174, 117, 0.1); /* Light Fawn */
+            border-left: 4px solid var(--secondary);
+            padding: 25px;
+            border-radius: 0 16px 16px 0;
+            margin: 30px 0;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .toc {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .toc a:hover {
+            color: var(--primary);
+        }
+        
+        .architecture-legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Documentație Tehnică, Arhitecturală și Design</h1>
+    
+    <div class="toc">
+        <h3>Cuprins</h3>
+        <ul>
+            <li><a href="#viziune">1. Viziunea Proiectului și Abordarea de Design</a></li>
+            <li><a href="#arhitectura">2. Arhitectura Aplicației (Next.js App Router)</a></li>
+            <li><a href="#stack">3. Stack Tehnologic: Justificări Detaliate</a></li>
+            <li><a href="#db-schema">4. Schema Bazei de Date (Prisma ORM)</a></li>
+            <li><a href="#flux-autentificare">5. Securitate și Fluxul de Autentificare</a></li>
+            <li><a href="#componente-cheie">6. Analiza Componentelor Complexe (WebGL, AI, State)</a></li>
+            <li><a href="#seo-performanta">7. Strategie SEO și Optimizări de Performanță</a></li>
+            <li><a href="#deployment">8. CI/CD, Deployment și Variabile de Mediu</a></li>
+        </ul>
+    </div>
+
+    <p>Această documentație detaliată servește drept resursă definitivă (Single Source of Truth) pentru dezvoltatorii, inginerii DevOps și consultanții UX/UI care lucrează la platforma <strong>VreauDigitalizare</strong>. Documentul detaliază raționamentele din spatele fiecărei decizii tehnice, de la alegerea modului de randare până la micro-interacțiunile CSS.</p>
+
+    <h2 id="viziune">1. Viziunea Proiectului și Abordarea de Design</h2>
+    <div class="card">
+        <h3>1.1. De la "Corporate Blue" la "Corporate Elegance (Floral Earth)"</h3>
+        <p>Aplicațiile tradiționale B2B folosesc predominant scheme de culori reci (Dark Mode, nuanțe de gri și albastru marin) bazate pe premisa că "serios înseamnă sobru". Analizând audiența noastră țintă (antreprenori și manageri de IMM-uri aflați la începutul procesului de transformare digitală), am constatat că acest stil rece creează o barieră (intimidare tehnologică).</p>
+        
+        <p><strong>Decizia de Design:</strong> Am migrat întreaga aplicație către un design denumit <em>Floral Earth</em> sau <em>Corporate Elegance</em>.</p>
+        <ul>
+            <li><strong>Fundal Principal (Ivory/Alabaster <code>#FDFBF7</code>):</strong> O nuanță caldă de alb-fildeș care elimină oboseala oculară specifică albului pur (<code>#FFFFFF</code>), oferind un aer de publicație editorială premium sau agenție de consultanță boutique de top (ex: McKinsey, IDEO).</li>
+            <li><strong>Text Principal (Bole <code>#83513E</code>):</strong> Maro închis în loc de negru pur. Oferă lizibilitate excelentă (WCAG AAA contrast), dar este perceput ca fiind mult mai organic și abordabil de către ochiul uman.</li>
+            <li><strong>Accente Strategice (Salmon Pink <code>#F28AA1</code> & Fawn <code>#E7AE75</code>):</strong> Folosite strict pentru elemente de acțiune (CTA-uri), hover states și notificări. Aduc dinamism fără a compromite profesionalismul.</li>
+        </ul>
+
+        <h3>1.2. Interactivitate și Micro-Animații</h3>
+        <p>Am implementat efecte vizuale de înaltă performanță pentru a demonstra competența tehnologică a agenției chiar din homepage:</p>
+        <ul>
+            <li><strong>LiquidEther (WebGL):</strong> Un fundal fluid, interactiv la mouse, construit cu Three.js. Reprezintă "fluiditatea transformării digitale".</li>
+            <li><strong>Bento Grids:</strong> Prezentarea informațiilor (atât în secțiunea de servicii cât și în Dashboard-ul Admin) prin carduri modulare asimetrice. Reduc încărcătura cognitivă.</li>
+            <li><strong>Framer Motion:</strong> Toate tranzițiile între pagini și apariția elementelor se fac prin interpolare spring, creând o experiență tactilă (60 FPS constant).</li>
+        </ul>
+    </div>
+
+    <h2 id="arhitectura">2. Arhitectura Aplicației (Next.js App Router)</h2>
+    <p>Aplicația utilizează paradigma de tip <strong>BFF (Backend for Frontend)</strong> facilitată nativ de framework-ul Next.js versiunea 14+, folosind noul <code>App Router</code>.</p>
+
+    <div class="mermaid-container">
+        <div class="mermaid">
+            graph TD
+                subgraph Client Tier
+                    B[Browser]
+                    M[Mobile Device]
+                end
+
+                subgraph Vercel Edge Network
+                    CDN[Edge Cache / CDN]
+                    MW[Edge Middleware - Auth/Routing]
+                end
+
+                subgraph Next.js Application Server
+                    subgraph Public Marketing Routes
+                        SSG[SSG Pages: Home, Despre]
+                        ISR[ISR Pages: Blog, Chestionare]
+                    end
+                    
+                    subgraph Protected Admin Routes
+                        SSR[SSR Dashboards - Dynamic]
+                        SA[Server Actions - Mutations]
+                    end
+                    
+                    subgraph API Routes
+                        API_AI[/api/ai/]
+                        API_Lead[/api/leads/]
+                        API_Webhooks[/api/webhooks/]
+                    end
+                end
+
+                subgraph External Services & Data
+                    DB[(PostgreSQL Database via Prisma)]
+                    OAI[OpenAI LLM API]
+                    RSND[Resend Email API]
+                end
+
+                B & M --> CDN
+                CDN --> MW
+                MW --> SSG
+                MW --> ISR
+                MW --> SSR
+                
+                SSR --> SA
+                SA --> DB
+                API_Lead --> DB
+                API_AI --> OAI
+                SA --> RSND
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h4>Cum funcționează Rendering-ul Hibrid:</h4>
+        <p>Am împărțit aplicația în <strong>Route Groups</strong> logice (ex: <code>(marketing)</code>, <code>(admin)</code>) pentru a aplica strategii diferite de randare:</p>
+        <ol>
+            <li><strong><code>app/(marketing)</code></strong>: Paginile publice sunt generate static (SSG). Datele dinamice (ex: ultimele articole de blog) sunt fetch-uite folosind <em>Incremental Static Regeneration (ISR)</em>, ceea ce garantează un TTFB (Time to First Byte) sub 50ms, esențial pentru SEO și Core Web Vitals.</li>
+            <li><strong><code>app/admin</code></strong>: Tot panoul de administrare forțează randarea pe server (SSR) la cerere (<code>force-dynamic</code>) deoarece administratorii trebuie să vadă lead-urile în timp real, iar datele sunt strict confidențiale (nu trebuie stocate în Edge Cache).</li>
+        </ol>
+    </div>
+
+    <h2 id="stack">3. Stack Tehnologic: Justificări Detaliate</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tehnologie / Librărie</th>
+                <th>Rol în aplicație</th>
+                <th>Motivul selecției (Trade-offs & Avantaje)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Next.js 14 (App Router)</strong></td>
+                <td>Framework Full-Stack React</td>
+                <td>React simplu necesită un backend separat (Express/Nest). Next.js ne permite să scriem backend-ul (Server Actions) direct în aceleași fișiere ca frontend-ul, accelerând dramatic timpul de dezvoltare. Componentele Server (RSC) reduc masiv cantitatea de JavaScript trimisă clientului.</td>
+            </tr>
+            <tr>
+                <td><strong>TypeScript (Strict Mode)</strong></td>
+                <td>Limbaj</td>
+                <td>Procesul de evaluare a lead-urilor implică manipularea de structuri JSON complexe (Rapoarte AI, Răspunsuri). Fără validarea statică a tipurilor oferită de TypeScript, aplicația ar fi fost predispusă la erori majore la runtime (ex: undefined is not an object).</td>
+            </tr>
+            <tr>
+                <td><strong>Prisma ORM</strong></td>
+                <td>Interfață Bază de Date</td>
+                <td>Alternativa era TypeORM sau SQL brut. Prisma a fost aleasă pentru <em>type-safety-ul end-to-end</em>. Orice modificare în schema bazei de date se propagă imediat ca eroare de tipare în IDE dacă un query nu a fost actualizat, prevenind bug-uri în producție.</td>
+            </tr>
+            <tr>
+                <td><strong>PostgreSQL</strong></td>
+                <td>Bază de date relațională</td>
+                <td>Ales în detrimentul MongoDB (NoSQL) deoarece relațiile noastre (Lead → Răspunsuri → Chestionar) sunt strict relaționale și necesită consistență ACID. PostgreSQL suportă și tipul de date <code>JSONB</code>, esențial pentru stocarea rapoartelor AI și a setărilor flexibile.</td>
+            </tr>
+            <tr>
+                <td><strong>Vercel AI SDK</strong></td>
+                <td>Integrare LLM (OpenAI)</td>
+                <td>Gestionează perfect conexiunile de tip streaming (Server-Sent Events) dinspre server spre client, permițând afișarea răspunsurilor AI caracter-cu-caracter, fără a bloca UI-ul.</td>
+            </tr>
+            <tr>
+                <td><strong>Zod & React Hook Form</strong></td>
+                <td>Validare Formulare</td>
+                <td>Formularele (login, lead capture, chestionare) sunt validate mai întâi pe client (instant feedback), apoi structura Zod este refolosită pe server pentru securitate, implementând principiul DRY (Don't Repeat Yourself).</td>
+            </tr>
+            <tr>
+                <td><strong>Shadcn UI & Tailwind CSS</strong></td>
+                <td>Sistem de Componente & Stil</td>
+                <td>Shadcn nu este o librărie instalabilă ca Bootstrap, ci un set de componente accesibile (Radix UI) pe care le deținem fizic în folderul <code>components/ui</code>. Acest lucru ne-a permis să modificăm codul intern al fiecărei componente pentru a se potrivi temei Floral Earth.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="db-schema">4. Schema Bazei de Date (Prisma ORM)</h2>
+    <p>Baza de date a fost arhitecturată pentru a susține scalabilitatea agenției de consultanță, permițând crearea nelimitată de chestionare dinamice.</p>
+
+    <div class="mermaid-container">
+        <div class="mermaid">
+            erDiagram
+                User {
+                    String id PK
+                    String email UK
+                    String role "ADMIN | USER"
+                    String password
+                }
+                
+                Lead {
+                    String id PK
+                    String email UK
+                    String name
+                    String status "Nou | Contactat | Pierdut | Castigat"
+                    Int score
+                    Json aiReport
+                    DateTime createdAt
+                }
+                
+                Questionnaire {
+                    String id PK
+                    String title
+                    Boolean isPublished
+                }
+                
+                Question {
+                    String id PK
+                    String questionnaireId FK
+                    String type "TEXT | RADIO | CHECKBOX | RANGE"
+                    String text
+                    Json options
+                    Int order
+                }
+                
+                ResponseAnswer {
+                    String id PK
+                    String leadId FK
+                    String questionId FK
+                    String answer
+                }
+                
+                Appointment {
+                    String id PK
+                    String adminId FK
+                    DateTime startTime
+                    DateTime endTime
+                    String status
+                    String meetLink
+                }
+
+                User ||--o{ Appointment : manages
+                Questionnaire ||--o{ Question : contains
+                Lead ||--o{ ResponseAnswer : submits
+                Question ||--o{ ResponseAnswer : has
+                Questionnaire ||--o{ Lead : generates
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4>Explicația Modelului de Date (Design Relațional):</h4>
+        <ul>
+            <li><strong>Dynamic Schemas:</strong> În loc să creăm coloane specifice în tabelul <code>Lead</code> pentru fiecare întrebare, am creat o arhitectură dinamică. Entitatea <code>Question</code> salvează structura întrebării (opțiunile sunt un câmp JSON), iar <code>ResponseAnswer</code> stochează valoarea completată de lead, creând o relație <em>Many-to-Many</em> rezolvată, permițând crearea de noi chestionare din Dashboard fără a modifica schema SQL.</li>
+            <li><strong>Câmpurile JSON (NoSQL in SQL):</strong> Câmpurile precum <code>aiReport</code> sau <code>timeline</code> din modelul <code>Lead</code> sunt de tip <code>Json</code>. De ce? Pentru că structura unui raport generat de AI (pros, cons, recomandări) se poate schimba. Folosind JSON în PostgreSQL obținem flexibilitatea NoSQL păstrând integritatea SQL pentru ID-uri.</li>
+            <li><strong>Cascade Deletes:</strong> S-a folosit <code>onDelete: Cascade</code> pe tot arborele de chestionare (Questionnaire -> Question -> QuestionRuleGroup). Dacă un admin șterge un chestionar, toate întrebările, regulile logice și opțiunile asociate se șterg automat la nivel de bază de date pentru a preveni "datele orfane" (orphan records) și scurgerile de memorie.</li>
+        </ul>
+    </div>
+
+    <h2 id="flux-autentificare">5. Securitate și Fluxul de Autentificare</h2>
+    <p>Aplicația utilizează <strong>NextAuth.js (Auth.js v5)</strong> combinat cu Middleware-ul Edge oferit de Next.js pentru securizarea rutelor panoului de control.</p>
+
+    <div class="mermaid-container">
+        <div class="mermaid">
+            sequenceDiagram
+                autonumber
+                participant V as Vizitator
+                participant MW as Edge Middleware
+                participant NA as NextAuth (Server)
+                participant DB as PostgreSQL
+                
+                V->>MW: Cerere către /admin/dashboard
+                MW->>MW: Verifică Session Token (JWT în Cookie)
+                alt Token Lipsă sau Invalid
+                    MW-->>V: Redirect 302 către /login?callbackUrl=/admin/dashboard
+                else Token Valid
+                    MW-->>NA: Passthrough cerere către Server Component
+                    NA->>DB: Prisma.user.findUnique(id) (opțional ptr validare rol)
+                    DB-->>NA: Returnează detalii User (Role: ADMIN)
+                    alt Rol != ADMIN
+                        NA-->>V: Eroare 403 / Pagina Access Denied
+                    else Rol == ADMIN
+                        NA-->>V: Randează 200 OK /admin/dashboard (SSR)
+                    end
+                end
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Politici de Securitate Implementate:</h3>
+        <ol>
+            <li><strong>Edge Middleware Protection:</strong> Rutele <code>/admin/*</code> sunt protejate la nivel de Edge (înainte ca cererea să ajungă la serverul Node.js). Acest lucru oprește atacurile de tip brute-force asupra dashboard-ului fără a consuma resurse de procesare server-side (cost-effective pe Vercel).</li>
+            <li><strong>Stateless Sessions (JWT):</strong> Am ales să stocăm sesiunea în cookies criptate JWT (JWE - JSON Web Encryption) în loc de sesiuni stocate în baza de date. Astfel, verificarea sesiunii durează &lt;2ms și nu supraîncarcă PostgreSQL-ul la fiecare navigare între paginile de admin.</li>
+            <li><strong>Criptare Parole:</strong> Parolele sunt trecute printr-un algoritm bcrypt cu un factor de "salt" ridicat în momentul salvării în baza de date. Serverul nu știe niciodată parola în clar.</li>
+        </ol>
+    </div>
+
+    <h2 id="componente-cheie">6. Analiza Componentelor Complexe (WebGL, AI, State)</h2>
+
+    <h3>6.1. Sistemul de Analiză AI (LLM Integration)</h3>
+    <p>Când un prospect completează chestionarul lung de digitalizare, platforma generează automat un raport inteligent.</p>
+    <pre><code>// Arhitectura fluxului de generare Raport AI (Simplified)
+export async function generateAIReport(leadId, answers) {
+  // 1. Construim Prompt-ul folosind un Template din DB
+  const systemPrompt = "Ești un consultant senior IT care analizează datele IMM-urilor...";
+  const userData = formatAnswersForPrompt(answers);
+  
+  // 2. Apelăm OpenAI prin Vercel AI SDK (pentru edge streaming)
+  const response = await generateObject({
+    model: openai('gpt-4-turbo'),
+    schema: z.object({
+      score: z.number().min(0).max(100),
+      vulnerabilities: z.array(z.string()),
+      recommendedServices: z.array(z.string()),
+      executiveSummary: z.string()
+    }),
+    prompt: userData
+  });
+  
+  // 3. Salvăm ca JSONB în tabelul Lead
+  await db.lead.update({
+    where: { id: leadId },
+    data: { aiReport: response.object, score: response.object.score }
+  });
+}</code></pre>
+    <p><strong>De ce JSON Schema (Zod)?</strong> LLM-urile (precum GPT-4) returnează implicit text liber (nestructurat). Obligând AI-ul să respecte un <code>Zod schema</code>, garantăm că răspunsul său va fi un obiect JSON perfect structurat (cu procente, liste bullet-point), care poate fi randat nativ de componentele noastre React în Dashboard, fără erori de parsare.</p>
+
+    <h3>6.2. Componenta LiquidEther (WebGL Fluid Simulation)</h3>
+    <p>Componenta <code>LiquidEther</code> din <code>hero-landing.tsx</code> nu este un simplu video, ci o simulare fizică a fluidelor calculată în timp real folosind placa video a utilizatorului. Aceasta implementează 3 programe Shader (GLSL):</p>
+    <ol>
+        <li><strong>Advection Shader:</strong> Mută cerneala prin spațiu conform vectorilor de viteză.</li>
+        <li><strong>Poisson/Jacobi Solver:</strong> Calculează presiunea fluidului pentru a menține incompresibilitatea.</li>
+        <li><strong>Display Shader:</strong> Suprapune culorile noastre din paleta Floral Earth peste masa de fluid. Pentru compatibilitatea cu tema luminoasă (Ivory), a fost modificat canalul alpha (transparența) al shader-ului pentru a nu randa negru/alb, permițând fundalului de CSS să treacă prin fluid.</li>
+    </ol>
+    <p><strong>Optimizare de performanță:</strong> Componenta dispune de un mecanism <code>IntersectionObserver</code>. Simularea WebGL se oprește (pause) complet atunci când utilizatorul face scroll și secțiunea Hero iese din ecran, economisind bateria și procesorul pe dispozitivele mobile (evitând consumul inutil de GPU).</p>
+
+    <h2 id="seo-performanta">7. Strategie SEO și Optimizări de Performanță</h2>
+    <div class="card">
+        <p>Fiind o platformă care își propune să atragă organic IMM-uri interesate de digitalizare, SEO-ul a fost o prioritate arhitecturală:</p>
+        
+        <h4>7.1. Generarea Semantică a Metadatelor (Metadata API)</h4>
+        <p>În Next.js 14, metadatele nu se mai introduc manual în tag-uri <code>&lt;head&gt;</code>, ci folosind API-ul de Metadata. Am implementat funcția <code>constructMetadata()</code> (în <code>lib/utils.ts</code>) care generează automat titluri, descrieri meta, tag-uri OpenGraph (pentru Facebook/LinkedIn) și tag-uri Twitter Cards pentru absolut fiecare pagină. Când un articol de blog este încărcat din baza de date, metadatele se adaptează dinamic pentru a include titlul și imaginea articolului.</p>
+
+        <h4>7.2. JSON-LD (Schema.org Structured Data)</h4>
+        <p>Pe homepage (<code>app/(marketing)/page.tsx</code>) am integrat scripturi <code>application/ld+json</code> invizibile pentru utilizator, dar citite de Google. Acestea declară VreauDigitalizare ca fiind o entitate de tip <code>LocalBusiness</code> și <code>Organization</code>, specificând locația (România), serviciile și linkurile sociale. Acest lucru crește radical șansele de a apărea în Google Knowledge Graph (caseta din dreapta căutărilor).</p>
+
+        <h4>7.3. Optimizarea Imaginilor (next/image)</h4>
+        <p>Nu folosim deloc tag-ul HTML standard <code>&lt;img&gt;</code>. Toate imaginile folosesc componenta Next.js <code>&lt;Image&gt;</code> care realizează: 1) Convertire automată la format WebP; 2) Redimensionare automată în funcție de dispozitiv; 3) Lazy-loading nativ (imaginea nu se încarcă până nu ajungi cu scroll-ul la ea), salvând lățime de bandă.</p>
+    </div>
+
+    <h2 id="deployment">8. CI/CD, Deployment și Variabile de Mediu</h2>
+    <p>Platforma este construită pentru a rula în cloud-ul serverless Vercel, conectată la o instanță de bază de date pe platforme precum Supabase, Neon sau Railway.</p>
+
+    <div class="highlight-box">
+        <h4>Procesul de Continuous Deployment (CI/CD)</h4>
+        <p>Orice commit împins pe branch-ul <code>main</code> din GitHub declanșează automat următorul flux de lucru pe serverele Vercel:</p>
+        <ol>
+            <li><strong>Clonare Repository:</strong> Vercel descarcă ultimul cod sursă.</li>
+            <li><strong>Install & Linting:</strong> Se instalează dependențele (<code>npm install</code>). Dacă TypeScript sau ESLint detectează erori (ex: un tip de date greșit în Prisma), build-ul <strong>se oprește</strong> și codul spart nu ajunge în producție.</li>
+            <li><strong>Prisma Generate:</strong> Se generează clientul de baze de date bazat pe schema curentă.</li>
+            <li><strong>Build:</strong> Next.js compilează paginile statice și asamblează bundle-urile JavaScript de client și server.</li>
+            <li><strong>Atomic Deployment:</strong> Noua versiune intră online instantaneu pe rețeaua globală (Edge Network), înlocuind versiunea veche fără nicio secundă de downtime (Zero Downtime Deployment).</li>
+        </ol>
+    </div>
+
+    <h4>Gestionarea Securizată a Variabilelor de Mediu</h4>
+    <p>Codul aplicației folosește pachetul <code>@t3-oss/env-nextjs</code> pentru validarea riguroasă a variabilelor de mediu (fișierul <code>.env</code>). Când aplicația pornește, biblioteca Zod verifică dacă toate variabilele esențiale există:</p>
+    <ul>
+        <li><code>DATABASE_URL</code>: String-ul de conexiune PostgreSQL.</li>
+        <li><code>NEXTAUTH_SECRET</code>: Cheia de criptare (JWT) pentru sesiuni. Fără ea, nimeni nu se poate autentifica.</li>
+        <li><code>OPENAI_API_KEY</code>: Cheia necesară pentru generarea rapoartelor.</li>
+        <li><code>RESEND_API_KEY</code>: Pentru trimiterea emailurilor de notificare automată.</li>
+    </ul>
+    <p>Dacă vreuna din aceste variabile lipsește pe serverul de producție, aplicația va refuza să compileze, alertând echipa DevOps în loc să producă erori greu de detectat la utilizatorii finali.</p>
+
+</body>
+</html>

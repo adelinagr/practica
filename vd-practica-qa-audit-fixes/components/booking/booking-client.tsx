@@ -119,7 +119,7 @@ export function BookingClient() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-5xl rounded-2xl border border-slate-200/60 bg-foreground/70 shadow-xl backdrop-blur-md dark:border-zinc-800/50 dark:bg-zinc-950/60">
+    <div className="mx-auto w-full max-w-5xl rounded-2xl border border-border bg-card shadow-xl backdrop-blur-md">
       <AnimatePresence mode="wait">
         {step === 1 && (
           <motion.div
@@ -131,31 +131,31 @@ export function BookingClient() {
             className="grid grid-cols-1 md:grid-cols-12"
           >
             {/* Call Details Side */}
-            <div className="border-b border-slate-100 p-6 md:col-span-5 md:border-b-0 md:border-r dark:border-zinc-800">
+            <div className="border-b border-border p-6 md:col-span-5 md:border-b-0 md:border-r">
               <div className="sticky top-6">
-                <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-indigo-600 dark:bg-indigo-950/40 dark:text-indigo-400">
-                  Consultanță Gratuite
+                <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                  Consultanță Gratuită
                 </span>
-                <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+                <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground">
                   Apel de Aliniere Strategică
                 </h2>
-                <div className="mt-4 flex flex-col gap-3 text-[13px] text-slate-500 dark:text-zinc-400">
+                <div className="mt-4 flex flex-col gap-3 text-[13px] text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <Clock className="size-4 text-indigo-500" />
+                    <Clock className="size-4 text-primary" />
                     <span>30 de minute</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Video className="size-4 text-indigo-500" />
+                    <Video className="size-4 text-primary" />
                     <span>Google Meet / Zoom (online)</span>
                   </div>
                 </div>
-                <p className="mt-6 text-[13px] leading-relaxed text-slate-500 dark:text-zinc-400">
+                <p className="mt-6 text-[13px] leading-relaxed text-muted-foreground">
                   Rezervă o discuție de 30 de minute cu unul dintre consultanții noștri pentru a identifica procesele din compania ta care pot fi digitalizate și automatizate.
                 </p>
-                <div className="mt-8 rounded-xl bg-slate-50/50 p-4 border border-slate-100 dark:bg-zinc-900/30 dark:border-zinc-800/40">
+                <div className="mt-8 rounded-xl bg-background p-4 border border-border">
                   <div className="flex gap-2">
-                    <AlertCircle className="size-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-[12px] text-slate-500 leading-relaxed dark:text-zinc-400">
+                    <AlertCircle className="size-4 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-[12px] text-muted-foreground leading-relaxed">
                       Disponibilitatea este afișată în timp real în fusul tău orar local.
                     </p>
                   </div>
@@ -165,7 +165,7 @@ export function BookingClient() {
 
             {/* Date/Time Picker Side */}
             <div className="p-6 md:col-span-7 flex flex-col">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-zinc-500">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 1. Selectează data și ora
               </h3>
               
@@ -177,24 +177,24 @@ export function BookingClient() {
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                     disabled={isDateDisabled}
-                    className="rounded-xl border border-slate-100 bg-foreground p-3 shadow-sm dark:border-zinc-800/40 dark:bg-zinc-950"
+                    className="rounded-xl border border-border bg-background p-3 shadow-sm"
                   />
                 </div>
 
                 {/* Time Slots */}
                 <div className="flex-1 flex flex-col min-h-[300px]">
-                  <h4 className="text-xs font-semibold text-slate-500 mb-3 dark:text-zinc-400">
+                  <h4 className="text-xs font-semibold text-muted-foreground mb-3">
                     {selectedDate ? (
-                      <>Intervale disponibile pentru <span className="text-indigo-600 dark:text-indigo-400 font-semibold">{format(selectedDate, "d MMMM", { locale: ro })}</span></>
+                      <>Intervale disponibile pentru <span className="text-primary font-bold">{format(selectedDate, "d MMMM", { locale: ro })}</span></>
                     ) : (
                       "Alege o dată din calendar"
                     )}
                   </h4>
 
                   {!selectedDate ? (
-                    <div className="flex flex-1 flex-col items-center justify-center rounded-xl border border-dashed border-slate-200 p-6 text-center dark:border-zinc-800">
-                      <CalendarDays className="size-8 text-slate-300 dark:text-zinc-700" />
-                      <p className="mt-2 text-xs text-slate-400 dark:text-zinc-500">
+                    <div className="flex flex-1 flex-col items-center justify-center rounded-xl border border-dashed border-border p-6 text-center">
+                      <CalendarDays className="size-8 text-muted-foreground/50" />
+                      <p className="mt-2 text-xs text-muted-foreground">
                         Alege o zi disponibilă pentru a vizualiza orele.
                       </p>
                     </div>
@@ -205,9 +205,9 @@ export function BookingClient() {
                       ))}
                     </div>
                   ) : availableSlots.length === 0 ? (
-                    <div className="flex flex-1 flex-col items-center justify-center rounded-xl bg-slate-50 p-6 text-center dark:bg-zinc-900/20">
-                      <AlertCircle className="size-6 text-slate-400 dark:text-zinc-600" />
-                      <p className="mt-2 text-xs text-slate-500 dark:text-zinc-400">
+                    <div className="flex flex-1 flex-col items-center justify-center rounded-xl bg-background p-6 text-center border border-border">
+                      <AlertCircle className="size-6 text-muted-foreground/50" />
+                      <p className="mt-2 text-xs text-muted-foreground">
                         Nu sunt intervale disponibile. Alege altă zi.
                       </p>
                     </div>
@@ -219,8 +219,8 @@ export function BookingClient() {
                           onClick={() => handleTimeSelect(time)}
                           className={`flex items-center justify-center rounded-lg border py-2.5 text-xs font-semibold transition-all ${
                             selectedTime === time
-                              ? "border-indigo-600 bg-indigo-600 text-foreground"
-                              : "border-slate-200 bg-foreground text-slate-700 hover:border-indigo-500 hover:bg-indigo-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-indigo-400/50 dark:hover:bg-indigo-950/20"
+                              ? "border-primary bg-primary text-primary-foreground"
+                              : "border-border bg-background text-foreground hover:border-primary/50 hover:bg-primary/5"
                           }`}
                         >
                           {time}
@@ -237,7 +237,7 @@ export function BookingClient() {
                     >
                       <Button
                         onClick={handleNextStep}
-                        className="w-full bg-indigo-600 text-foreground hover:bg-indigo-500"
+                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                       >
                         Continuă spre detalii
                         <ArrowRight className="ml-2 size-4" />
@@ -259,22 +259,22 @@ export function BookingClient() {
             className="p-6 md:p-8"
           >
             {/* Header info */}
-            <div className="flex items-center gap-4 border-b border-slate-100 pb-5 dark:border-zinc-800">
+            <div className="flex items-center gap-4 border-b border-border pb-5">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={handleBackStep}
-                className="text-slate-500 hover:text-slate-800 dark:hover:text-zinc-200"
+                className="text-muted-foreground hover:text-foreground"
               >
                 <ArrowLeft className="mr-2 size-4" />
                 Înapoi
               </Button>
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-zinc-500">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                   2. Introdu detaliile tale
                 </h3>
-                <p className="text-xs text-slate-500 mt-0.5 dark:text-zinc-400">
-                  Rezervat pe data de <span className="font-semibold text-indigo-600 dark:text-indigo-400">{format(selectedDate!, "d MMMM yyyy", { locale: ro })}</span> la ora <span className="font-semibold text-indigo-600 dark:text-indigo-400">{selectedTime}</span>.
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  Rezervat pe data de <span className="font-bold text-primary">{format(selectedDate!, "d MMMM yyyy", { locale: ro })}</span> la ora <span className="font-bold text-primary">{selectedTime}</span>.
                 </p>
               </div>
             </div>
@@ -283,8 +283,8 @@ export function BookingClient() {
             <form onSubmit={handleBookingSubmit} className="mt-6 space-y-4 max-w-xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 dark:text-zinc-400 flex items-center gap-1.5">
-                    <User className="size-3.5 text-slate-400" />
+                  <label className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                    <User className="size-3.5 text-muted-foreground" />
                     Nume Complet *
                   </label>
                   <Input
@@ -292,12 +292,12 @@ export function BookingClient() {
                     placeholder="ex: Ion Popescu"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="h-10 text-xs border-slate-200 dark:border-zinc-800 focus-visible:ring-indigo-600"
+                    className="h-10 text-xs border-border bg-background focus-visible:ring-primary"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-600 dark:text-zinc-400 flex items-center gap-1.5">
-                    <Mail className="size-3.5 text-slate-400" />
+                  <label className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                    <Mail className="size-3.5 text-muted-foreground" />
                     Adresă Email *
                   </label>
                   <Input
@@ -306,14 +306,14 @@ export function BookingClient() {
                     placeholder="ex: ion.popescu@gmail.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="h-10 text-xs border-slate-200 dark:border-zinc-800 focus-visible:ring-indigo-600"
+                    className="h-10 text-xs border-border bg-background focus-visible:ring-primary"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-slate-600 dark:text-zinc-400 flex items-center gap-1.5">
-                  <Phone className="size-3.5 text-slate-400" />
+                <label className="text-xs font-semibold text-foreground flex items-center gap-1.5">
+                  <Phone className="size-3.5 text-muted-foreground" />
                   Număr de Telefon (Opțional)
                 </label>
                 <Input
@@ -321,12 +321,12 @@ export function BookingClient() {
                   placeholder="ex: 0722 000 000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="h-10 text-xs border-slate-200 dark:border-zinc-800 focus-visible:ring-indigo-600"
+                  className="h-10 text-xs border-border bg-background focus-visible:ring-primary"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-slate-600 dark:text-zinc-400">
+                <label className="text-xs font-semibold text-foreground">
                   Scopul discuției / Ce dorești să digitalizezi?
                 </label>
                 <Textarea
@@ -334,15 +334,15 @@ export function BookingClient() {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   rows={4}
-                  className="text-xs border-slate-200 dark:border-zinc-800 focus-visible:ring-indigo-600"
+                  className="text-xs border-border bg-background focus-visible:ring-primary"
                 />
               </div>
 
-              <div className="pt-4 border-t border-slate-100 mt-6 dark:border-zinc-800">
+              <div className="pt-4 border-t border-border mt-6">
                 <Button
                   type="submit"
                   disabled={submitting}
-                  className="w-full h-11 bg-indigo-600 text-foreground hover:bg-indigo-500 font-bold"
+                  className="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
                 >
                   {submitting ? "Se trimite..." : "Confirmă Programarea"}
                 </Button>
@@ -358,23 +358,23 @@ export function BookingClient() {
             animate={{ opacity: 1, scale: 1 }}
             className="p-8 text-center flex flex-col items-center justify-center max-w-xl mx-auto min-h-[400px]"
           >
-            <div className="rounded-full bg-emerald-50 p-3 text-emerald-500 dark:bg-emerald-950/30 dark:text-emerald-400">
+            <div className="rounded-full bg-emerald-50 p-3 text-emerald-500">
               <CheckCircle2 className="size-12 animate-pulse" strokeWidth={2.5} />
             </div>
             
-            <h2 className="mt-6 text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+            <h2 className="mt-6 text-2xl font-bold tracking-tight text-foreground">
               Solicitare Trimisă!
             </h2>
             
-            <p className="mt-3 text-sm text-slate-500 leading-relaxed dark:text-zinc-400">
-              Salutare, <strong className="text-slate-800 dark:text-zinc-200">{name}</strong>. Solicitarea ta pentru data de <span className="font-semibold text-indigo-600 dark:text-indigo-400">{format(selectedDate!, "EEEE, d MMMM yyyy", { locale: ro })}</span> la ora <span className="font-semibold text-indigo-600 dark:text-indigo-400">{selectedTime}</span> a fost înregistrată cu succes.
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Salutare, <strong className="text-foreground">{name}</strong>. Solicitarea ta pentru data de <span className="font-semibold text-primary">{format(selectedDate!, "EEEE, d MMMM yyyy", { locale: ro })}</span> la ora <span className="font-semibold text-primary">{selectedTime}</span> a fost înregistrată cu succes.
             </p>
 
-            <div className="mt-6 rounded-xl bg-slate-50 p-4 text-left border border-slate-100 w-full dark:bg-zinc-900/30 dark:border-zinc-800/40">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 dark:text-zinc-500">
+            <div className="mt-6 rounded-xl bg-background p-4 text-left border border-border w-full">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">
                 Ce urmează:
               </h4>
-              <ul className="text-xs text-slate-500 space-y-2 list-disc list-inside dark:text-zinc-400">
+              <ul className="text-xs text-muted-foreground space-y-2 list-disc list-inside">
                 <li>Vei primi un email de notificare în curând.</li>
                 <li>Un consultant va analiza datele tale și va confirma apelul.</li>
                 <li>După confirmare, vei primi pe email linkul final de conectare (Google Meet / Zoom).</li>
@@ -383,7 +383,6 @@ export function BookingClient() {
 
             <Button
               onClick={() => {
-                // Reset state to step 1 to allow booking again if needed
                 setStep(1);
                 setSelectedDate(undefined);
                 setSelectedTime(undefined);
@@ -393,7 +392,7 @@ export function BookingClient() {
                 setNotes("");
               }}
               variant="outline"
-              className="mt-8 border-slate-200 text-slate-700 hover:bg-slate-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-900"
+              className="mt-8 border-border text-foreground hover:bg-background"
             >
               Programează alt apel
             </Button>
