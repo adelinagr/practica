@@ -125,15 +125,42 @@ async function seedHrQuestionnaire() {
 }
 
 export default async function ChestionareSelectionPage() {
-  await seedHrQuestionnaire();
+  let questionnaires: any[] = [];
+  try {
+    await seedHrQuestionnaire();
 
-  const questionnaires = await prisma.questionnaire.findMany({
-    where: { status: "PUBLISHED" },
-    orderBy: { createdAt: "desc" },
-  });
+    questionnaires = await prisma.questionnaire.findMany({
+      where: { status: "PUBLISHED" },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.warn("Prisma connection failed on /chestionare. Using mock data for presentation.");
+    questionnaires = [
+      {
+        id: "mock1",
+        slug: "evaluare-maturitate-hr",
+        title: "Evaluare Maturitate Guvernanță HR",
+        description: "Evaluează nivelul de maturitate al departamentului tău de resurse umane.",
+        status: "PUBLISHED",
+        estimatedMinutes: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: "mock2",
+        slug: "evaluare-planificare-hr",
+        title: "Evaluare Planificare Resurse Umane",
+        description: "Evaluează capacitatea companiei de a prognoza necesarul de personal.",
+        status: "PUBLISHED",
+        estimatedMinutes: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ];
+  }
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-transparent pt-24 md:pt-32">
       <DirectoryClient questionnaires={questionnaires} />
     </div>
   );

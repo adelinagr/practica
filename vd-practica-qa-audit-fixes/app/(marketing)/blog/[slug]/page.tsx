@@ -82,7 +82,7 @@ export default async function BlogArticlePage({ params }: { params: { slug: stri
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       
-      <main className="flex min-h-screen flex-col w-full bg-white pt-24 md:pt-32">
+      <main className="flex min-h-screen flex-col w-full bg-transparent pt-24 md:pt-32">
         <ArticleHeader
           title={post.title}
           category={post.category?.name || "General"}

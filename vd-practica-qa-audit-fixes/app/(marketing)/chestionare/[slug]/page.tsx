@@ -12,70 +12,79 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const dbSlug =
-    slug === "hr" ? "evaluare-maturitate-hr" :
-    slug === "workforce" ? "evaluare-planificare-hr" :
-    slug === "recrutare" ? "evaluare-recrutare-hr" :
-    slug === "performanta" ? "evaluare-performanta-hr" :
-    slug === "dezvoltare" ? "evaluare-dezvoltare-hr" :
-    slug === "experienta" ? "evaluare-experienta-hr" :
-    slug === "digitalizare" ? "evaluare-digitalizare-hr" :
-    slug === "compliance" ? "evaluare-compliance-hr" :
-    slug;
-  const q = await prisma.questionnaire.findUnique({ where: { slug: dbSlug } });
-  if (!q) return { title: "Chestionar | VreauDigitalizare" };
-  return {
-    title: `${q.title} | VreauDigitalizare`,
-    description:
-      q.description ??
-      "Completează chestionarul și primești recomandări personalizate.",
-  };
+  try {
+    const dbSlug =
+      slug === "hr" ? "evaluare-maturitate-hr" :
+      slug === "workforce" ? "evaluare-planificare-hr" :
+      slug === "recrutare" ? "evaluare-recrutare-hr" :
+      slug === "performanta" ? "evaluare-performanta-hr" :
+      slug === "dezvoltare" ? "evaluare-dezvoltare-hr" :
+      slug === "experienta" ? "evaluare-experienta-hr" :
+      slug === "digitalizare" ? "evaluare-digitalizare-hr" :
+      slug === "compliance" ? "evaluare-compliance-hr" :
+      slug;
+    const q = await prisma.questionnaire.findUnique({ where: { slug: dbSlug } });
+    if (!q) return { title: "Chestionar | VreauDigitalizare" };
+    return {
+      title: `${q.title} | VreauDigitalizare`,
+      description:
+        q.description ??
+        "Completează chestionarul și primești recomandări personalizate.",
+    };
+  } catch (e) {
+    return { title: "Chestionar Evaluare | VreauDigitalizare" };
+  }
 }
 
 async function getQuestionnaire(slug: string) {
-  const questionnaire = await prisma.questionnaire.findUnique({
-    where: { slug, status: "PUBLISHED" },
-    include: {
-      questions: {
-        orderBy: { order: "asc" },
-        include: {
-          ruleGroups: {
-            include: { conditions: true },
+  try {
+    const questionnaire = await prisma.questionnaire.findUnique({
+      where: { slug, status: "PUBLISHED" },
+      include: {
+        questions: {
+          orderBy: { order: "asc" },
+          include: {
+            ruleGroups: {
+              include: { conditions: true },
+            },
           },
         },
       },
-    },
-  });
+    });
 
-  if (!questionnaire) return null;
+    if (!questionnaire) return null;
 
-  return {
-    id: questionnaire.id,
-    slug: questionnaire.slug,
-    title: questionnaire.title,
-    description: questionnaire.description,
-    questions: questionnaire.questions.map((q) => ({
-      id: q.id,
-      type: q.type as "TEXT" | "SINGLE_CHOICE" | "MULTIPLE_CHOICE" | "RATING",
-      text: q.text,
-      options: q.options ? (q.options as unknown as string[]) : null,
-      required: q.required,
-      order: q.order,
-      ruleGroups: q.ruleGroups.map((g) => ({
-        id: g.id,
-        questionId: g.questionId,
-        logicOperator: g.logicOperator as "AND" | "OR",
-        conditions: g.conditions.map((c) => ({
-          id: c.id,
-          ruleGroupId: c.ruleGroupId,
-          sourceQuestionId: c.sourceQuestionId,
-          operator: c.operator as any,
-          value: c.value,
-          valueSecondary: c.valueSecondary,
+    return {
+      id: questionnaire.id,
+      slug: questionnaire.slug,
+      title: questionnaire.title,
+      description: questionnaire.description,
+      questions: questionnaire.questions.map((q) => ({
+        id: q.id,
+        type: q.type as "TEXT" | "SINGLE_CHOICE" | "MULTIPLE_CHOICE" | "RATING",
+        text: q.text,
+        options: q.options ? (q.options as unknown as string[]) : null,
+        required: q.required,
+        order: q.order,
+        ruleGroups: q.ruleGroups.map((g) => ({
+          id: g.id,
+          questionId: g.questionId,
+          logicOperator: g.logicOperator as "AND" | "OR",
+          conditions: g.conditions.map((c) => ({
+            id: c.id,
+            ruleGroupId: c.ruleGroupId,
+            sourceQuestionId: c.sourceQuestionId,
+            operator: c.operator as any,
+            value: c.value,
+            valueSecondary: c.valueSecondary,
+          })),
         })),
       })),
-    })),
-  };
+    };
+  } catch (error) {
+    console.warn("Prisma connection failed on getQuestionnaire. Using fallback.");
+    return null;
+  }
 }
 
 export default async function ChestionarSlugPage({ params }: Props) {
