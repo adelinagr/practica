@@ -125,8 +125,8 @@ async function getBlogData(searchParams: { page?: string; category?: string; sea
       articleCount: c.articleCount
     })),
     pagination: {
-      total: totalCount,
-      pages: Math.ceil(totalCount / limit),
+      total: totalPosts,
+      pages: Math.ceil(totalPosts / limit),
       currentPage: page,
     }
   };
