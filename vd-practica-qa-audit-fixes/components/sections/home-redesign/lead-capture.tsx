@@ -107,7 +107,7 @@ export function LeadCaptureForm() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="glass-card rounded-3xl border border-border/25 p-6 md:p-10 shadow-xl relative overflow-hidden" style={{background: 'rgba(96,77,83,0.7)'}}>
+          <div className="glass-card rounded-3xl border border-border/25 p-6 md:p-10 shadow-xl relative overflow-hidden bg-card/60 backdrop-blur-md">
             {success ? (
               <div className="flex flex-col items-center justify-center text-center py-12 animate-fade-in">
                 <div className="h-16 w-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mb-6">

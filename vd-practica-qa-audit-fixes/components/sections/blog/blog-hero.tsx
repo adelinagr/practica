@@ -13,10 +13,9 @@ export function BlogHero() {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary dark:text-primary"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary"
         >
-          <span className="size-1.5 rounded-full bg-primary dark:bg-primary animate-pulse" />
+          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
           BLOG & INSIGHTS
         </motion.div>
 
@@ -28,7 +27,7 @@ export function BlogHero() {
         >
           Cele mai recente{" "}
           <br className="hidden md:block" />
-          <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
             insights digitale
           </span>
         </motion.h1>
