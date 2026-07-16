@@ -39,29 +39,69 @@ async function getBlogData(searchParams: { page?: string; category?: string; sea
     ];
   }
 
-  // Fetch Featured Post
-  const featuredPostRaw = await prisma.post.findFirst({
-    where: { published: true, featured: true },
-    include: { category: true, author: { select: { name: true, image: true, role: true } } },
-    orderBy: { createdAt: "desc" },
-  });
+  let featuredPostRaw: any = null;
+  let postsRaw: any[] = [];
+  let totalPosts: number = 0;
+  let categoriesRaw: any[] = [];
 
-  // Fetch paginated posts
-  const [postsRaw, totalCount] = await Promise.all([
-    prisma.post.findMany({
+  try {
+    featuredPostRaw = await prisma.post.findFirst({
+      where: { published: true, featured: true },
+      include: { category: true, author: { select: { name: true, image: true, role: true } } },
+      orderBy: { createdAt: "desc" },
+    });
+
+    postsRaw = await prisma.post.findMany({
       where: whereClause,
       include: { category: true, author: { select: { name: true } } },
       orderBy: { createdAt: "desc" },
       skip,
       take: limit,
-    }),
-    prisma.post.count({ where: whereClause }),
-  ]);
+    });
 
-  // Fetch categories for sidebar
-  const categoriesRaw = await prisma.category.findMany({
-    orderBy: { articleCount: "desc" },
-  });
+    totalPosts = await prisma.post.count({ where: whereClause });
+
+    categoriesRaw = await prisma.category.findMany({
+      orderBy: { articleCount: "desc" },
+    });
+  } catch (error) {
+    console.warn("Prisma connection failed (likely on Vercel without DB). Using mock blog data for presentation.");
+    featuredPostRaw = {
+      title: "Viitorul Digitalizării în 2026",
+      excerpt: "Un ghid complet despre tehnologiile care vor domina piața și cum poți rămâne în fruntea competiției.",
+      slug: "viitorul-digitalizarii-2026",
+      createdAt: new Date(),
+      readingTime: 8,
+      imageUrl: null,
+      category: { name: "Tehnologie" },
+      author: { name: "Echipa VreauDigitalizare", image: null }
+    };
+    
+    postsRaw = [
+      {
+        title: "Cum să automatizezi procesele din agenția ta cu AI",
+        category: { name: "Automatizări" },
+        excerpt: "Află cum uneltele bazate pe inteligență artificială îți pot reduce munca manuală cu peste 40% în fiecare lună.",
+        readingTime: 4,
+        slug: "cum-sa-automatizezi-cu-ai",
+        createdAt: new Date(),
+        imageUrl: null,
+        author: { name: "Echipa VreauDigitalizare", image: null }
+      },
+      {
+        title: "Migrarea în Cloud: Ghid complet pentru IMM-uri",
+        category: { name: "Cloud Computing" },
+        excerpt: "Pașii critici pentru o tranziție sigură și eficientă către infrastructura de cloud, fără a pierde date.",
+        readingTime: 6,
+        slug: "migrare-in-cloud-ghid",
+        createdAt: new Date(),
+        imageUrl: null,
+        author: { name: "Echipa VreauDigitalizare", image: null }
+      }
+    ];
+    totalPosts = 2;
+    categoriesRaw = [{ id: "1", name: "Tehnologie", slug: "tehnologie", articleCount: 1 }, { id: "2", name: "Automatizări", slug: "automatizari", articleCount: 1 }];
+  }
 
   // Format data
   const formatPost = (p: any) => ({

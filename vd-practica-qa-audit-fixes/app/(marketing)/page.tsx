@@ -101,12 +101,46 @@ export default async function IndexPage() {
     ]
   };
 
-  const latestPostsRaw = await prisma.post.findMany({
-    where: { published: true },
-    include: { category: true },
-    orderBy: { createdAt: "desc" },
-    take: 3,
-  });
+  let latestPostsRaw: any[] = [];
+  try {
+    latestPostsRaw = await prisma.post.findMany({
+      where: { published: true },
+      include: { category: true },
+      orderBy: { createdAt: "desc" },
+      take: 3,
+    });
+  } catch (error) {
+    console.warn("Prisma connection failed (likely on Vercel without DB). Using mock posts for presentation.");
+    latestPostsRaw = [
+      {
+        title: "Cum să automatizezi procesele din agenția ta cu AI",
+        category: { name: "Automatizări" },
+        excerpt: "Află cum uneltele bazate pe inteligență artificială îți pot reduce munca manuală cu peste 40% în fiecare lună.",
+        readingTime: 4,
+        slug: "cum-sa-automatizezi-cu-ai",
+        createdAt: new Date(),
+        imageUrl: null,
+      },
+      {
+        title: "Migrarea în Cloud: Ghid complet pentru IMM-uri",
+        category: { name: "Cloud Computing" },
+        excerpt: "Pașii critici pentru o tranziție sigură și eficientă către infrastructura de cloud, fără a pierde date.",
+        readingTime: 6,
+        slug: "migrare-in-cloud-ghid",
+        createdAt: new Date(),
+        imageUrl: null,
+      },
+      {
+        title: "De ce ai nevoie de un CRM customizat?",
+        category: { name: "Dezvoltare Software" },
+        excerpt: "O soluție off-the-shelf s-ar putea să nu se potrivească fluxurilor tale unice. Iată de ce soluțiile personalizate câștigă teren.",
+        readingTime: 5,
+        slug: "de-ce-ai-nevoie-de-crm",
+        createdAt: new Date(),
+        imageUrl: null,
+      }
+    ];
+  }
 
   const latestPosts = latestPostsRaw.map((post) => ({
     title: post.title,
