@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex-1 w-full bg-[#111111] overflow-hidden relative">
+    <div className="flex-1 w-full bg-transparent overflow-hidden relative">
       {/* Background decorations */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-[#DB7F8E]/10 blur-[120px]" />

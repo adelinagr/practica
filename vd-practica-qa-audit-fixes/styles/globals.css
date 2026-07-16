@@ -4,41 +4,41 @@
 
 @layer base {
   :root, .dark {
-    /* Obsidian & Rose Palette */
-    --background: 0 0% 7%;              /* Obsidian #111111 */
-    --foreground: 0 0% 98%;             /* Off-white #fafafa */
+    /* Vibrant Palette */
+    --background: 217 41% 40%;          /* Lapis Lazuli #3D5D91 */
+    --foreground: 3 46% 90%;            /* Misty Rose #F2DCDB */
     
-    --card: 0 0% 10%;                   /* Slightly lighter obsidian */
-    --card-foreground: 0 0% 98%;
+    --card: 346 86% 23%;                /* Burgundy #6C0820 */
+    --card-foreground: 3 46% 90%;       /* Misty Rose */
     
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 346 86% 23%;             /* Burgundy */
+    --popover-foreground: 3 46% 90%;
     
-    --primary: 350 56% 68%;             /* Rose #DB7F8E */
-    --primary-foreground: 0 0% 7%;      /* Obsidian */
+    --primary: 348 71% 82%;             /* Cherry Blossom Pink #F2AEBC */
+    --primary-foreground: 346 86% 23%;  /* Burgundy */
     
-    --secondary: 0 0% 15%;              /* Dark gray */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217 53% 57%;           /* Silver Lake Blue #5A86CB */
+    --secondary-foreground: 3 46% 90%;  /* Misty Rose */
     
-    --muted: 0 0% 15%;                  /* Dark gray */
-    --muted-foreground: 0 0% 65%;       /* Light gray text */
+    --muted: 217 41% 30%;               /* Darker Lapis */
+    --muted-foreground: 3 46% 80%;      /* Slightly darker Misty Rose */
     
-    --accent: 350 56% 68%;              /* Rose */
-    --accent-foreground: 0 0% 7%;       /* Obsidian */
+    --accent: 348 71% 82%;              /* Cherry Blossom Pink */
+    --accent-foreground: 346 86% 23%;   /* Burgundy */
     
-    --destructive: 0 84% 60%;           /* Standard red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 346 86% 23%;         /* Burgundy */
+    --destructive-foreground: 3 46% 90%;
     
-    --border: 0 0% 18%;                 /* Dark border */
-    --input: 0 0% 18%;
-    --ring: 350 56% 68%;                /* Rose */
+    --border: 217 53% 57%;              /* Silver Lake Blue */
+    --input: 217 53% 57%;
+    --ring: 348 71% 82%;                /* Cherry Blossom Pink */
     --radius: 1rem;
     
-    --chart-1: 350 56% 68%;
-    --chart-2: 0 0% 30%;
-    --chart-3: 0 0% 50%;
-    --chart-4: 0 0% 70%;
-    --chart-5: 0 0% 90%;
+    --chart-1: 346 86% 23%;
+    --chart-2: 348 71% 82%;
+    --chart-3: 3 46% 90%;
+    --chart-4: 217 53% 57%;
+    --chart-5: 217 41% 40%;
   }
 }
 

@@ -1,6 +1,6 @@
 export default function BlogLoading() {
   return (
-    <div className="flex min-h-screen flex-col w-full bg-background animate-pulse">
+    <div className="flex min-h-screen flex-col w-full bg-transparent animate-pulse">
       <div className="pt-24 pb-16 md:pt-32 md:pb-24 border-b border-border/40">
         <div className="container max-w-4xl mx-auto px-4 md:px-6 flex flex-col items-center justify-center space-y-6">
           <div className="h-8 w-48 rounded-full bg-slate-200 dark:bg-slate-800" />

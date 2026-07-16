@@ -158,7 +158,7 @@ export default async function BlogPage({
       <main className="flex min-h-screen flex-col w-full">
         <BlogHero />
         
-        <div className="bg-background py-16 md:py-24">
+        <div className="bg-transparent py-16 md:py-24">
           <div className="container max-w-7xl mx-auto px-4 md:px-6">
             
             {/* ── Featured Post ── */}
